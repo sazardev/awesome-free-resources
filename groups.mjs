@@ -47,7 +47,7 @@ export const GROUPS = [
   ['Papers, Books & Blogs', [
     'Papers & preprints', 'Free textbooks', 'Topic blogs',
   ]],
-  ['Electronics & Devices & Robotics', [
+  ['Electronics, Robotics & Devices', [
     'Electronics', 'Circuits & Signals', 'Electricity & Power',
     'Semiconductors & Chips', 'Embedded & Devices', 'Hardware & Making',
     'Device Repair', 'Computer Architecture', 'Robotics & Control',
