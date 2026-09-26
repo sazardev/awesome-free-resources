@@ -1,6 +1,6 @@
 # Awesome Free Resources
 
-A curated, **link-verified** collection of **2,291 free and open-source resources** for
+A curated, **link-verified** collection of **2,400 free and open-source resources** for
 developers, scientists, engineers, students and self-learners.
 
 Everything here is free to read, free to use, and — in the vast majority of cases —
@@ -17,7 +17,7 @@ Most "awesome" lists are unverified. This one is not:
 - **Every URL was checked over HTTP** with retries. Broken links were either repaired
   (often to a moved page) or removed outright.
 - **Duplicates were removed** programmatically by title *and* URL.
-- The result: **2,291 links across 72 categories, from 1,498 distinct domains.**
+- The result: **2,400 links across 75 categories, from 1,504 distinct domains.**
 
 That work is reproducible — see [Regenerating](#regenerating).
 
@@ -33,6 +33,7 @@ That work is reproducible — see [Regenerating](#regenerating).
 | AI / ML | 77 |
 | Computer Science | 74 |
 | Papers & preprints | 74 |
+| SDR & Radio hacking | 67 |
 | Networking | 65 |
 | Framework docs | 64 |
 | Language docs | 58 |
@@ -52,12 +53,12 @@ That work is reproducible — see [Regenerating](#regenerating).
 | Chemistry | 35 |
 | Tech pioneers | 35 |
 | Physics | 34 |
+| Radio Frequencies & Bands | 34 |
 | Fun facts | 33 |
 | Influential tech | 33 |
 | Telecommunications | 33 |
 | Dev blogs | 32 |
 | Omarchy | 32 |
-| SDR & Radio hacking | 32 |
 | Databases | 31 |
 | Hardware & Making | 30 |
 | Kotlin | 30 |
@@ -84,6 +85,8 @@ That work is reproducible — see [Regenerating](#regenerating).
 | News & aggregators | 21 |
 | Technical writing | 21 |
 | Biology | 20 |
+| Go Hacking | 20 |
+| Mobile & Android Hacking | 20 |
 | Particle physics | 20 |
 | Health | 19 |
 | Physiotherapy | 19 |
@@ -407,3 +410,68 @@ again, and anything I still could not confirm was deleted instead of shipped. A
 handful of hosts (`nanovna.ch`, `rigol.com`, `smdcomponent.com`) are DNS-blocked
 from the sandbox and are carried unverified; the weekly check will confirm them
 from a real runner.
+
+## Radio hacking, frequencies, Go and mobile
+
+The focused follow-up to the section above, concentrating on radio hacking as the
+primary interest. Three new categories, 109 new links.
+
+**`SDR & Radio hacking`** grew from 32 to 67. The additions are the out-of-tree
+GNU Radio blocks that let you receive real protocols yourself: `gr-gsm` (a working
+GSM receiver), `gr-lte` (reads an LTE cell's control channel from a HackRF or
+LimeSDR), `gr-ieee802-11` (a complete 802.11 receiver and transmitter in GNU
+Radio), `gr-radar` (real-time Doppler radar you can point at a wall), `gr-satnogs`
+(automated satellite telemetry), and `OpenLTE`, a full software LTE eNodeB and UE
+so you can run your own 4G cell and watch what a handset actually transmits. Plus
+RFCat for sub-GHz board work, and the modulation layer in depth: AM, FM, PSK, QAM,
+MSK, FHSS, and the Shannon-Hartley and Nyquist limits every SDR decision runs
+into.
+
+**`Radio Frequencies & Bands`** (34) is the part that makes the rest usable. The
+ITU Radio Regulations, 47 CFR Part 2 (the full US Table of Allocations), Part 95
+(CB, FRS, GMRS), ARRL and RSGB band plans, the ITU-R V.431 band nomenclature, and
+FCC ULS for looking up a licence. Then the practical side: Trove, which is a
+fully searchable database of every radiofrequency licence issued in Australia and
+the best public spectrum dataset anywhere; the amateur, ISM, LTE, 5G NR, Zigbee,
+LoRa, Meshtastic, airband, marine, DAB and DVB allocations; the WWV and other
+time-signal stations that any cheap radio can receive; and the propagation
+articles that explain skip, tropospheric ducting and the whispering-gallery
+waveguide.
+
+**`Go Hacking`** (20) and **`Mobile & Android Hacking`** (20). For Go: the
+ProjectDiscovery chain (subfinder, httpx, nuclei, naabu, katana), OWASP Amass,
+ffuf, gobuster, gitleaks and trufflehog for secrets, dalfox for XSS, Sliver to
+read how command and control is actually implemented, and the defensive
+toolchain — gosec, govulncheck, OpenSSF Scorecard, staticcheck. For mobile: OWASP
+MASTG and the Mobile Top 10, Frida and frida-tools, objection, jadx, Apktool,
+androguard, smali, MobSF, APKiD, drozer, Quark Engine, Magisk, LSPosed, and the
+Android Security Bulletins and AOSP documentation as the authoritative reference.
+
+### Verified before written this time
+
+After the previous batch shipped 34 invented links, the order here was reversed:
+nothing was written to the data file until it had been confirmed. Repositories
+went through the GitHub API, article titles through the Wikipedia API, and
+everything else through paced requests. 121 candidate URLs, 120 confirmed, and one
+(`fcc.gov/uls`, which 403s to bots) carried deliberately.
+
+Six Wikipedia titles were wrong and are now correct: `Marine band` →
+`Marine VHF radio`, `Time from NCEL` → `Time signal`, `Shortwave broadcast band`
+→ `Shortwave bands`, `Skip propagation` → `Skywave`, `Whispering gallery effect` →
+`Whispering-gallery wave`, `Automatic weather satellite` → `Weather satellite`.
+
+### Two bugs in the link checker itself
+
+**Wikipedia is now checked through its API, not over HTTP.** Wikipedia throttles
+by returning 404 rather than 429, so an HTML fetch is not a usable existence test:
+the same URL alternated between 200 and 404 within minutes, and about sixty
+perfectly good links would have been reported dead forever. The API is
+authoritative and is not throttled the same way.
+
+**And the API check had a truthiness bug.** The API marks an absent page with
+`"missing": ""` — an empty string, which is falsy in JavaScript. The original
+`p.missing ? 404 : 200` therefore reported every missing article as present. Both
+the checker and my earlier manual verification shared that bug, which is why six
+bad titles had been marked good. It now tests for the presence of the key, and
+follows the `normalized` and `redirects` mappings so a redirected article is not
+mistaken for an absent one. Confirmed it reports a deliberately fake title as 404.

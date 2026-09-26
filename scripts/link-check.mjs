@@ -21,6 +21,9 @@ const src = readFileSync(join(root, 'all.js'), 'utf8');
 const BOOKMARKS = new Function(`${src}; return BOOKMARKS;`)();
 const urls = [...new Set(BOOKMARKS.map((b) => b.u))];
 
+// The API rejects the default fetch user-agent, and a descriptive one is
+// required by the Wikimedia UA policy.
+const WIKI_UA = 'awesome-free-resources-linkcheck/1.0 (link verification; contact via GitHub)';
 const UA =
   'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36';
 
@@ -42,7 +45,63 @@ const TIMEOUT_MS = 15_000;
 
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 
+// Wikipedia throttles by returning 404 rather than 429, so an HTML fetch is not
+// a usable existence test for it: the same URL can be 200 one minute later and
+// 404 the next, and 60-odd legitimate links would be reported as dead forever.
+// The API is the authoritative answer and is not throttled the same way, so ask
+// it instead. Batching keeps this to a couple of requests for the whole list.
+const wikiTitles = new Map();
+for (const u of urls) {
+  const m = u.match(/^https:\/\/([a-z-]+)\.wikipedia\.org\/wiki\/([^#?]+)$/);
+  if (m) wikiTitles.set(u, decodeURIComponent(m[2]).replace(/_/g, ' '));
+}
+const wikiStatus = new Map();
+async function checkWikipedia() {
+  const entries = [...wikiTitles.entries()];
+  for (let i = 0; i < entries.length; i += 40) {
+    const batch = entries.slice(i, i + 40);
+    const q = 'https://en.wikipedia.org/w/api.php?action=query&format=json&redirects=1&titles=' +
+      batch.map(([, t]) => encodeURIComponent(t)).join('|');
+    try {
+      const r = await fetch(q, { headers: { 'user-agent': WIKI_UA } });
+      const d = await r.json();
+      const q = d.query;
+
+      // A requested title can be normalised (capitalisation, underscores) or
+      // redirected before it reaches a page. Both mappings have to be followed,
+      // or a valid article whose title differs from the one we asked for comes
+      // back looking missing, and a genuinely absent one looks present.
+      const norm = new Map((q.normalized ?? []).map((x) => [x.from, x.to]));
+      const redir = new Map((q.redirects ?? []).map((x) => [x.from, x.to]));
+      // The API signals a missing page with `"missing": ""` — an empty string,
+      // which is falsy in JavaScript. Testing `p.missing ? 404 : 200` therefore
+      // marks every absent article as present, and every Wikipedia link passes
+      // forever. The key's presence is the only reliable signal.
+      const byTitle = new Map();
+      for (const p of Object.values(q.pages)) {
+        byTitle.set(p.title.replace(/_/g, ' '), 'missing' in p ? 404 : 200);
+      }
+
+      for (const [u, requested] of batch) {
+        let t = requested;
+        t = norm.get(t) ?? t;
+        t = redir.get(t) ?? t;
+        // No mapping and no page means the title does not exist. Do not guess.
+        wikiStatus.set(u, byTitle.get(t) ?? 404);
+      }
+    } catch {
+      for (const [u] of batch) wikiStatus.set(u, TIMEOUT);
+    }
+    await sleep(400);
+  }
+}
+if (wikiTitles.size) {
+  if (!quiet) console.log(`Asking the Wikipedia API about ${wikiTitles.size} articles...`);
+  await checkWikipedia();
+}
+
 async function probe(url) {
+  if (wikiStatus.has(url)) return wikiStatus.get(url);
   for (let attempt = 0; attempt < ATTEMPTS; attempt++) {
     for (const method of ['HEAD', 'GET']) {
       const ac = new AbortController();

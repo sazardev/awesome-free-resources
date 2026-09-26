@@ -176,6 +176,12 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://sazardev.github.io/awesome-free-resources/#cat-go-hacking</loc>
+    <lastmod>2026-09-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://sazardev.github.io/awesome-free-resources/#cat-go-blogs</loc>
     <lastmod>2026-09-26</lastmod>
     <changefreq>monthly</changefreq>
@@ -237,6 +243,12 @@
   </url>
   <url>
     <loc>https://sazardev.github.io/awesome-free-resources/#cat-medicine</loc>
+    <lastmod>2026-09-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://sazardev.github.io/awesome-free-resources/#cat-mobile-android-hacking</loc>
     <lastmod>2026-09-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -315,6 +327,12 @@
   </url>
   <url>
     <loc>https://sazardev.github.io/awesome-free-resources/#cat-radio-amateur</loc>
+    <lastmod>2026-09-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://sazardev.github.io/awesome-free-resources/#cat-radio-frequencies-bands</loc>
     <lastmod>2026-09-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -447,6 +465,12 @@
   </url>
   <url>
     <loc>https://sazardev.github.io/awesome-free-resources/?q=%233d-printing</loc>
+    <lastmod>2026-09-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://sazardev.github.io/awesome-free-resources/?q=%235g</loc>
     <lastmod>2026-09-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.3</priority>
@@ -764,6 +788,12 @@
     <priority>0.3</priority>
   </url>
   <url>
+    <loc>https://sazardev.github.io/awesome-free-resources/?q=%23c2</loc>
+    <lastmod>2026-09-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  <url>
     <loc>https://sazardev.github.io/awesome-free-resources/?q=%23cad</loc>
     <lastmod>2026-09-26</lastmod>
     <changefreq>monthly</changefreq>
@@ -897,6 +927,12 @@
   </url>
   <url>
     <loc>https://sazardev.github.io/awesome-free-resources/?q=%23code</loc>
+    <lastmod>2026-09-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://sazardev.github.io/awesome-free-resources/?q=%23code-quality</loc>
     <lastmod>2026-09-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.3</priority>
@@ -1514,6 +1550,12 @@
     <priority>0.3</priority>
   </url>
   <url>
+    <loc>https://sazardev.github.io/awesome-free-resources/?q=%23frequencies</loc>
+    <lastmod>2026-09-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  <url>
     <loc>https://sazardev.github.io/awesome-free-resources/?q=%23frontend</loc>
     <lastmod>2026-09-26</lastmod>
     <changefreq>monthly</changefreq>
@@ -1611,30 +1653,6 @@
   </url>
   <url>
     <loc>https://sazardev.github.io/awesome-free-resources/?q=%23gpu</loc>
-    <lastmod>2026-09-26</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.3</priority>
-  </url>
-  <url>
-    <loc>https://sazardev.github.io/awesome-free-resources/?q=%23gradle</loc>
-    <lastmod>2026-09-26</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.3</priority>
-  </url>
-  <url>
-    <loc>https://sazardev.github.io/awesome-free-resources/?q=%23graphics</loc>
-    <lastmod>2026-09-26</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.3</priority>
-  </url>
-  <url>
-    <loc>https://sazardev.github.io/awesome-free-resources/?q=%23gravitation</loc>
-    <lastmod>2026-09-26</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.3</priority>
-  </url>
-  <url>
-    <loc>https://sazardev.github.io/awesome-free-resources/?q=%23grid</loc>
     <lastmod>2026-09-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.3</priority>
