@@ -197,27 +197,15 @@
 <script>
 (function () {
   'use strict';
-  const B = BOOKMARKS, CATS = CATEGORIES, TAG_LIST = TAGS;
+  const B = BOOKMARKS, CATS = CATEGORIES, TAG_LIST = TAGS, GROUPS_ = GROUPS;
   document.title = 'Dev Bookmarks — ' + B.length + ' free & open-source resources';
 
-  // Same top-level grouping as the Chromium bookmark bar.
-  const GROUPS = [
-    ['Software & Dev', ['Software Engineering', 'Architecture', 'CS fundamentals', 'AI / ML', 'Compilers', 'Go', 'Go frameworks', 'Go blogs', 'Rust', 'Rust ecosystem', 'Flutter', 'Android', 'Kotlin', 'Computer Science', 'DevOps / Infra', 'Databases', 'Testing', 'Security', 'Performance', 'Tools & productivity', 'Big tech blogs', 'Dev blogs']],
-    ['Science', ['Science', 'Science news', 'Research data']],
-    ['Physics & Chemistry', ['Physics', 'Chemistry']],
-    ['Atomic & Particles', ['Quantum & Atomic', 'Particle physics']],
-    ['Astronomy & Biology', ['Astronomy', 'Biology']],
-    ['Medicine', ['Medicine']],
-    ['Anatomy & Physiotherapy', ['Anatomy', 'Physiotherapy']],
-    ['Nutrition & Health', ['Nutrition', 'Health']],
-    ['Papers, Books & Blogs', ['Papers & preprints', 'Free textbooks', 'Topic blogs']],
-    ['Electronics & Devices', ['Electronics', 'Circuits & Signals', 'Electricity & Power', 'Semiconductors & Chips', 'Embedded & Devices', 'Hardware & Making', 'Device Repair', 'Computer Architecture']],
-  ['Linux, Unix & Omarchy', ['Omarchy', 'Linux & Unix', 'Language docs', 'Framework docs', 'Technical writing', 'Influential tech']],
-  ['Fun & News', ['Fun facts', 'News & aggregators']],
-  ];
+  // Top-level grouping comes from all.js, which build.mjs derives from
+  // groups.mjs. One source of truth: a category cannot be added to the
+  // data and then be missing here.
   const CAT_TO_GROUP = new Map();
-  for (const [g, cs] of GROUPS) for (const c of cs) CAT_TO_GROUP.set(c, g);
-  const ORDER = GROUPS.flatMap(([g]) => g);
+  for (const [g, cs] of GROUPS_) for (const c of cs) CAT_TO_GROUP.set(c, g);
+  const ORDER = GROUPS_.flatMap(([g]) => g);
   const out = document.getElementById('out');
   const q = document.getElementById('q');
   const clr = document.getElementById('clr');

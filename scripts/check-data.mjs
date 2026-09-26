@@ -3,6 +3,7 @@
 // complete, every URL is well-formed, and nothing is duplicated.
 // Exits non-zero with a readable list of problems.
 import { readdirSync, readFileSync } from 'node:fs';
+import { GROUPS } from '../groups.mjs';
 import { fileURLToPath } from 'node:url';
 import { dirname, join } from 'node:path';
 
@@ -65,6 +66,25 @@ for (const f of files) {
     }
   }
 }
+
+// Every category must be reachable from the group map. A category that exists
+// in the data but not in groups.mjs used to be skipped silently, which is how
+// 132 links became invisible on the site while every build reported success.
+const mapped = new Set(GROUPS.flatMap(([, cs]) => cs));
+const unmapped = [...seenCat.values()].filter((c) => !mapped.has(c));
+for (const c of unmapped) problems.push(`category "${c}" is not in groups.mjs — it will not render`);
+
+// ...and the reverse: a group entry with no matching category is dead config.
+const actual = new Set(seenCat.values());
+for (const [g, cs] of GROUPS) {
+  for (const c of cs) {
+    if (!actual.has(c)) problems.push(`groups.mjs maps "${c}" to "${g}" but no bookmark uses that category`);
+  }
+}
+
+// ...and a category listed in two groups at once.
+const dupes = GROUPS.flatMap(([, cs]) => cs).filter((c, i, a) => a.indexOf(c) !== i);
+for (const c of new Set(dupes)) problems.push(`groups.mjs lists "${c}" in more than one group`);
 
 if (count < 500) problems.push(`only ${count} bookmarks — did a data file fail to load?`);
 

@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 // Validate + merge the bookmark data files into one all.js, and report stats.
 import { readFileSync, writeFileSync, readdirSync } from 'node:fs';
+import { GROUPS } from './groups.mjs';
 import { fileURLToPath } from 'node:url';
 import { dirname, join } from 'node:path';
 
@@ -63,7 +64,8 @@ writeFileSync(
     `// ${all.length} bookmarks across ${cats.length} categories and ${tags.length} tags.\n` +
     `const BOOKMARKS = ${JSON.stringify(all, null, 0)};\n` +
     `const CATEGORIES = ${JSON.stringify(cats)};\n` +
-    `const TAGS = ${JSON.stringify(tags)};\n`
+    `const TAGS = ${JSON.stringify(tags)};\n` +
+    `const GROUPS = ${JSON.stringify(GROUPS)};\n`
 );
 
 console.log(`\nTOTAL: ${all.length} bookmarks`);
