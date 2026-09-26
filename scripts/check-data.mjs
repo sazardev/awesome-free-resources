@@ -12,6 +12,7 @@ const files = readdirSync(root).filter((f) => /^data-\d+.*\.js$/.test(f)).sort()
 const problems = [];
 const seenTitle = new Map();
 const seenUrl = new Map();
+const seenCat = new Map();
 let count = 0;
 
 for (const f of files) {
@@ -47,6 +48,21 @@ for (const f of files) {
     if (b.u && seenUrl.has(b.u)) problems.push(`${where}: duplicate url of ${seenUrl.get(b.u)}`);
     if (b.t) seenTitle.set(b.t, where);
     if (b.u) seenUrl.set(b.u, where);
+
+    // Categories are compared case- and punctuation-insensitively. Without
+    // this, "Tech pioneers" and "Tech Pioneers" look like two categories in
+    // the UI and quietly split the links between them.
+    if (b.c) {
+      const k = b.c.toLowerCase().replace(/[^a-z0-9]+/g, '');
+      const prev = seenCat.get(k);
+      // Only a *differently spelled* name is a problem. Repeating the exact
+      // same category is the normal case.
+      if (prev !== undefined && prev !== b.c) {
+        problems.push(`${where}: category "${b.c}" collides with "${prev}" — same name, different spelling or case`);
+      } else if (prev === undefined) {
+        seenCat.set(k, b.c);
+      }
+    }
   }
 }
 

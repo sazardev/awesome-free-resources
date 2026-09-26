@@ -5,8 +5,8 @@ const BOOKMARKS_19 = [
   { c: "Data Engineering", t: "The Data Journalism Handbook (free)", u: "https://datajournalism.com/", d: "A free book on doing rigorous data journalism. Very well written.", g: ["data", "books", "free", "must-read"] },
   { c: "Mathematics", t: "nLab — reference on category theory", u: "https://ncatlab.org/", d: "A free collaborative wiki on category theory, homotopy and higher algebra.", g: ["math", "reference", "must-use", "free"] },
   { c: "Robotics & Control", t: "Control System Lectures (Brian Douglas)", u: "https://www.youtube.com/@ControlSystemLectures", d: "Free excellent video series on control systems, state space and stability.", g: ["control", "video", "must-watch"] },
-  { c: "Tech Pioneers", t: "Stallman's writings (free)", u: "https://stallman.org/", d: "Free writing from the founder of the free software movement. Provocative.", g: ["gnu", "must-read"] },
-  { c: "Tech Pioneers", t: "A New Kind of Science (Wolfram, free)", u: "https://www.wolfram.com/nks/", d: "Wolfram's free online book on cellular automata. A classic.", g: ["theory", "books", "free", "must-read"] },
-  { c: "Tech Pioneers", t: "Handmade Network (free)", u: "https://handmade.network/", d: "Free community of developers making games and tools from scratch. Great.", g: ["games", "community", "free", "must-visit"] },
-  { c: "Tech Pioneers", t: "Id Software open source (free)", u: "https://github.com/id-Software", d: "Free open source releases of classic game engines from John Carmack's studio.", g: ["games", "open-source", "free", "must-try"] },
+  { c: "Tech pioneers", t: "Stallman's writings (free)", u: "https://stallman.org/", d: "Free writing from the founder of the free software movement. Provocative.", g: ["gnu", "must-read"] },
+  { c: "Tech pioneers", t: "A New Kind of Science (Wolfram, free)", u: "https://www.wolfram.com/nks/", d: "Wolfram's free online book on cellular automata. A classic.", g: ["theory", "books", "free", "must-read"] },
+  { c: "Tech pioneers", t: "Handmade Network (free)", u: "https://handmade.network/", d: "Free community of developers making games and tools from scratch. Great.", g: ["games", "community", "free", "must-visit"] },
+  { c: "Tech pioneers", t: "Id Software open source (free)", u: "https://github.com/id-Software", d: "Free open source releases of classic game engines from John Carmack's studio.", g: ["games", "open-source", "free", "must-try"] },
 ];
