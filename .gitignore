@@ -26,3 +26,7 @@ bm-manager.png
 # NOTE: all.js and chromium-bookmarks.html are generated but deliberately
 # committed, so the repo works as a plain static site on GitHub Pages and the
 # bookmarks file is downloadable straight from the web.
+
+# workflow output
+link-report.txt
+comment.md

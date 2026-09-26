@@ -1,0 +1,71 @@
+name: Verify build
+
+# Cheap gate so a broken commit never lands on main: rebuilds the generated
+# files and confirms they are byte-identical to what is committed.
+on:
+  pull_request:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    name: Build is reproducible
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Check data files parse and contain no duplicates
+        run: |
+          node build.mjs
+          node -e '
+            const fs = require("fs");
+            const B = new Function(fs.readFileSync("all.js","utf8")+";return BOOKMARKS;")();
+            const seen = new Set(), dupes = [];
+            for (const b of B) {
+              if (seen.has(b.t) || seen.has(b.u)) dupes.push(b.t);
+              seen.add(b.t); seen.add(b.u);
+            }
+            if (dupes.length) {
+              console.error("Duplicate entries: " + dupes.join(", "));
+              process.exit(1);
+            }
+            console.log(B.length + " bookmarks, no duplicates");
+          '
+
+      - name: Check every link is well-formed
+        run: |
+          node -e '
+            const fs = require("fs");
+            const B = new Function(fs.readFileSync("all.js","utf8")+";return BOOKMARKS;")();
+            let bad = 0;
+            for (const b of B) {
+              let u;
+              try { u = new URL(b.u); } catch { console.error("unparseable url: " + b.u); bad++; continue; }
+              if (u.protocol !== "https:" && u.protocol !== "http:") { console.error("bad scheme: " + b.u); bad++; }
+              if (!b.t || !b.d || !b.c || !Array.isArray(b.g) || !b.g.length) {
+                console.error("incomplete entry: " + (b.t || b.u)); bad++;
+              }
+            }
+            if (bad) process.exit(1);
+            console.log("all " + B.length + " entries well-formed");
+          '
+
+      - name: Generated files are up to date
+        run: |
+          node dedupe.mjs
+          node build.mjs
+          node make-bookmarks.mjs
+          node seo.mjs
+          if ! git diff --quiet; then
+            echo "::error::Generated files are stale. Run:"
+            echo "::error::  node build.mjs && node dedupe.mjs && node build.mjs && node make-bookmarks.mjs && node seo.mjs"
+            git --no-pager diff --stat
+            exit 1
+          fi
+          echo "generated files are current"
