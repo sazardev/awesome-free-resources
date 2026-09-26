@@ -49,13 +49,13 @@ export const GROUPS = [
   ]],
   ['Radio, Antennas & RF', [
     'SDR & Radio hacking', 'Antennas', 'Radio & Amateur', 'RF & Microwave',
-    'Satellites & Space',
+    'Satellites & Space', 'Radio Frequencies & Bands',
   ]],
   ['Telecommunications & Networking', [
     'Telecommunications', 'Networking',
   ]],
   ['Hacking & Pentesting', [
-    'Hacking & Pentesting',
+    'Hacking & Pentesting', 'Go Hacking', 'Mobile & Android Hacking',
   ]],
   ['Test, Measurement & PCB Design', [
     'Test & Measurement', 'PCB & EDA',
