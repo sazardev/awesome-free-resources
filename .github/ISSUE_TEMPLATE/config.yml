@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Contributing guide
+    url: https://github.com/sazardev/awesome-free-resources/blob/main/CONTRIBUTING.md
+    about: How to add a link, and the rules the automated checks enforce.
+  - name: Browse the collection
+    url: https://sazardev.github.io/awesome-free-resources/
+    about: 2,400 free resources, searchable by tag and category.

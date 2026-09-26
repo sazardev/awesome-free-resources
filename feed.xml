@@ -1,0 +1,536 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Awesome Free Resources</title>
+  <subtitle>2400 free and open-source resources across 75 categories</subtitle>
+  <link href="https://sazardev.github.io/awesome-free-resources/"/>
+  <link rel="self" href="https://sazardev.github.io/awesome-free-resources/feed.xml"/>
+  <link rel="alternate" type="text/html" href="https://sazardev.github.io/awesome-free-resources/"/>
+  <id>https://sazardev.github.io/awesome-free-resources/</id>
+  <updated>2026-09-26T00:00:00Z</updated>
+  <generator>seo.mjs</generator>
+  <entry>
+    <title>AI / ML</title>
+    <link href="https://sazardev.github.io/awesome-free-resources/#cat-ai-ml"/>
+    <id>https://sazardev.github.io/awesome-free-resources/#cat-ai-ml</id>
+    <category term="AI / ML"/>
+    <summary type="text">77 free resources. Tags: advanced, agents, ai, api, blog, book, c, code.</summary>
+  </entry>
+  <entry>
+    <title>Anatomy</title>
+    <link href="https://sazardev.github.io/awesome-free-resources/#cat-anatomy"/>
+    <id>https://sazardev.github.io/awesome-free-resources/#cat-anatomy</id>
+    <category term="Anatomy"/>
+    <summary type="text">25 free resources. Tags: 3d, anatomy, atlas, data, free, images, must-know, must-read.</summary>
+  </entry>
+  <entry>
+    <title>Android</title>
+    <link href="https://sazardev.github.io/awesome-free-resources/#cat-android"/>
+    <id>https://sazardev.github.io/awesome-free-resources/#cat-android</id>
+    <category term="Android"/>
+    <summary type="text">51 free resources. Tags: android, aosp, architecture, background, blog, build, code, community.</summary>
+  </entry>
+  <entry>
+    <title>Antennas</title>
+    <link href="https://sazardev.github.io/awesome-free-resources/#cat-antennas"/>
+    <id>https://sazardev.github.io/awesome-free-resources/#cat-antennas</id>
+    <category term="Antennas"/>
+    <summary type="text">22 free resources. Tags: amateur, antennas, calculators, code, community, data, free, hardware.</summary>
+  </entry>
+  <entry>
+    <title>Architecture</title>
+    <link href="https://sazardev.github.io/awesome-free-resources/#cat-architecture"/>
+    <id>https://sazardev.github.io/awesome-free-resources/#cat-architecture</id>
+    <category term="Architecture"/>
+    <summary type="text">25 free resources. Tags: adr, android, blog, book, clean-arch, ddd, eaa, eda.</summary>
+  </entry>
+  <entry>
+    <title>Astronomy</title>
+    <link href="https://sazardev.github.io/awesome-free-resources/#cat-astronomy"/>
+    <id>https://sazardev.github.io/awesome-free-resources/#cat-astronomy</id>
+    <category term="Astronomy"/>
+    <summary type="text">29 free resources. Tags: astronomy, blog, career, community, cosmology, data, explainer, free.</summary>
+  </entry>
+  <entry>
+    <title>Big tech blogs</title>
+    <link href="https://sazardev.github.io/awesome-free-resources/#cat-big-tech-blogs"/>
+    <id>https://sazardev.github.io/awesome-free-resources/#cat-big-tech-blogs</id>
+    <category term="Big tech blogs"/>
+    <summary type="text">46 free resources. Tags: analytics, api-design, architecture, blog, cloud, consensus, crdt, data.</summary>
+  </entry>
+  <entry>
+    <title>Biology</title>
+    <link href="https://sazardev.github.io/awesome-free-resources/#cat-biology"/>
+    <id>https://sazardev.github.io/awesome-free-resources/#cat-biology</id>
+    <category term="Biology"/>
+    <summary type="text">20 free resources. Tags: archive, biology, books, community, courses, data, education, explainer.</summary>
+  </entry>
+  <entry>
+    <title>CS fundamentals</title>
+    <link href="https://sazardev.github.io/awesome-free-resources/#cat-cs-fundamentals"/>
+    <id>https://sazardev.github.io/awesome-free-resources/#cat-cs-fundamentals</id>
+    <category term="CS fundamentals"/>
+    <summary type="text">22 free resources. Tags: algorithms, beginner, book, cheatsheet, code, community, courses, databases.</summary>
+  </entry>
+  <entry>
+    <title>Chemistry</title>
+    <link href="https://sazardev.github.io/awesome-free-resources/#cat-chemistry"/>
+    <id>https://sazardev.github.io/awesome-free-resources/#cat-chemistry</id>
+    <category term="Chemistry"/>
+    <summary type="text">35 free resources. Tags: biology, books, chemistry, community, courses, data, directory, education.</summary>
+  </entry>
+  <entry>
+    <title>Circuits &amp; Signals</title>
+    <link href="https://sazardev.github.io/awesome-free-resources/#cat-circuits-signals"/>
+    <id>https://sazardev.github.io/awesome-free-resources/#cat-circuits-signals</id>
+    <category term="Circuits &amp; Signals"/>
+    <summary type="text">22 free resources. Tags: advanced, ai, books, community, control, courses, directory, docs.</summary>
+  </entry>
+  <entry>
+    <title>Compilers</title>
+    <link href="https://sazardev.github.io/awesome-free-resources/#cat-compilers"/>
+    <id>https://sazardev.github.io/awesome-free-resources/#cat-compilers</id>
+    <category term="Compilers"/>
+    <summary type="text">27 free resources. Tags: advanced, assembly, blog, book, c, clang, code, compilers.</summary>
+  </entry>
+  <entry>
+    <title>Computer Architecture</title>
+    <link href="https://sazardev.github.io/awesome-free-resources/#cat-computer-architecture"/>
+    <id>https://sazardev.github.io/awesome-free-resources/#cat-computer-architecture</id>
+    <category term="Computer Architecture"/>
+    <summary type="text">23 free resources. Tags: ai, architecture, books, community, courses, design, docs, embedded.</summary>
+  </entry>
+  <entry>
+    <title>Computer Science</title>
+    <link href="https://sazardev.github.io/awesome-free-resources/#cat-computer-science"/>
+    <id>https://sazardev.github.io/awesome-free-resources/#cat-computer-science</id>
+    <category term="Computer Science"/>
+    <summary type="text">74 free resources. Tags: a11y, advanced, ai, algorithms, architecture, astronomy, beginner, blog.</summary>
+  </entry>
+  <entry>
+    <title>Data Engineering</title>
+    <link href="https://sazardev.github.io/awesome-free-resources/#cat-data-engineering"/>
+    <id>https://sazardev.github.io/awesome-free-resources/#cat-data-engineering</id>
+    <category term="Data Engineering"/>
+    <summary type="text">26 free resources. Tags: blog, books, data, databases, docs, free, internals, must-do.</summary>
+  </entry>
+  <entry>
+    <title>Databases</title>
+    <link href="https://sazardev.github.io/awesome-free-resources/#cat-databases"/>
+    <id>https://sazardev.github.io/awesome-free-resources/#cat-databases</id>
+    <category term="Databases"/>
+    <summary type="text">31 free resources. Tags: ai, analytics, blog, databases, design, distributed, docs, essay.</summary>
+  </entry>
+  <entry>
+    <title>Dev blogs</title>
+    <link href="https://sazardev.github.io/awesome-free-resources/#cat-dev-blogs"/>
+    <id>https://sazardev.github.io/awesome-free-resources/#cat-dev-blogs</id>
+    <category term="Dev blogs"/>
+    <summary type="text">32 free resources. Tags: ai, architecture, blog, career, classic, craft, culture, data.</summary>
+  </entry>
+  <entry>
+    <title>DevOps / Infra</title>
+    <link href="https://sazardev.github.io/awesome-free-resources/#cat-devops-infra"/>
+    <id>https://sazardev.github.io/awesome-free-resources/#cat-devops-infra</id>
+    <category term="DevOps / Infra"/>
+    <summary type="text">38 free resources. Tags: advanced, automation, blog, cd, ci, cicd, cli, cloud-native.</summary>
+  </entry>
+  <entry>
+    <title>Device Repair</title>
+    <link href="https://sazardev.github.io/awesome-free-resources/#cat-device-repair"/>
+    <id>https://sazardev.github.io/awesome-free-resources/#cat-device-repair</id>
+    <category term="Device Repair"/>
+    <summary type="text">13 free resources. Tags: batteries, community, debugging, devices, electronics, free, measurement, must-read.</summary>
+  </entry>
+  <entry>
+    <title>Electricity &amp; Power</title>
+    <link href="https://sazardev.github.io/awesome-free-resources/#cat-electricity-power"/>
+    <id>https://sazardev.github.io/awesome-free-resources/#cat-electricity-power</id>
+    <category term="Electricity &amp; Power"/>
+    <summary type="text">24 free resources. Tags: blog, books, climate, courses, data, energy, free, grid.</summary>
+  </entry>
+  <entry>
+    <title>Electronics</title>
+    <link href="https://sazardev.github.io/awesome-free-resources/#cat-electronics"/>
+    <id>https://sazardev.github.io/awesome-free-resources/#cat-electronics</id>
+    <category term="Electronics"/>
+    <summary type="text">39 free resources. Tags: beginner, books, community, courses, docs, dsp, electronics, free.</summary>
+  </entry>
+  <entry>
+    <title>Embedded &amp; Devices</title>
+    <link href="https://sazardev.github.io/awesome-free-resources/#cat-embedded-devices"/>
+    <id>https://sazardev.github.io/awesome-free-resources/#cat-embedded-devices</id>
+    <category term="Embedded &amp; Devices"/>
+    <summary type="text">22 free resources. Tags: beginner, community, courses, docs, embedded, free, language, magazine.</summary>
+  </entry>
+  <entry>
+    <title>Flutter</title>
+    <link href="https://sazardev.github.io/awesome-free-resources/#cat-flutter"/>
+    <id>https://sazardev.github.io/awesome-free-resources/#cat-flutter</id>
+    <category term="Flutter"/>
+    <summary type="text">47 free resources. Tags: a11y, advanced, animation, architecture, backend, blog, book, codegen.</summary>
+  </entry>
+  <entry>
+    <title>Formal Methods</title>
+    <link href="https://sazardev.github.io/awesome-free-resources/#cat-formal-methods"/>
+    <id>https://sazardev.github.io/awesome-free-resources/#cat-formal-methods</id>
+    <category term="Formal Methods"/>
+    <summary type="text">10 free resources. Tags: c, formal, free, history, must-know, must-try, open-source, reference.</summary>
+  </entry>
+  <entry>
+    <title>Framework docs</title>
+    <link href="https://sazardev.github.io/awesome-free-resources/#cat-framework-docs"/>
+    <id>https://sazardev.github.io/awesome-free-resources/#cat-framework-docs</id>
+    <category term="Framework docs"/>
+    <summary type="text">64 free resources. Tags: angular, api, astro, async, books, ci, codegen, courses.</summary>
+  </entry>
+  <entry>
+    <title>Free textbooks</title>
+    <link href="https://sazardev.github.io/awesome-free-resources/#cat-free-textbooks"/>
+    <id>https://sazardev.github.io/awesome-free-resources/#cat-free-textbooks</id>
+    <category term="Free textbooks"/>
+    <summary type="text">46 free resources. Tags: advanced, anatomy, astronomy, biology, books, chemistry, courses, directory.</summary>
+  </entry>
+  <entry>
+    <title>Fun facts</title>
+    <link href="https://sazardev.github.io/awesome-free-resources/#cat-fun-facts"/>
+    <id>https://sazardev.github.io/awesome-free-resources/#cat-fun-facts</id>
+    <category term="Fun facts"/>
+    <summary type="text">33 free resources. Tags: ai, archive, blog, books, comics, cs, culture, data.</summary>
+  </entry>
+  <entry>
+    <title>Go</title>
+    <link href="https://sazardev.github.io/awesome-free-resources/#cat-go"/>
+    <id>https://sazardev.github.io/awesome-free-resources/#cat-go</id>
+    <category term="Go"/>
+    <summary type="text">24 free resources. Tags: blog, concurrency, debugging, docs, errors, examples, generics, go.</summary>
+  </entry>
+  <entry>
+    <title>Go Hacking</title>
+    <link href="https://sazardev.github.io/awesome-free-resources/#cat-go-hacking"/>
+    <id>https://sazardev.github.io/awesome-free-resources/#cat-go-hacking</id>
+    <category term="Go Hacking"/>
+    <summary type="text">20 free resources. Tags: advanced, c2, code, code-quality, fuzzing, go, learning, legal.</summary>
+  </entry>
+  <entry>
+    <title>Go blogs</title>
+    <link href="https://sazardev.github.io/awesome-free-resources/#cat-go-blogs"/>
+    <id>https://sazardev.github.io/awesome-free-resources/#cat-go-blogs</id>
+    <category term="Go blogs"/>
+    <summary type="text">14 free resources. Tags: blog, case-study, distributed-systems, go, internals, must-read, networking, rust.</summary>
+  </entry>
+  <entry>
+    <title>Go frameworks</title>
+    <link href="https://sazardev.github.io/awesome-free-resources/#cat-go-frameworks"/>
+    <id>https://sazardev.github.io/awesome-free-resources/#cat-go-frameworks</id>
+    <category term="Go frameworks"/>
+    <summary type="text">52 free resources. Tags: backend, build, ci, cicd, cli, code, codegen, config.</summary>
+  </entry>
+  <entry>
+    <title>Hacking &amp; Pentesting</title>
+    <link href="https://sazardev.github.io/awesome-free-resources/#cat-hacking-pentesting"/>
+    <id>https://sazardev.github.io/awesome-free-resources/#cat-hacking-pentesting</id>
+    <category term="Hacking &amp; Pentesting"/>
+    <summary type="text">40 free resources. Tags: advanced, books, code, community, courses, data, debugging, embedded.</summary>
+  </entry>
+  <entry>
+    <title>Hardware &amp; Making</title>
+    <link href="https://sazardev.github.io/awesome-free-resources/#cat-hardware-making"/>
+    <id>https://sazardev.github.io/awesome-free-resources/#cat-hardware-making</id>
+    <category term="Hardware &amp; Making"/>
+    <summary type="text">30 free resources. Tags: 3d-printing, cad, community, design, devices, docs, electronics, embedded.</summary>
+  </entry>
+  <entry>
+    <title>Health</title>
+    <link href="https://sazardev.github.io/awesome-free-resources/#cat-health"/>
+    <id>https://sazardev.github.io/awesome-free-resources/#cat-health</id>
+    <category term="Health"/>
+    <summary type="text">19 free resources. Tags: courses, data, evidence, exercise, free, guidance, health, journalism.</summary>
+  </entry>
+  <entry>
+    <title>Influential tech</title>
+    <link href="https://sazardev.github.io/awesome-free-resources/#cat-influential-tech"/>
+    <id>https://sazardev.github.io/awesome-free-resources/#cat-influential-tech</id>
+    <category term="Influential tech"/>
+    <summary type="text">33 free resources. Tags: archive, blog, career, community, devops, dhh, docs, free.</summary>
+  </entry>
+  <entry>
+    <title>Kotlin</title>
+    <link href="https://sazardev.github.io/awesome-free-resources/#cat-kotlin"/>
+    <id>https://sazardev.github.io/awesome-free-resources/#cat-kotlin</id>
+    <category term="Kotlin"/>
+    <summary type="text">30 free resources. Tags: advanced, blog, build, code, community, compilers, compose, concurrency.</summary>
+  </entry>
+  <entry>
+    <title>Language docs</title>
+    <link href="https://sazardev.github.io/awesome-free-resources/#cat-language-docs"/>
+    <id>https://sazardev.github.io/awesome-free-resources/#cat-language-docs</id>
+    <category term="Language docs"/>
+    <summary type="text">58 free resources. Tags: 3d, api, c, clojure, compilers, cpp, csharp, css.</summary>
+  </entry>
+  <entry>
+    <title>Linux &amp; Unix</title>
+    <link href="https://sazardev.github.io/awesome-free-resources/#cat-linux-unix"/>
+    <id>https://sazardev.github.io/awesome-free-resources/#cat-linux-unix</id>
+    <category term="Linux &amp; Unix"/>
+    <summary type="text">95 free resources. Tags: advanced, audio, books, bsd, build, c, cli, code.</summary>
+  </entry>
+  <entry>
+    <title>Mathematics</title>
+    <link href="https://sazardev.github.io/awesome-free-resources/#cat-mathematics"/>
+    <id>https://sazardev.github.io/awesome-free-resources/#cat-mathematics</id>
+    <category term="Mathematics"/>
+    <summary type="text">17 free resources. Tags: advanced, algebra, algorithms, analysis, blog, books, calculus, community.</summary>
+  </entry>
+  <entry>
+    <title>Medicine</title>
+    <link href="https://sazardev.github.io/awesome-free-resources/#cat-medicine"/>
+    <id>https://sazardev.github.io/awesome-free-resources/#cat-medicine</id>
+    <category term="Medicine"/>
+    <summary type="text">49 free resources. Tags: anaesthesia, anatomy, archive, cases, clinical, courses, data, docs.</summary>
+  </entry>
+  <entry>
+    <title>Mobile &amp; Android Hacking</title>
+    <link href="https://sazardev.github.io/awesome-free-resources/#cat-mobile-android-hacking"/>
+    <id>https://sazardev.github.io/awesome-free-resources/#cat-mobile-android-hacking</id>
+    <category term="Mobile &amp; Android Hacking"/>
+    <summary type="text">20 free resources. Tags: advanced, android, code, mobile, must-read, must-try, must-use, official.</summary>
+  </entry>
+  <entry>
+    <title>Networking</title>
+    <link href="https://sazardev.github.io/awesome-free-resources/#cat-networking"/>
+    <id>https://sazardev.github.io/awesome-free-resources/#cat-networking</id>
+    <category term="Networking"/>
+    <summary type="text">65 free resources. Tags: advanced, api, automation, bgp, books, code, concepts, courses.</summary>
+  </entry>
+  <entry>
+    <title>News &amp; aggregators</title>
+    <link href="https://sazardev.github.io/awesome-free-resources/#cat-news-aggregators"/>
+    <id>https://sazardev.github.io/awesome-free-resources/#cat-news-aggregators</id>
+    <category term="News &amp; aggregators"/>
+    <summary type="text">21 free resources. Tags: aggregator, android, blog, community, databases, discovery, flutter, go.</summary>
+  </entry>
+  <entry>
+    <title>Nutrition</title>
+    <link href="https://sazardev.github.io/awesome-free-resources/#cat-nutrition"/>
+    <id>https://sazardev.github.io/awesome-free-resources/#cat-nutrition</id>
+    <category term="Nutrition"/>
+    <summary type="text">30 free resources. Tags: books, data, education, evidence, free, guidance, health, must-know.</summary>
+  </entry>
+  <entry>
+    <title>Omarchy</title>
+    <link href="https://sazardev.github.io/awesome-free-resources/#cat-omarchy"/>
+    <id>https://sazardev.github.io/awesome-free-resources/#cat-omarchy</id>
+    <category term="Omarchy"/>
+    <summary type="text">32 free resources. Tags: ai, automation, beginner, blog, cli, code, config, dev.</summary>
+  </entry>
+  <entry>
+    <title>PCB &amp; EDA</title>
+    <link href="https://sazardev.github.io/awesome-free-resources/#cat-pcb-eda"/>
+    <id>https://sazardev.github.io/awesome-free-resources/#cat-pcb-eda</id>
+    <category term="PCB &amp; EDA"/>
+    <summary type="text">12 free resources. Tags: advanced, code, community, eda, fabrication, free, legal, libraries.</summary>
+  </entry>
+  <entry>
+    <title>Papers &amp; preprints</title>
+    <link href="https://sazardev.github.io/awesome-free-resources/#cat-papers-preprints"/>
+    <id>https://sazardev.github.io/awesome-free-resources/#cat-papers-preprints</id>
+    <category term="Papers &amp; preprints"/>
+    <summary type="text">74 free resources. Tags: access, ai, api, astronomy, atomic, biology, books, chemistry.</summary>
+  </entry>
+  <entry>
+    <title>Particle physics</title>
+    <link href="https://sazardev.github.io/awesome-free-resources/#cat-particle-physics"/>
+    <id>https://sazardev.github.io/awesome-free-resources/#cat-particle-physics</id>
+    <category term="Particle physics"/>
+    <summary type="text">20 free resources. Tags: advanced, astronomy, code, community, data, explainer, gravitation, must-know.</summary>
+  </entry>
+  <entry>
+    <title>Performance</title>
+    <link href="https://sazardev.github.io/awesome-free-resources/#cat-performance"/>
+    <id>https://sazardev.github.io/awesome-free-resources/#cat-performance</id>
+    <category term="Performance"/>
+    <summary type="text">11 free resources. Tags: book, databases, debugging, distributed-systems, ebpf, free, linux, must-read.</summary>
+  </entry>
+  <entry>
+    <title>Physics</title>
+    <link href="https://sazardev.github.io/awesome-free-resources/#cat-physics"/>
+    <id>https://sazardev.github.io/awesome-free-resources/#cat-physics</id>
+    <category term="Physics"/>
+    <summary type="text">34 free resources. Tags: advanced, atomic, books, community, computation, courses, education, explainer.</summary>
+  </entry>
+  <entry>
+    <title>Physiotherapy</title>
+    <link href="https://sazardev.github.io/awesome-free-resources/#cat-physiotherapy"/>
+    <id>https://sazardev.github.io/awesome-free-resources/#cat-physiotherapy</id>
+    <category term="Physiotherapy"/>
+    <summary type="text">19 free resources. Tags: assessment, evidence, exercises, free, must-know, must-read, must-use, open-access.</summary>
+  </entry>
+  <entry>
+    <title>Quantum &amp; Atomic</title>
+    <link href="https://sazardev.github.io/awesome-free-resources/#cat-quantum-atomic"/>
+    <id>https://sazardev.github.io/awesome-free-resources/#cat-quantum-atomic</id>
+    <category term="Quantum &amp; Atomic"/>
+    <summary type="text">30 free resources. Tags: atomic, books, code, computation, courses, data, education, explainer.</summary>
+  </entry>
+  <entry>
+    <title>RF &amp; Microwave</title>
+    <link href="https://sazardev.github.io/awesome-free-resources/#cat-rf-microwave"/>
+    <id>https://sazardev.github.io/awesome-free-resources/#cat-rf-microwave</id>
+    <category term="RF &amp; Microwave"/>
+    <summary type="text">28 free resources. Tags: adsb, app-notes, aviation, calculators, code, courses, free, hardware.</summary>
+  </entry>
+  <entry>
+    <title>Radio &amp; Amateur</title>
+    <link href="https://sazardev.github.io/awesome-free-resources/#cat-radio-amateur"/>
+    <id>https://sazardev.github.io/awesome-free-resources/#cat-radio-amateur</id>
+    <category term="Radio &amp; Amateur"/>
+    <summary type="text">36 free resources. Tags: adsb, amateur, aprs, balloons, broadcast, code, community, contesting.</summary>
+  </entry>
+  <entry>
+    <title>Radio Frequencies &amp; Bands</title>
+    <link href="https://sazardev.github.io/awesome-free-resources/#cat-radio-frequencies-bands"/>
+    <id>https://sazardev.github.io/awesome-free-resources/#cat-radio-frequencies-bands</id>
+    <category term="Radio Frequencies &amp; Bands"/>
+    <summary type="text">34 free resources. Tags: 5g, amateur, aviation, broadcast, cellular, data, frequencies, iot.</summary>
+  </entry>
+  <entry>
+    <title>Research data</title>
+    <link href="https://sazardev.github.io/awesome-free-resources/#cat-research-data"/>
+    <id>https://sazardev.github.io/awesome-free-resources/#cat-research-data</id>
+    <category term="Research data"/>
+    <summary type="text">14 free resources. Tags: biology, climate, data, free, genetics, geography, health, must-know.</summary>
+  </entry>
+  <entry>
+    <title>Robotics &amp; Control</title>
+    <link href="https://sazardev.github.io/awesome-free-resources/#cat-robotics-control"/>
+    <id>https://sazardev.github.io/awesome-free-resources/#cat-robotics-control</id>
+    <category term="Robotics &amp; Control"/>
+    <summary type="text">19 free resources. Tags: books, community, control, courses, data, directory, docs, drones.</summary>
+  </entry>
+  <entry>
+    <title>Rust</title>
+    <link href="https://sazardev.github.io/awesome-free-resources/#cat-rust"/>
+    <id>https://sazardev.github.io/awesome-free-resources/#cat-rust</id>
+    <category term="Rust"/>
+    <summary type="text">26 free resources. Tags: advanced, api-design, async, blog, book, cli, code, community.</summary>
+  </entry>
+  <entry>
+    <title>Rust ecosystem</title>
+    <link href="https://sazardev.github.io/awesome-free-resources/#cat-rust-ecosystem"/>
+    <id>https://sazardev.github.io/awesome-free-resources/#cat-rust-ecosystem</id>
+    <category term="Rust ecosystem"/>
+    <summary type="text">41 free resources. Tags: architecture, async, blockchain, book, case-study, ci, cli, code.</summary>
+  </entry>
+  <entry>
+    <title>SDR &amp; Radio hacking</title>
+    <link href="https://sazardev.github.io/awesome-free-resources/#cat-sdr-radio-hacking"/>
+    <id>https://sazardev.github.io/awesome-free-resources/#cat-sdr-radio-hacking</id>
+    <category term="SDR &amp; Radio hacking"/>
+    <summary type="text">67 free resources. Tags: 5g, advanced, ble, cellular, code, community, decoding, embedded.</summary>
+  </entry>
+  <entry>
+    <title>Satellites &amp; Space</title>
+    <link href="https://sazardev.github.io/awesome-free-resources/#cat-satellites-space"/>
+    <id>https://sazardev.github.io/awesome-free-resources/#cat-satellites-space</id>
+    <category term="Satellites &amp; Space"/>
+    <summary type="text">15 free resources. Tags: amateur, code, community, competition, data, free, hardware, images.</summary>
+  </entry>
+  <entry>
+    <title>Science</title>
+    <link href="https://sazardev.github.io/awesome-free-resources/#cat-science"/>
+    <id>https://sazardev.github.io/awesome-free-resources/#cat-science</id>
+    <category term="Science"/>
+    <summary type="text">48 free resources. Tags: archive, atomic, beginner, biology, books, computing, courses, critical-thinking.</summary>
+  </entry>
+  <entry>
+    <title>Science news</title>
+    <link href="https://sazardev.github.io/awesome-free-resources/#cat-science-news"/>
+    <id>https://sazardev.github.io/awesome-free-resources/#cat-science-news</id>
+    <category term="Science news"/>
+    <summary type="text">23 free resources. Tags: career, chemistry, community, discoveries, education, engineering, images, medicine.</summary>
+  </entry>
+  <entry>
+    <title>Security</title>
+    <link href="https://sazardev.github.io/awesome-free-resources/#cat-security"/>
+    <id>https://sazardev.github.io/awesome-free-resources/#cat-security</id>
+    <category term="Security"/>
+    <summary type="text">13 free resources. Tags: api, crypto, dependencies, linux, must-do, must-know, must-read, practice.</summary>
+  </entry>
+  <entry>
+    <title>Self-taught learning</title>
+    <link href="https://sazardev.github.io/awesome-free-resources/#cat-self-taught-learning"/>
+    <id>https://sazardev.github.io/awesome-free-resources/#cat-self-taught-learning</id>
+    <category term="Self-taught learning"/>
+    <summary type="text">12 free resources. Tags: algorithms, beginner, books, clojure, courses, erlang, free, functional.</summary>
+  </entry>
+  <entry>
+    <title>Semiconductors &amp; Chips</title>
+    <link href="https://sazardev.github.io/awesome-free-resources/#cat-semiconductors-chips"/>
+    <id>https://sazardev.github.io/awesome-free-resources/#cat-semiconductors-chips</id>
+    <category term="Semiconductors &amp; Chips"/>
+    <summary type="text">27 free resources. Tags: blog, chips, courses, explainer, free, hardware, history, math.</summary>
+  </entry>
+  <entry>
+    <title>Software Engineering</title>
+    <link href="https://sazardev.github.io/awesome-free-resources/#cat-software-engineering"/>
+    <id>https://sazardev.github.io/awesome-free-resources/#cat-software-engineering</id>
+    <category term="Software Engineering"/>
+    <summary type="text">25 free resources. Tags: algorithms, architecture, blog, book, books, cheatsheet, curriculum, design.</summary>
+  </entry>
+  <entry>
+    <title>Tech pioneers</title>
+    <link href="https://sazardev.github.io/awesome-free-resources/#cat-tech-pioneers"/>
+    <id>https://sazardev.github.io/awesome-free-resources/#cat-tech-pioneers</id>
+    <category term="Tech pioneers"/>
+    <summary type="text">35 free resources. Tags: ai, blog, books, cognitive-science, community, compilers, crypto, design.</summary>
+  </entry>
+  <entry>
+    <title>Technical writing</title>
+    <link href="https://sazardev.github.io/awesome-free-resources/#cat-technical-writing"/>
+    <id>https://sazardev.github.io/awesome-free-resources/#cat-technical-writing</id>
+    <category term="Technical writing"/>
+    <summary type="text">21 free resources. Tags: a11y, diagrams, docs, free, hosting, must-have, must-read, must-use.</summary>
+  </entry>
+  <entry>
+    <title>Telecommunications</title>
+    <link href="https://sazardev.github.io/awesome-free-resources/#cat-telecommunications"/>
+    <id>https://sazardev.github.io/awesome-free-resources/#cat-telecommunications</id>
+    <category term="Telecommunications"/>
+    <summary type="text">33 free resources. Tags: advanced, api, cellular, code, concepts, fiber, free, history.</summary>
+  </entry>
+  <entry>
+    <title>Test &amp; Measurement</title>
+    <link href="https://sazardev.github.io/awesome-free-resources/#cat-test-measurement"/>
+    <id>https://sazardev.github.io/awesome-free-resources/#cat-test-measurement</id>
+    <category term="Test &amp; Measurement"/>
+    <summary type="text">12 free resources. Tags: advanced, app-notes, design, electronics, free, hardware, logic-analyser, measurement.</summary>
+  </entry>
+  <entry>
+    <title>Testing</title>
+    <link href="https://sazardev.github.io/awesome-free-resources/#cat-testing"/>
+    <id>https://sazardev.github.io/awesome-free-resources/#cat-testing</id>
+    <category term="Testing"/>
+    <summary type="text">13 free resources. Tags: blog, fuzzing, go, java, microservices, must-read, mutation, open-source.</summary>
+  </entry>
+  <entry>
+    <title>Tools &amp; productivity</title>
+    <link href="https://sazardev.github.io/awesome-free-resources/#cat-tools-productivity"/>
+    <id>https://sazardev.github.io/awesome-free-resources/#cat-tools-productivity</id>
+    <category term="Tools &amp; productivity"/>
+    <summary type="text">27 free resources. Tags: book, cli, design, diagrams, docs, dx, editor, free.</summary>
+  </entry>
+  <entry>
+    <title>Topic blogs</title>
+    <link href="https://sazardev.github.io/awesome-free-resources/#cat-topic-blogs"/>
+    <id>https://sazardev.github.io/awesome-free-resources/#cat-topic-blogs</id>
+    <category term="Topic blogs"/>
+    <summary type="text">46 free resources. Tags: astronomy, atomic, biology, blog, books, chemistry, community, courses.</summary>
+  </entry>
+  <entry>
+    <title>Web Performance</title>
+    <link href="https://sazardev.github.io/awesome-free-resources/#cat-web-performance"/>
+    <id>https://sazardev.github.io/awesome-free-resources/#cat-web-performance</id>
+    <category term="Web Performance"/>
+    <summary type="text">13 free resources. Tags: courses, data, docs, free, http, must-read, must-use, must-watch.</summary>
+  </entry>
+</feed>
