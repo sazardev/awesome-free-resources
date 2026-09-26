@@ -17,7 +17,7 @@ Most "awesome" lists are unverified. This one is not:
 - **Every URL was checked over HTTP** with retries. Broken links were either repaired
   (often to a moved page) or removed outright.
 - **Duplicates were removed** programmatically by title *and* URL.
-- The result: **1,996 links across 63 categories, from 1,332 distinct domains.**
+- The result: **1,996 links across 62 categories, from 1,332 distinct domains.**
 
 That work is reproducible — see [Regenerating](#regenerating).
 
@@ -47,13 +47,13 @@ That work is reproducible — see [Regenerating](#regenerating).
 | Electronics | 39 |
 | DevOps / Infra | 38 |
 | Chemistry | 35 |
+| Tech pioneers | 35 |
 | Physics | 34 |
 | Fun facts | 33 |
 | Influential tech | 33 |
 | Dev blogs | 32 |
 | Omarchy | 32 |
 | Databases | 31 |
-| Tech pioneers | 31 |
 | Hardware & Making | 30 |
 | Kotlin | 30 |
 | Nutrition | 30 |
@@ -91,7 +91,6 @@ That work is reproducible — see [Regenerating](#regenerating).
 | Self-taught learning | 12 |
 | Performance | 11 |
 | Formal Methods | 10 |
-| Tech Pioneers | 4 |
 <!-- /AUTO-GENERATED -->
 
 </details>
@@ -153,15 +152,15 @@ node build.mjs && node dedupe.mjs && node build.mjs \
 
 The site is set up to be indexed properly:
 
-- [`sitemap.xml`](sitemap.xml) — 264 URLs: the root plus one per category, using the
+- [`sitemap.xml`](sitemap.xml) — 263 URLs: the root plus one per category, using the
   page's own `#cat-...` anchors, plus tag-filtered entry points
 - [`robots.txt`](robots.txt) — open, and advertises the sitemap and the two
   machine-readable downloads
 - **Open Graph + Twitter card** tags for link previews in Slack, Discord and X
 - **JSON-LD** `CollectionPage` structured data, including `isAccessibleForFree`,
   the CC0 license, and `DataDownload` pointers to `all.js` and the bookmarks file
-- [`_headers`](_headers) — caching rules, `nosniff`, referrer policy, and a
-  `Content-Disposition` so the bookmarks file downloads instead of rendering
+- both downloads are declared as `link rel="alternate"` and as JSON-LD
+  `DataDownload` objects, so crawlers and readers can find them
 - [`404.html`](404.html) — a real 404 page instead of GitHub's default
 
 Submit `https://sazardev.github.io/awesome-free-resources/sitemap.xml` to

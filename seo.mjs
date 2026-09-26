@@ -3,7 +3,7 @@
 //   - sitemap.xml      one URL per category (deep links via #cat-...)
 //   - robots.txt       allows everything, points at the sitemap
 //   - 404.html          friendly page (GitHub Pages serves it automatically)
-//   - _headers          caching + security headers for Pages
+//   - .nojekyll         serve dotfiles as-is on Pages
 // Also rewrites the auto-generated block in README.md so the stats never go stale.
 import { readFileSync, writeFileSync, existsSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
@@ -90,21 +90,11 @@ write('404.html',
 `
 );
 
-// ---------------------------------------------------------------- _headers
-write('_headers',
-  `/*
-  X-Content-Type-Options: nosniff
-  Referrer-Policy: strict-origin-when-cross-origin
-  X-Frame-Options: SAMEORIGIN
-
-/all.js
-  Cache-Control: public, max-age=3600
-
-/chromium-bookmarks.html
-  Content-Type: text/html; charset=utf-8
-  Content-Disposition: attachment; filename="awesome-free-resources-bookmarks.html"
-`
-);
+// NOTE: no _headers file is generated. That format is a Cloudflare Pages /
+// Netlify feature; GitHub Pages ignores it completely. Shipping it implied a
+// set of security and caching headers that were never actually being sent, so
+// it was removed. The link below is a normal anchor with a download attribute,
+// which browsers honour without any header support.
 
 // ---------------------------------------------------------------- README stats
 const readmePath = 'README.md';
@@ -153,4 +143,4 @@ ${table}
 }
 
 console.log('sitemap.xml:', urls.length, 'urls');
-console.log('robots.txt, 404.html, _headers written');
+console.log('robots.txt, 404.html written');

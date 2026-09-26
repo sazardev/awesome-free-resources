@@ -1,7 +1,7 @@
 name: Maintain
 
 # Keeps the generated artefacts (all.js, chromium-bookmarks.html, sitemap.xml,
-# robots.txt, _headers, 404.html and the README stats) in sync with data-*.js,
+# robots.txt, 404.html and the README stats) in sync with data-*.js,
 # and re-checks every link so the list degrades honestly instead of rotting.
 #
 # The heavy lifting lives in scripts/*.mjs rather than inline `run:` blocks:

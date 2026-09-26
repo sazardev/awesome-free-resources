@@ -11,7 +11,7 @@ const steps = [
   ['dedupe.mjs', 'remove duplicate titles and URLs'],
   ['build.mjs', 'rebuild after dedupe'],
   ['make-bookmarks.mjs', 'regenerate the browser import file'],
-  ['seo.mjs', 'regenerate sitemap, robots, 404, _headers and README stats'],
+  ['seo.mjs', 'regenerate sitemap, robots, 404 and README stats'],
 ];
 
 for (const [script, why] of steps) {
