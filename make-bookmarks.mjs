@@ -9,7 +9,19 @@ const here = dirname(fileURLToPath(import.meta.url));
 const src = readFileSync(join(here, 'all.js'), 'utf8');
 const BOOKMARKS = new Function(`${src}; return BOOKMARKS;`)();
 
-const now = Math.floor(Date.now() / 1000);
+// Timestamps must be byte-reproducible, otherwise the generated file differs
+// on every run and the "generated files are up to date" CI check can never
+// pass. Anything clock-derived is wrong here: git checkouts set mtime to the
+// moment of checkout, so a build in CI would stamp a different time than the
+// same build on a laptop and the two would never match.
+//
+// So the default is the Unix epoch and callers can override it via
+// SOURCE_DATE_EPOCH, the standard reproducible-builds convention. Chromium
+// imports a zero timestamp fine, and an invented "added on" date would be a
+// lie anyway — these links were curated over time, not created at once.
+const now = /^\d+$/.test(process.env.SOURCE_DATE_EPOCH ?? '')
+  ? Number(process.env.SOURCE_DATE_EPOCH)
+  : 0;
 
 const escAttr = (s) => String(s).replace(/&/g, '&amp;').replace(/"/g, '&quot;')
   .replace(/</g, '&lt;').replace(/>/g, '&gt;');
