@@ -2,28 +2,29 @@ name: Maintain
 
 # Keeps the generated artefacts (all.js, chromium-bookmarks.html, sitemap.xml,
 # robots.txt, _headers, 404.html and the README stats) in sync with data-*.js,
-# and surfaces dead links instead of silently rotting.
+# and re-checks every link so the list degrades honestly instead of rotting.
+#
+# The heavy lifting lives in scripts/*.mjs rather than inline `run:` blocks:
+# inline JS containing backticks and template literals breaks the YAML parser,
+# and a script can be tested locally before it ever reaches CI.
 on:
   push:
     branches: [main]
-    paths-ignore: ['**/*.md']
+    paths-ignore:
+      - '**/*.md'
+      - '.github/workflows/**'
   schedule:
     # Mondays 04:17 UTC
     - cron: '17 4 * * 1'
   workflow_dispatch:
     inputs:
       check_links:
-        description: 'Re-verify every URL over HTTP'
-        type: boolean
-        default: true
-      open_pr:
-        description: 'Open a PR with the report instead of pushing'
+        description: Re-verify every URL over HTTP
         type: boolean
         default: true
 
 permissions:
   contents: write
-  pull-requests: write
   issues: write
 
 concurrency:
@@ -32,166 +33,41 @@ concurrency:
 
 jobs:
   rebuild:
-    name: Rebuild and verify
+    name: Rebuild
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
 
-      - name: Rebuild generated files
-        run: |
-          node build.mjs
-          node dedupe.mjs
-          node build.mjs
-          node make-bookmarks.mjs
-          node seo.mjs
+      - name: Regenerate derived files
+        run: node scripts/rebuild.mjs
 
-      - name: Sanity check the built page
-        run: |
-          node -e '
-            const fs = require("fs");
-            const src = fs.readFileSync("all.js", "utf8");
-            const B = new Function(src + ";return BOOKMARKS;")();
-            const C = new Function(src + ";return CATEGORIES;")();
-            if (B.length < 500) throw new Error("suspiciously few bookmarks: " + B.length);
-            const bad = B.filter(b => !/^https?:\/\//.test(b.url || b.u));
-            if (bad.length) throw new Error("bad urls: " + bad.length);
-            const dupes = new Set(), seen = new Set();
-            for (const b of B) {
-              if (seen.has(b.t) || seen.has(b.u)) dupes.add(b.t);
-              seen.add(b.t); seen.add(b.u);
-            }
-            if (dupes.size) throw new Error("duplicates: " + [...dupes].slice(0, 5).join(", "));
-            console.log(B.length + " bookmarks, " + C.length + " categories — OK");
-          '
-          # the page must be self-contained apart from all.js
-          grep -q 'src="all.js"' index.html
-          if grep -qE 'src="https?://' index.html; then
-            echo "index.html has a remote script dependency; it should be self-contained"; exit 1
-          fi
-
-      - name: Commit regenerated files
-        run: |
-          git config user.name  'github-actions[bot]'
-          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add -A
-          if git diff --cached --quiet; then
-            echo "nothing to commit — generated files already current"
-          else
-            git commit -m 'chore: regenerate all.js, bookmarks export, sitemap and README stats'
-            git push
-          fi
+      - name: Commit
+        run: node scripts/commit-generated.mjs
 
   link-check:
     name: Verify links
     needs: rebuild
-    if: github.event_name == 'schedule' || (github.event_name == 'workflow_dispatch' && inputs.check_links)
+    if: github.event_name == 'schedule' || github.event_name == 'workflow_dispatch'
     runs-on: ubuntu-latest
     permissions:
       contents: read
       issues: write
-      pull-requests: write
     steps:
       - uses: actions/checkout@v4
-
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
 
-      - name: Check every URL (HEAD then GET, 3 attempts, 12 workers)
-        run: |
-          node -e '
-            const fs = require("fs");
-            const B = new Function(fs.readFileSync("all.js","utf8")+";return BOOKMARKS;")();
-            const urls = [...new Set(B.map(b => b.u))];
-            const CONC = 12;
-            let next = 0, done = 0;
-            const dead = [];
-            const UA = "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36";
-            const OK = new Set([200,204,206,301,302,303,307,308,401,403,405,406,429,501]);
-            async function probe(url) {
-              for (let i = 0; i < 3; i++) {
-                for (const method of ["HEAD","GET"]) {
-                  const ac = new AbortController();
-                  const t = setTimeout(() => ac.abort(), 15000);
-                  try {
-                    const r = await fetch(url, { method, redirect: "follow", signal: ac.signal,
-                      headers: { "user-agent": UA, accept: "*/*" } });
-                    clearTimeout(t);
-                    if (method === "HEAD" && r.status === 405) continue;
-                    return r.status;
-                  } catch (e) { clearTimeout(t); }
-                }
-              }
-              return 0;
-            }
-            async function worker() {
-              while (next < urls.length) {
-                const url = urls[next++];
-                const st = await probe(url);
-                done++;
-                if (!OK.has(st)) dead.push([st, url]);
-                if (done % 50 === 0) process.stdout.write(`\r${done}/${urls.length}`);
-              }
-            }
-            (async () => {
-              process.stdout.write(`checking ${urls.length} urls\n`);
-              await Promise.all(Array.from({length: CONC}, worker));
-              console.log(`\ndone. ${dead.length} flagged of ${urls.length}`);
-              const lines = dead.map(([s,u]) => `${s}\t${u}`).sort();
-              fs.writeFileSync("link-report.txt", lines.join("\n") + "\n");
-              const summary = dead.length
-                ? dead.map(([s,u]) => `- \`${s}\` ${u}`).join("\n")
-                : "No dead links found. Everything returned an acceptable status.";
-              const body =
-`Automated link check of **${urls.length}** unique URLs.
+      - name: Check every URL
+        # A non-zero exit means something was flagged, which is expected and
+        # handled by the next step, so don't fail the job here.
+        continue-on-error: true
+        run: node scripts/link-check.mjs
 
-**Result:** ${dead.length} flagged (${dead.filter(d=>d[0]===0).length} of them timeouts/DNS, which are usually sandbox-side rather than dead).
-
-<details><summary>Flagged URLs</summary>
-
-${summary || "_none_"}
-
-</details>
-
-<details><summary>How to read this</summary>
-
-- \`200\`-\`3xx\` = fine. \`401\`/\`403\`/\`406\`/\`429\` = alive but blocking bots, fine.
-- \`404\`/\`410\` = genuinely dead, needs a replacement URL or removal.
-- \`0\` = timeout or DNS failure. In CI these are usually rate-limiting, not dead links.
-  Re-check those locally with \`curl\` before removing anything.
-
-Run \`curl -sIL -A 'Mozilla/5.0' <url>\` to confirm. To fix, edit the \`data-*.js\` file and
-run \`node build.mjs && node dedupe.mjs && node make-bookmarks.mjs && node seo.mjs\`.
-</details>`;
-              fs.writeFileSync("comment.md", body);
-            })();
-          '
-
-      - name: Publish the report
+      - name: File the report
         uses: actions/github-script@v7
         with:
-          script: |
-            const fs = require('fs');
-            const report = fs.readFileSync('comment.md','utf8');
-            const flag = fs.existsSync('link-report.txt') &&
-                         fs.readFileSync('link-report.txt','utf8').trim().length > 0;
-            const { owner, repo } = context.repo;
-            const runId = context.runId;
-
-            if (flag) {
-              const title = `Link check: flagged links need review (run ${runId})`;
-              const url = `${context.serverUrl}/${owner}/${repo}/actions/runs/${runId}`;
-              try {
-                await github.rest.issues.create({
-                  owner, repo, title,
-                  body: report + `\n\n[View the workflow run](${url})`,
-                });
-                core.info('opened an issue with the link report');
-              } catch (e) { core.info('could not open issue: ' + e.message); }
-            } else {
-              core.info('no dead links — nothing to report');
-            }
+          script: scripts/publish-report.cjs
