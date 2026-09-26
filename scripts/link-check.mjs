@@ -39,9 +39,19 @@ const TIMEOUT = 0;
 // "dead" would produce noise and delete working links.
 const DEFINITELY_DEAD = new Set([404, 410]);
 
-const WORKERS = 12;
-const ATTEMPTS = 3;
-const TIMEOUT_MS = 15_000;
+// Tunable, because the right values depend on who is asking. A GitHub runner has
+// a clean address and can afford 12 workers. Anything checking from a laptop or a
+// residential connection should slow down: burst-checking a thousand URLs trips
+// rate limiters, and a rate-limited request comes back as 403, 429 or even 404,
+// which then reads as a dead link. That is how good links get deleted.
+//
+//   LINK_WORKERS=3 LINK_DELAY=2500 node scripts/link-check.mjs
+const WORKERS = Number(process.env.LINK_WORKERS ?? 12);
+const ATTEMPTS = Number(process.env.LINK_ATTEMPTS ?? 3);
+// Per-request delay. With one worker this is a pause between requests, which is
+// the point: it keeps the request rate under any plausible limit.
+const DELAY_MS = Number(process.env.LINK_DELAY ?? 0);
+const TIMEOUT_MS = Number(process.env.LINK_TIMEOUT ?? 15_000);
 
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 
@@ -120,7 +130,7 @@ async function probe(url) {
         clearTimeout(t);
       }
     }
-    await sleep(500);
+    await sleep(DELAY_MS || 500);
   }
   return TIMEOUT;
 }
@@ -140,7 +150,10 @@ async function worker() {
 }
 
 const t0 = Date.now();
-if (!quiet) console.log(`Checking ${urls.length} unique URLs with ${WORKERS} workers...`);
+if (!quiet) {
+  console.log(`Checking ${urls.length} unique URLs with ${WORKERS} workers, ${DELAY_MS}ms delay, ${TIMEOUT_MS}ms timeout.`);
+  if (DELAY_MS) console.log('Slow mode: this will take a while and gives the most reliable answer.');
+}
 await Promise.all(Array.from({ length: WORKERS }, worker));
 if (!quiet) process.stdout.write(`\r${' '.repeat(24)}\r`);
 

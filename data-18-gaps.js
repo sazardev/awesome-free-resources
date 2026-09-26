@@ -119,7 +119,7 @@ const BOOKMARKS_18 = [
   { c: "Tech pioneers", t: "Michael Munday's blog", u: "https://mmunday.com/", d: "Free blog on compilers, language design and research papers. Deep.", g: ["blog", "compilers", "must-read"] },
   { c: "Tech pioneers", t: "Hans Boehm's blog", u: "https://hboehm.info/", d: "Free writing on garbage collection, compilers and language design. Rigorous.", g: ["blog", "compilers", "gc", "must-read"] },
   { c: "Tech pioneers", t: "Guy L. Steele's page", u: "https://people.csail.mit.edu/guy/", d: "Common Lisp and Scheme co-designer. Free papers, talks and writings.", g: ["lisp", "history", "must-read"] },
-  { c: "Tech pioneers", t: "John McCarthy's papers (free)", u: "http://www-formal.stanford.edu/jmc/", d: "The original AI papers and essays, free. A primary source.", g: ["ai", "history", "must-read", "free"] },
+  { c: "Tech pioneers", t: "John McCarthy's papers (free)", u: "https://www-formal.stanford.edu/jmc/", d: "The original AI papers and essays, free. A primary source.", g: ["ai", "history", "must-read", "free"] },
   { c: "Tech pioneers", t: "Douglas Hofstadter's site", u: "https://www.douglas-hofstadter.com/", d: "Gödel, Escher, Bach and Hofstadter's laws. Free writing on mind and computation.", g: ["blog", "must-read", "cognitive-science"] },
   { c: "Tech pioneers", t: "Tim O'Reilly's Radar", u: "https://www.oreilly.com/radar/", d: "Free essays on software and technology trends from O'Reilly's founder.", g: ["blog", "industry", "must-read"] },
   { c: "Tech pioneers", t: "Ted Nelson — Hypertext", u: "https://www.hypertext.org/", d: "The inventor of hypertext on his own work. Primary source, free.", g: ["history", "free", "must-read"] },

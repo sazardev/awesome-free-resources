@@ -122,9 +122,13 @@ hand-maintained link count stayed at `1,996` while the data held `2,327`.
    hundred mediocre ones.
 4. **Stable.** Prefer a canonical page over a deep link that will rot.
 
-Add `must-read`, `must-do` or `must-use` to the tags for the genuinely
-high-signal entries. There are 12 such tags across 2,400 links, so it still means
-something.
+Add `must-read`, `must-do` or `must-use` only for genuinely high-signal entries.
+
+Be aware these tags are already heavily used: 1,000 of the 2,399 entries carry
+some `must-*` tag, and `must-read` alone is on 417. That is too generous to be a
+useful filter, so **adding more of them makes the signal worse, not better**. The
+existing ones are being trimmed separately. If you are unsure, leave the tag off —
+`reference`, `free` and the topic tags already do useful work.
 
 ## Radio and telecommunications specifically
 

@@ -48,7 +48,7 @@ const BOOKMARKS_08 = [
   { c: "Free textbooks", t: "The Feynman Lectures — Caltech", u: "https://www.feynmanlectures.caltech.edu/flpt.html", d: "Full text index of all three volumes plus the 1964 challenge course.", g: ["books", "physics", "free"] },
   { c: "Free textbooks", t: "Wikipedia — portal: science", u: "https://en.wikipedia.org/wiki/Portal:Science", d: "The free encyclopedia is genuinely the best quick reference. Start from these portals.", g: ["reference", "free"] },
   { c: "Free textbooks", t: "Wikibooks", u: "https://en.wikibooks.org/", d: "Free, community-written textbooks including Physics and Chemistry 1.", g: ["books", "free"] },
-  { c: "Free textbooks", t: "Project Gutenberg — science classics", u: "https://www.gutenberg.org/ebooks/search/?query=science", d: "Darwin, Maxwell, Faraday and more, free and complete.", g: ["books", "history", "free"] },
+  { c: "Free textbooks", t: "Project Gutenberg — Books in Medicine", u: "https://www.gutenberg.org/ebooks/bookshelf/48", d: "Darwin, Maxwell, Faraday and more, free and complete.", g: ["books", "history", "free"] },
   { c: "Free textbooks", t: "Pressbooks (BCcampus collection)", u: "https://pressbooks.bccampus.ca/", d: "Hundreds of free open textbooks, browsable by subject.", g: ["books", "free", "directory"] },
 
   // ---------------------------------------------------------------- Papers & preprints
@@ -62,7 +62,7 @@ const BOOKMARKS_08 = [
   { c: "Papers & preprints", t: "arXiv — Astrophysics (astro-ph)", u: "https://arxiv.org/list/astro-ph/recent", d: "Cosmology, galaxies, stars, instruments, exoplanets.", g: ["papers", "astronomy"] },
   { c: "Papers & preprints", t: "arXiv — Cosmology (astro-ph.CO)", u: "https://arxiv.org/list/astro-ph.CO/recent", d: "CMB, inflation, dark matter, large-scale structure.", g: ["papers", "cosmology"] },
   { c: "Papers & preprints", t: "arXiv — Quantitative Biology (q-bio)", u: "https://arxiv.org/list/q-bio/recent", d: "Free quantitative biology: bioinformatics, biophysics, systems biology.", g: ["papers", "biology"] },
-  { c: "Papers & preprints", t: "arXiv — Statistics (stat.ML)", u: "https://arxiv.org/list/stat.ML/recent", d: "Statistics and machine learning theory, free preprints.", g: ["papers", "statistics"] },
+
   { c: "Papers & preprints", t: "arXiv — Mathematics", u: "https://arxiv.org/list/math/recent", d: "All of mathematics as preprints.", g: ["papers", "math"] },
   { c: "Papers & preprints", t: "bioRxiv", u: "https://www.biorxiv.org/", d: "Biology preprints, before publication. Free full text, no paywall ever.", g: ["preprints", "biology", "must-know"] },
   { c: "Papers & preprints", t: "medRxiv", u: "https://www.medrxiv.org/", d: "Health sciences preprints: epidemiology, clinical trials, public health.", g: ["preprints", "medicine", "health"] },
