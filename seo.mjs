@@ -17,6 +17,7 @@ const src = read('all.js');
 const BOOKMARKS = new Function(`${src}; return BOOKMARKS;`)();
 const CATEGORIES = new Function(`${src}; return CATEGORIES;`)();
 const TAGS = new Function(`${src}; return TAGS;`)();
+const GROUPS = new Function(`${src}; return GROUPS;`)();
 
 const ORIGIN = 'https://sazardev.github.io';
 const BASE = `${ORIGIN}/awesome-free-resources`;
@@ -165,6 +166,23 @@ console.log('robots.txt, 404.html written');
   }
 }
 
+// ---------------------------------------------------------------- README counts
+// Same reasoning for the README: it states the link count and the folder count
+// in the install instructions, and both drift the moment anything is added or
+// removed. Left as prose they were found stale three times. Rewrite them here.
+if (existsSync(join(here, readmePath))) {
+  const before = readmePath ? read(readmePath) : '';
+  const n = BOOKMARKS.length.toLocaleString('en-US');
+  const g = String(GROUPS.length);
+  const after = before
+    .replace(/all [\d,]+ links in \d+ grouped folders/g, `all ${n} links in ${g} grouped folders`)
+    .replace(/You get all [\d,]+ links in \d+ grouped folders\./g, `You get all ${n} links in ${g} grouped folders.`);
+  if (after !== before) {
+    write(readmePath, after);
+    console.log(`README.md: counts set to ${n} links in ${g} folders`);
+  }
+}
+
 // ---------------------------------------------------------------- feed.xml
 // An Atom feed, so people can follow the collection without watching the
 // repository. The site has no server and no database, which is exactly why a
@@ -179,7 +197,7 @@ console.log('robots.txt, 404.html written');
 {
   const SITE = 'https://sazardev.github.io/awesome-free-resources';
   const LAST_UPDATED = '2026-09-26';
-  const BUMP_WHEN_CHANGING = '2399';
+  const BUMP_WHEN_CHANGING = '2395';
 
   if (String(BOOKMARKS.length) !== BUMP_WHEN_CHANGING) {
     console.log(`feed.xml: WARNING update LAST_UPDATED and BUMP_WHEN_CHANGING in seo.mjs (now ${BOOKMARKS.length} links)`);

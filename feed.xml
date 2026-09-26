@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title>Awesome Free Resources</title>
-  <subtitle>2399 free and open-source resources across 75 categories</subtitle>
+  <subtitle>2395 free and open-source resources across 75 categories</subtitle>
   <link href="https://sazardev.github.io/awesome-free-resources/"/>
   <link rel="self" href="https://sazardev.github.io/awesome-free-resources/feed.xml"/>
   <link rel="alternate" type="text/html" href="https://sazardev.github.io/awesome-free-resources/"/>
@@ -104,7 +104,7 @@
     <link href="https://sazardev.github.io/awesome-free-resources/#cat-computer-science"/>
     <id>https://sazardev.github.io/awesome-free-resources/#cat-computer-science</id>
     <category term="Computer Science"/>
-    <summary type="text">74 free resources. Tags: a11y, advanced, ai, algorithms, architecture, astronomy, beginner, blog.</summary>
+    <summary type="text">73 free resources. Tags: a11y, advanced, ai, algorithms, architecture, astronomy, beginner, blog.</summary>
   </entry>
   <entry>
     <title>Data Engineering</title>
@@ -188,7 +188,7 @@
     <link href="https://sazardev.github.io/awesome-free-resources/#cat-free-textbooks"/>
     <id>https://sazardev.github.io/awesome-free-resources/#cat-free-textbooks</id>
     <category term="Free textbooks"/>
-    <summary type="text">46 free resources. Tags: advanced, anatomy, astronomy, biology, books, chemistry, courses, directory.</summary>
+    <summary type="text">45 free resources. Tags: advanced, anatomy, astronomy, biology, books, chemistry, courses, directory.</summary>
   </entry>
   <entry>
     <title>Fun facts</title>
@@ -405,7 +405,7 @@
     <link href="https://sazardev.github.io/awesome-free-resources/#cat-robotics-control"/>
     <id>https://sazardev.github.io/awesome-free-resources/#cat-robotics-control</id>
     <category term="Robotics &amp; Control"/>
-    <summary type="text">19 free resources. Tags: books, community, control, courses, data, directory, docs, drones.</summary>
+    <summary type="text">18 free resources. Tags: books, community, control, courses, data, directory, docs, drones.</summary>
   </entry>
   <entry>
     <title>Rust</title>
@@ -482,7 +482,7 @@
     <link href="https://sazardev.github.io/awesome-free-resources/#cat-tech-pioneers"/>
     <id>https://sazardev.github.io/awesome-free-resources/#cat-tech-pioneers</id>
     <category term="Tech pioneers"/>
-    <summary type="text">35 free resources. Tags: ai, blog, books, cognitive-science, community, compilers, crypto, design.</summary>
+    <summary type="text">34 free resources. Tags: ai, blog, cognitive-science, community, compilers, crypto, design, erlang.</summary>
   </entry>
   <entry>
     <title>Technical writing</title>

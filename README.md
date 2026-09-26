@@ -1,6 +1,6 @@
 # Awesome Free Resources
 
-A curated, **link-verified** collection of **2,399 free and open-source resources** for
+A curated, **link-verified** collection of **2,395 free and open-source resources** for
 developers, scientists, engineers, students and self-learners.
 
 Everything here is free to read, free to use, and — in the vast majority of cases —
@@ -44,7 +44,7 @@ Most "awesome" lists are unverified. This one is not:
 - **Every URL was checked over HTTP** with retries. Broken links were either repaired
   (often to a moved page) or removed outright.
 - **Duplicates were removed** programmatically by title *and* URL.
-- The result: **2,399 links across 75 categories, from 1,504 distinct domains.**
+- The result: **2,395 links across 75 categories, from 1,502 distinct domains.**
 
 That work is reproducible and re-runnable — see [How it stays up to date](#how-it-stays-up-to-date).
 
@@ -68,7 +68,7 @@ Three things make that trustworthy rather than aspirational:
 |---|---|
 | Linux & Unix | 95 |
 | AI / ML | 77 |
-| Computer Science | 74 |
+| Computer Science | 73 |
 | Papers & preprints | 73 |
 | SDR & Radio hacking | 67 |
 | Networking | 65 |
@@ -80,17 +80,17 @@ Three things make that trustworthy rather than aspirational:
 | Science | 48 |
 | Flutter | 47 |
 | Big tech blogs | 46 |
-| Free textbooks | 46 |
 | Topic blogs | 46 |
+| Free textbooks | 45 |
 | Rust ecosystem | 41 |
 | Hacking & Pentesting | 40 |
 | Electronics | 39 |
 | DevOps / Infra | 38 |
 | Radio & Amateur | 36 |
 | Chemistry | 35 |
-| Tech pioneers | 35 |
 | Physics | 34 |
 | Radio Frequencies & Bands | 34 |
+| Tech pioneers | 34 |
 | Fun facts | 33 |
 | Influential tech | 33 |
 | Telecommunications | 33 |
@@ -127,7 +127,7 @@ Three things make that trustworthy rather than aspirational:
 | Particle physics | 20 |
 | Health | 19 |
 | Physiotherapy | 19 |
-| Robotics & Control | 19 |
+| Robotics & Control | 18 |
 | Mathematics | 17 |
 | Satellites & Space | 15 |
 | Go blogs | 14 |
@@ -413,7 +413,7 @@ node -e 'const B=new Function(require("fs").readFileSync("all.js","utf8")+";retu
 
 Download `chromium-bookmarks.html`, then in Chromium/Chrome press
 <kbd>Ctrl/⌘ Shift</kbd>+<kbd>O</kbd> → *Import and export* → *Import bookmarks*,
-and select the file. You get all 2,399 links in 17 grouped folders.
+and select the file. You get all 2,395 links in 17 grouped folders.
 
 ### As a browsable page
 
