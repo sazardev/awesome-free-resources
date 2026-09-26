@@ -8,6 +8,8 @@ import { dirname, join } from 'node:path';
 const here = dirname(fileURLToPath(import.meta.url));
 const src = readFileSync(join(here, 'all.js'), 'utf8');
 const BOOKMARKS = new Function(`${src}; return BOOKMARKS;`)();
+// Grouping comes from all.js, generated from groups.mjs by build.mjs.
+const GROUPS = new Function(`${src}; return GROUPS;`)();
 
 // Timestamps must be byte-reproducible, otherwise the generated file differs
 // on every run and the "generated files are up to date" CI check can never
@@ -26,21 +28,6 @@ const now = /^\d+$/.test(process.env.SOURCE_DATE_EPOCH ?? '')
 const escAttr = (s) => String(s).replace(/&/g, '&amp;').replace(/"/g, '&quot;')
   .replace(/</g, '&lt;').replace(/>/g, '&gt;');
 
-// Top-level folder per group, mirroring write-bookmarks.mjs.
-const GROUPS = [
-  ['Software & Dev', ['Software Engineering', 'Architecture', 'CS fundamentals', 'AI / ML', 'Compilers', 'Go', 'Go frameworks', 'Go blogs', 'Rust', 'Rust ecosystem', 'Flutter', 'Android', 'Kotlin', 'Computer Science', 'DevOps / Infra', 'Databases', 'Testing', 'Security', 'Performance', 'Tools & productivity', 'Big tech blogs', 'Dev blogs']],
-  ['Science', ['Science', 'Science news', 'Research data']],
-  ['Physics & Chemistry', ['Physics', 'Chemistry']],
-  ['Atomic & Particles', ['Quantum & Atomic', 'Particle physics']],
-  ['Astronomy & Biology', ['Astronomy', 'Biology']],
-  ['Medicine', ['Medicine']],
-  ['Anatomy & Physiotherapy', ['Anatomy', 'Physiotherapy']],
-  ['Nutrition & Health', ['Nutrition', 'Health']],
-  ['Papers, Books & Blogs', ['Papers & preprints', 'Free textbooks', 'Topic blogs']],
-  ['Electronics & Devices', ['Electronics', 'Circuits & Signals', 'Electricity & Power', 'Semiconductors & Chips', 'Embedded & Devices', 'Hardware & Making', 'Device Repair', 'Computer Architecture']],
-  ['Linux, Unix & Omarchy', ['Omarchy', 'Linux & Unix', 'Language docs', 'Framework docs', 'Technical writing', 'Influential tech']],
-  ['Fun & News', ['Fun facts', 'News & aggregators']],
-];
 const CAT_TO_GROUP = new Map();
 for (const [g, cats] of GROUPS) for (const c of cats) CAT_TO_GROUP.set(c, g);
 

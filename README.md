@@ -129,8 +129,25 @@ This is the part that makes it a real resource rather than a snapshot.
 - a `data-*.js` file does not parse
 - any entry is missing a field, or has a URL that will not parse
 - two entries share a title or a URL
+- two category names differ only in capitalisation
+- a category exists in the data but not in `groups.mjs`, so it would never render
+- a category in the data is missing, duplicated, or unreachable in the UI
+- the page advertises a link count the data does not have
 - the committed `all.js`, `chromium-bookmarks.html`, `sitemap.xml` or README stats
   are **stale** — it regenerates them and fails on any diff
+
+### One source of truth for grouping
+
+`groups.mjs` is the only place the category-to-group map exists. `build.mjs`
+emits it into `all.js`, and the page, the browser export and the Chromium
+importer all read it from there.
+
+It used to be a hand-maintained array copied into three files. They drifted, and
+because the render loop skipped unknown categories without complaining, **132
+links were invisible on the site** while every build cheerfully reported 1,996.
+`scripts/check-render.mjs` walks the same loop the page does and fails if a
+single link is unreachable, so a green build now means the links are actually
+there.
 
 **`.github/workflows/maintain.yml`** runs on push to `main` and every Monday:
 

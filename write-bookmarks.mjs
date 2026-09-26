@@ -13,31 +13,13 @@ if (!target) { console.error('usage: write-bookmarks.mjs <path-to-Bookmarks-file
 
 const src = readFileSync(join(here, 'all.js'), 'utf8');
 const BOOKMARKS = new Function(`${src}; return BOOKMARKS;`)();
+// Grouping comes from all.js, generated from groups.mjs by build.mjs.
+const GROUPS = new Function(`${src}; return GROUPS;`)();
 const CATEGORIES = new Function(`${src}; return CATEGORIES;`)();
 
 const ROOT = 'Dev Bookmarks';
 const FOLDER_NAME = 'Dev Bookmarks';
 
-// Top-level bookmark-bar folder for each category, so related topics live together.
-const GROUPS = [
-  ['Software & Dev', [
-    'Software Engineering', 'Architecture', 'CS fundamentals', 'AI / ML', 'Compilers',
-    'Go', 'Go frameworks', 'Go blogs', 'Rust', 'Rust ecosystem', 'Flutter', 'Android',
-    'Kotlin', 'Computer Science', 'DevOps / Infra', 'Databases', 'Testing', 'Security', 'Performance',
-    'Tools & productivity', 'Big tech blogs', 'Dev blogs',
-  ]],
-  ['Science', ['Science', 'Science news', 'Research data']],
-  ['Physics & Chemistry', ['Physics', 'Chemistry']],
-  ['Atomic & Particles', ['Quantum & Atomic', 'Particle physics']],
-  ['Astronomy & Biology', ['Astronomy', 'Biology']],
-  ['Medicine', ['Medicine']],
-  ['Anatomy & Physiotherapy', ['Anatomy', 'Physiotherapy']],
-  ['Nutrition & Health', ['Nutrition', 'Health']],
-  ['Papers, Books & Blogs', ['Papers & preprints', 'Free textbooks', 'Topic blogs']],
-  ['Electronics & Devices', ['Electronics', 'Circuits & Signals', 'Electricity & Power', 'Semiconductors & Chips', 'Embedded & Devices', 'Hardware & Making', 'Device Repair', 'Computer Architecture']],
-  ['Linux, Unix & Omarchy', ['Omarchy', 'Linux & Unix', 'Language docs', 'Framework docs', 'Technical writing', 'Influential tech']],
-  ['Fun & News', ['Fun facts', 'News & aggregators']],
-];
 
 const CAT_TO_GROUP = new Map();
 for (const [group, cats] of GROUPS) for (const c of cats) CAT_TO_GROUP.set(c, group);
