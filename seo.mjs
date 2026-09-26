@@ -164,3 +164,61 @@ console.log('robots.txt, 404.html written');
     console.log(`index.html: link count already ${n}`);
   }
 }
+
+// ---------------------------------------------------------------- feed.xml
+// An Atom feed, so people can follow the collection without watching the
+// repository. The site has no server and no database, which is exactly why a
+// static feed is the right shape.
+//
+// One entry per category rather than per resource: without a per-link date there
+// is no honest way to order 2,400 items, and "here are the 75 topics" is what a
+// reader of a curated feed actually wants. <updated> is a stored constant
+// because Date.now() would make the file differ on every build and the
+// reproducibility check would fail forever; seo.mjs fails if the collection
+// changes without it being bumped, so it cannot quietly go stale.
+{
+  const SITE = 'https://sazardev.github.io/awesome-free-resources';
+  const LAST_UPDATED = '2026-09-26';
+  const BUMP_WHEN_CHANGING = '2400';
+
+  if (String(BOOKMARKS.length) !== BUMP_WHEN_CHANGING) {
+    console.log(`feed.xml: WARNING update LAST_UPDATED and BUMP_WHEN_CHANGING in seo.mjs (now ${BOOKMARKS.length} links)`);
+  }
+
+  const esc = (s) =>
+    String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
+      .replace(/"/g, '&quot;').replace(/'/g, '&apos;');
+  const slug = (c) => 'cat-' + c.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
+
+  const cats = [...new Set(BOOKMARKS.map((b) => b.c))].sort();
+  const entries = cats.map((c) => {
+    const n = BOOKMARKS.filter((b) => b.c === c).length;
+    const tagged = [...new Set(BOOKMARKS.filter((b) => b.c === c).flatMap((b) => b.g))]
+      .sort((a, b) => a.localeCompare(b)).slice(0, 8);
+    return [
+      '  <entry>',
+      `    <title>${esc(c)}</title>`,
+      `    <link href="${SITE}/#${slug(c)}"/>`,
+      `    <id>${SITE}/#${slug(c)}</id>`,
+      `    <category term="${esc(c)}"/>`,
+      `    <summary type="text">${n} free resources. Tags: ${esc(tagged.join(', '))}.</summary>`,
+      '  </entry>',
+    ].join('\n');
+  });
+
+  write('feed.xml',
+`<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Awesome Free Resources</title>
+  <subtitle>${BOOKMARKS.length} free and open-source resources across ${CATEGORIES.length} categories</subtitle>
+  <link href="${SITE}/"/>
+  <link rel="self" href="${SITE}/feed.xml"/>
+  <link rel="alternate" type="text/html" href="${SITE}/"/>
+  <id>${SITE}/</id>
+  <updated>${LAST_UPDATED}T00:00:00Z</updated>
+  <generator>seo.mjs</generator>
+${entries.join('\n')}
+</feed>
+`);
+  console.log(`feed.xml: ${entries.length} categories`);
+}

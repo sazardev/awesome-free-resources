@@ -10,6 +10,33 @@ openly licensed by its authors. No paywalled papers, no paid courses, no trials.
 
 ---
 
+
+## Start here
+
+**Just want to browse?** Open <https://sazardev.github.io/awesome-free-resources/>.
+Search, filter by tag or category, no account needed. Works offline once loaded.
+
+**Want these as bookmarks?** Download
+[`chromium-bookmarks.html`](chromium-bookmarks.html), then:
+
+- *Chrome / Chromium / Edge / Brave* — Bookmark Manager (<kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>O</kbd>),
+  ⋮ menu → Import bookmarks
+- *Firefox* — Bookmarks → Manage bookmarks → Import and Backup → Import from File
+- *Safari* — File → Import → Bookmarks HTML File
+- *Android Chrome* — ⋮ → Bookmarks → ⋮ → Import from file
+
+They land in 17 top-level folders. Existing bookmarks are never touched if you use
+the import; the folder names are plain ASCII, no emoji.
+
+**Want to use the data?** [`all.js`](all.js) is the whole collection as JSON, one
+object per resource. See [Machine-readable](#machine-readable).
+
+**Want to follow along?** [`feed.xml`](feed.xml) is an Atom feed of the collection.
+
+**Want to add something?** Read [CONTRIBUTING.md](CONTRIBUTING.md). The short
+version: add one line to a `data-*.js` file, run `node scripts/rebuild.mjs`, open a
+pull request. CI tells you if anything is wrong.
+
 ## Why this exists
 
 Most "awesome" lists are unverified. This one is not:
@@ -19,7 +46,17 @@ Most "awesome" lists are unverified. This one is not:
 - **Duplicates were removed** programmatically by title *and* URL.
 - The result: **2,400 links across 75 categories, from 1,504 distinct domains.**
 
-That work is reproducible — see [Regenerating](#regenerating).
+That work is reproducible and re-runnable — see [How it stays up to date](#how-it-stays-up-to-date).
+
+Three things make that trustworthy rather than aspirational:
+
+- **The links are checked, in CI, every week.** `verify.yml` gates every pull
+  request; `maintain.yml` re-checks all 1,500-odd unique URLs on a schedule and
+  opens an issue only when something is genuinely dead.
+- **The build is reproducible.** Every generated file is byte-identical across
+  runs, so a diff in CI always means a real change.
+- **Broken checks are loud.** Three separate gates would fail this collection
+  before it could quietly rot, and each one exists because it caught something.
 
 ## What's inside
 
@@ -132,218 +169,6 @@ Highlights by area:
 | **Web Performance** | Core Web Vitals, HTTP caching, DevTools, Web Almanac, performance.now() talks |
 | **Tech Pioneers** | Bret Victor, Jef Raskin, Stallman, McCarthy, Shannon, Hofstadter, plus primary sources |
 | **Fun & News** | Quanta, 3Blue1Brown, Numberphile, Lobsters, Computerphile |
-
-## How it stays up to date
-
-This is the part that makes it a real resource rather than a snapshot.
-
-**`.github/workflows/verify.yml`** runs on every pull request and fails if:
-
-- a `data-*.js` file does not parse
-- any entry is missing a field, or has a URL that will not parse
-- two entries share a title or a URL
-- two category names differ only in capitalisation
-- a category exists in the data but not in `groups.mjs`, so it would never render
-- a category in the data is missing, duplicated, or unreachable in the UI
-- the page advertises a link count the data does not have
-- the committed `all.js`, `chromium-bookmarks.html`, `sitemap.xml` or README stats
-  are **stale** — it regenerates them and fails on any diff
-
-### One source of truth for grouping
-
-`groups.mjs` is the only place the category-to-group map exists. `build.mjs`
-emits it into `all.js`, and the page, the browser export and the Chromium
-importer all read it from there.
-
-It used to be a hand-maintained array copied into three files. They drifted, and
-because the render loop skipped unknown categories without complaining, **132
-links were invisible on the site** while every build cheerfully reported 1,996.
-`scripts/check-render.mjs` walks the same loop the page does and fails if a
-single link is unreachable, so a green build now means the links are actually
-there.
-
-**`.github/workflows/maintain.yml`** runs on push to `main` and every Monday:
-
-1. regenerates everything and commits the result
-2. re-checks all ~1,330 unique URLs over HTTP (12 workers, HEAD then GET, 3 attempts)
-3. classifies the results, so genuine 404s are separated from bot-blocks (401/403/406)
-   and from timeouts, which in CI are usually rate-limiting rather than dead links
-4. opens a single **issue** with the report only if something is actually flagged, so
-   the list degrades honestly instead of quietly rotting
-
-Run the same thing locally:
-
-```bash
-node build.mjs && node dedupe.mjs && node build.mjs \
-  && node make-bookmarks.mjs && node seo.mjs
-```
-
-## Indexing
-
-The site is set up to be indexed properly:
-
-- [`sitemap.xml`](sitemap.xml) — 263 URLs: the root plus one per category, using the
-  page's own `#cat-...` anchors, plus tag-filtered entry points
-- [`robots.txt`](robots.txt) — open, and advertises the sitemap and the two
-  machine-readable downloads
-- **Open Graph + Twitter card** tags for link previews in Slack, Discord and X
-- **JSON-LD** `CollectionPage` structured data, including `isAccessibleForFree`,
-  the CC0 license, and `DataDownload` pointers to `all.js` and the bookmarks file
-- both downloads are declared as `link rel="alternate"` and as JSON-LD
-  `DataDownload` objects, so crawlers and readers can find them
-- [`404.html`](404.html) — a real 404 page instead of GitHub's default
-
-Submit `https://sazardev.github.io/awesome-free-resources/sitemap.xml` to
-Google Search Console to get it indexed properly.
-
-## Machine-readable
-
-The whole collection is available as data, so you can use it however you like:
-
-- **[`all.js`](all.js)** — a JSON array of every entry
-  (`{ c, t, u, d, g }` = category, title, url, description, tags)
-- **[`chromium-bookmarks.html`](chromium-bookmarks.html)** — Netscape bookmark
-  export, importable into Chromium/Chrome/Firefox/Safari
-- **[`sitemap.xml`](sitemap.xml)** — one URL per category for search engines
-
-```bash
-# ten random bookmarks from the "Rust" category
-curl -s https://sazardev.github.io/awesome-free-resources/all.js \
-  | node -e 'const B=JSON.parse(require("fs").readFileSync(0,"utf8").replace(/^const BOOKMARKS = /,"").replace(/;\n?const[\s\S]*/,"").replace(/;\s*$/,"")); ...'
-```
-
-Or if you have the repo checked out:
-
-```bash
-node -e 'const B=new Function(require("fs").readFileSync("all.js","utf8")+";return BOOKMARKS;")();
-         console.log(B.filter(b=>b.c==="Rust").slice(0,5).map(b=>b.u).join("\n"))'
-```
-
-
-## The browsable page
-
-`index.html` is a self-contained, dependency-free page that loads the data from
-`all.js` and runs straight from the filesystem or GitHub Pages.
-
-- **Search** by title, description, topic, tag or domain. Multi-word = AND.
-- **Filter by tag** with a `#` prefix: `#must-read`, `#free`, `#books`,
-  `#rust #must-do`. Click any tag chip to apply it.
-- Tags marked `must-*` are the highest-signal entries in their category.
-- **Keyboard:** <kbd>/</kbd> to search, <kbd>Esc</kbd> to clear.
-- **Light/dark theme**, remembered in `localStorage`.
-
-## Layout
-
-```
-.
-├── index.html                 # the browsable page (self-contained)
-├── all.js                     # generated: all data + categories + tags
-├── chromium-bookmarks.html    # Netscape export — import into any Chromium/Chrome/Firefox
-├── data-*.js                  # the source of truth, one file per topic area
-├── build.mjs                  # merge + validate + generate all.js
-├── dedupe.mjs                 # remove duplicate titles/URLs
-├── make-bookmarks.mjs         # generate chromium-bookmarks.html
-├── write-bookmarks.mjs        # write directly into a Chromium profile
-└── LICENSE                    # CC0 1.0
-```
-
-The `data-*.js` files are plain JS arrays, so they stay easy to read and diff:
-
-```js
-{ c: "Physics", t: "The Feynman Lectures on Physics",
-  u: "https://www.feynmanlectures.caltech.edu/",
-  d: "Free, digitized, complete. The best physics textbook ever written.",
-  g: ["books", "physics", "free", "must-read"] }
-```
-
-`c` category · `t` title · `u` url · `d` description · `g` tags.
-
-## Contributing
-
-Adding links is welcome. Edit the relevant `data-*.js` file, keeping the array sorted
-loosely by topic, then run:
-
-```bash
-node build.mjs          # merge, validate, regenerate all.js
-node dedupe.mjs         # drop any duplicate title/URL
-node make-bookmarks.mjs # regenerate the importable bookmarks file
-```
-
-`build.mjs` fails loudly on missing fields, malformed URLs and duplicates, so a
-malformed entry will not slip through.
-
-## Installing the bookmarks
-
-### As a browser bookmarks bar (recommended)
-
-Download `chromium-bookmarks.html`, then in Chromium/Chrome press
-<kbd>Ctrl/⌘ Shift</kbd>+<kbd>O</kbd> → *Import and export* → *Import bookmarks*,
-and select the file. You get all 1,996 links in 12 grouped folders.
-
-### As a browsable page
-
-Just open `index.html` — no server, no build step, no dependencies.
-
-### Directly into a live profile
-
-On Linux, with Chromium **closed**:
-
-```bash
-node write-bookmarks.mjs ~/.config/chromium/Default/Bookmarks
-```
-
-The script merges into the existing profile, preserves your own bookmarks, and is
-idempotent — running it again replaces only the generated folders.
-
-## Contributing guidelines for links
-
-Please add resources that are:
-
-1. **Free to read in full** — or at least free at a useful depth. Flag paywalls rather
-   than pretending they are open.
-2. **Genuinely free or open source**, not a free tier or a trial.
-3. **Worth reading** — the list is curated, not exhaustive. Ten great links beat a
-   hundred mediocre ones.
-4. **Stable** — prefer a canonical URL over a deep link that will rot.
-
-Mark the highest-signal entries with a `must-read` / `must-do` / `must-use` tag.
-
-## Known caveats
-
-- **6 links are `http://`**, not `https://`: Gelman's *Bayesian Data Analysis*,
-  *Learn You a Haskell*, Preskill's quantum notes, Subatomic Cafe, Scholarpedia and
-  *This Week in Virology*. Their HTTPS endpoints did not respond during verification,
-  and a working HTTP link beats a broken HTTPS one. All six support HTTPS in a normal
-  browser — they are reachable, just not from the network this list was built on.
-- **Some resources are free but not openly licensed** (e.g. the Feynman Lectures are
-  Caltech-hosted but not CC-licensed as a whole). Check each project's own terms.
-- **The list rots.** `data/*.js` reflects links verified in the last days of
-  development. Spot-checking before you rely on a link is still worth it.
-
-## License
-
-Released into the public domain under [CC0 1.0](LICENSE).
-
-The links themselves belong to their respective owners and are **not** covered by this
-license — the same way a table of contents does not grant rights to the books it lists.
-Some resources are not officially free (e.g. *A Tour of Go* is provided by Google, and
-Feynman Lectures are Caltech-hosted but not CC-licensed as a whole). Treat this list as a
-starting point and follow each project's own terms.
-
-## Contributions
-
-Contributions are welcome, especially:
-
-- **Repairs.** The list rots. If a link is dead, an issue or PR with the correct URL is
-  genuinely valuable.
-- **Depth.** Several topics could go further — signal processing, control theory,
-  formal methods, number theory, and non-English material are all thin.
-- **Freshness.** Papers and blog lists in particular go stale fast.
-
----
-
-*Built by iterating: write → check every link over HTTP → repair or drop → deduplicate →
-re-publish.*
 
 ## Radio, RF, antennas, telecom and networking
 
@@ -475,3 +300,220 @@ the checker and my earlier manual verification shared that bug, which is why six
 bad titles had been marked good. It now tests for the presence of the key, and
 follows the `normalized` and `redirects` mappings so a redirected article is not
 mistaken for an absent one. Confirmed it reports a deliberately fake title as 404.
+
+## How it stays up to date
+
+This is the part that makes it a real resource rather than a snapshot.
+
+**`.github/workflows/verify.yml`** runs on every pull request and fails if:
+
+- a `data-*.js` file does not parse
+- any entry is missing a field, or has a URL that will not parse
+- two entries share a title or a URL
+- two category names differ only in capitalisation
+- a category exists in the data but not in `groups.mjs`, so it would never render
+- a category in the data is missing, duplicated, or unreachable in the UI
+- the page advertises a link count the data does not have
+- the committed `all.js`, `chromium-bookmarks.html`, `sitemap.xml` or README stats
+  are **stale** — it regenerates them and fails on any diff
+
+### One source of truth for grouping
+
+`groups.mjs` is the only place the category-to-group map exists. `build.mjs`
+emits it into `all.js`, and the page, the browser export and the Chromium
+importer all read it from there.
+
+It used to be a hand-maintained array copied into three files. They drifted, and
+because the render loop skipped unknown categories without complaining, **132
+links were invisible on the site** while every build cheerfully reported 1,996.
+`scripts/check-render.mjs` walks the same loop the page does and fails if a
+single link is unreachable, so a green build now means the links are actually
+there.
+
+**`.github/workflows/maintain.yml`** runs on push to `main` and every Monday:
+
+1. regenerates everything and commits the result
+2. re-checks all ~1,330 unique URLs over HTTP (12 workers, HEAD then GET, 3 attempts)
+3. classifies the results, so genuine 404s are separated from bot-blocks (401/403/406)
+   and from timeouts, which in CI are usually rate-limiting rather than dead links
+4. opens a single **issue** with the report only if something is actually flagged, so
+   the list degrades honestly instead of quietly rotting
+
+Run the same thing locally:
+
+```bash
+node build.mjs && node dedupe.mjs && node build.mjs \
+  && node make-bookmarks.mjs && node seo.mjs
+```
+
+## Indexing
+
+The site is set up to be indexed properly:
+
+- [`sitemap.xml`](sitemap.xml) — 263 URLs: the root plus one per category, using the
+  page's own `#cat-...` anchors, plus tag-filtered entry points
+- [`robots.txt`](robots.txt) — open, and advertises the sitemap and the two
+  machine-readable downloads
+- **Open Graph + Twitter card** tags for link previews in Slack, Discord and X
+- **JSON-LD** `CollectionPage` structured data, including `isAccessibleForFree`,
+  the CC0 license, and `DataDownload` pointers to `all.js` and the bookmarks file
+- both downloads are declared as `link rel="alternate"` and as JSON-LD
+  `DataDownload` objects, so crawlers and readers can find them
+- [`404.html`](404.html) — a real 404 page instead of GitHub's default
+
+Submit `https://sazardev.github.io/awesome-free-resources/sitemap.xml` to
+Google Search Console to get it indexed properly.
+
+## Follow along
+
+[`feed.xml`](feed.xml) is an Atom feed of the collection — one entry per category,
+with its size and tags. Subscribe in any reader if you would rather hear about
+new resources than remember to check a repository.
+
+## Machine-readable
+
+The whole collection is available as data, so you can use it however you like:
+
+- **[`all.js`](all.js)** — a JSON array of every entry
+  (`{ c, t, u, d, g }` = category, title, url, description, tags)
+- **[`chromium-bookmarks.html`](chromium-bookmarks.html)** — Netscape bookmark
+  export, importable into Chromium/Chrome/Firefox/Safari
+- **[`sitemap.xml`](sitemap.xml)** — one URL per category for search engines
+
+```bash
+# ten random bookmarks from the "Rust" category
+curl -s https://sazardev.github.io/awesome-free-resources/all.js \
+  | node -e 'const B=JSON.parse(require("fs").readFileSync(0,"utf8").replace(/^const BOOKMARKS = /,"").replace(/;\n?const[\s\S]*/,"").replace(/;\s*$/,"")); ...'
+```
+
+Or if you have the repo checked out:
+
+```bash
+node -e 'const B=new Function(require("fs").readFileSync("all.js","utf8")+";return BOOKMARKS;")();
+         console.log(B.filter(b=>b.c==="Rust").slice(0,5).map(b=>b.u).join("\n"))'
+```
+
+## The browsable page
+
+`index.html` is a self-contained, dependency-free page that loads the data from
+`all.js` and runs straight from the filesystem or GitHub Pages.
+
+- **Search** by title, description, topic, tag or domain. Multi-word = AND.
+- **Filter by tag** with a `#` prefix: `#must-read`, `#free`, `#books`,
+  `#rust #must-do`. Click any tag chip to apply it.
+- Tags marked `must-*` are the highest-signal entries in their category.
+- **Keyboard:** <kbd>/</kbd> to search, <kbd>Esc</kbd> to clear.
+- **Light/dark theme**, remembered in `localStorage`.
+
+## Installing the bookmarks
+
+### As a browser bookmarks bar (recommended)
+
+Download `chromium-bookmarks.html`, then in Chromium/Chrome press
+<kbd>Ctrl/⌘ Shift</kbd>+<kbd>O</kbd> → *Import and export* → *Import bookmarks*,
+and select the file. You get all 1,996 links in 12 grouped folders.
+
+### As a browsable page
+
+Just open `index.html` — no server, no build step, no dependencies.
+
+### Directly into a live profile
+
+On Linux, with Chromium **closed**:
+
+```bash
+node write-bookmarks.mjs ~/.config/chromium/Default/Bookmarks
+```
+
+The script merges into the existing profile, preserves your own bookmarks, and is
+idempotent — running it again replaces only the generated folders.
+
+## Layout
+
+```
+.
+├── index.html                 # the browsable page (self-contained)
+├── all.js                     # generated: all data + categories + tags
+├── chromium-bookmarks.html    # Netscape export — import into any Chromium/Chrome/Firefox
+├── data-*.js                  # the source of truth, one file per topic area
+├── build.mjs                  # merge + validate + generate all.js
+├── dedupe.mjs                 # remove duplicate titles/URLs
+├── make-bookmarks.mjs         # generate chromium-bookmarks.html
+├── write-bookmarks.mjs        # write directly into a Chromium profile
+└── LICENSE                    # CC0 1.0
+```
+
+The `data-*.js` files are plain JS arrays, so they stay easy to read and diff:
+
+```js
+{ c: "Physics", t: "The Feynman Lectures on Physics",
+  u: "https://www.feynmanlectures.caltech.edu/",
+  d: "Free, digitized, complete. The best physics textbook ever written.",
+  g: ["books", "physics", "free", "must-read"] }
+```
+
+`c` category · `t` title · `u` url · `d` description · `g` tags.
+
+## Contributing
+
+Adding links is welcome, and the process is short. The full instructions are in
+**[CONTRIBUTING.md](CONTRIBUTING.md)**, including the rules the automated checks
+enforce, so you do not have to discover them by having CI fail on you.
+
+In brief:
+
+1. Add one line to the relevant `data-*.js` file.
+2. Run `node scripts/rebuild.mjs`.
+3. Commit the generated files alongside your change and open a pull request.
+
+`verify.yml` checks the data is well-formed, checks that every link is reachable in
+the page, and fails if the generated files are stale. The issue and pull request
+templates spell out what a good submission looks like.
+
+## What makes a good link
+
+Please add resources that are:
+
+1. **Free to read in full** — or at least free at a useful depth. Flag paywalls rather
+   than pretending they are open.
+2. **Genuinely free or open source**, not a free tier or a trial.
+3. **Worth reading** — the list is curated, not exhaustive. Ten great links beat a
+   hundred mediocre ones.
+4. **Stable** — prefer a canonical URL over a deep link that will rot.
+
+Mark the highest-signal entries with a `must-read` / `must-do` / `must-use` tag.
+
+## What makes a good link
+
+Please add resources that are:
+
+1. **Free to read in full** — or at least free at a useful depth. Flag paywalls rather
+   than pretending they are open.
+2. **Genuinely free or open source**, not a free tier or a trial.
+3. **Worth reading** — the list is curated, not exhaustive. Ten great links beat a
+   hundred mediocre ones.
+4. **Stable** — prefer a canonical URL over a deep link that will rot.
+
+Mark the highest-signal entries with a `must-read` / `must-do` / `must-use` tag.
+
+## Known caveats
+
+- **6 links are `http://`**, not `https://`: Gelman's *Bayesian Data Analysis*,
+  *Learn You a Haskell*, Preskill's quantum notes, Subatomic Cafe, Scholarpedia and
+  *This Week in Virology*. Their HTTPS endpoints did not respond during verification,
+  and a working HTTP link beats a broken HTTPS one. All six support HTTPS in a normal
+  browser — they are reachable, just not from the network this list was built on.
+- **Some resources are free but not openly licensed** (e.g. the Feynman Lectures are
+  Caltech-hosted but not CC-licensed as a whole). Check each project's own terms.
+- **The list rots.** `data/*.js` reflects links verified in the last days of
+  development. Spot-checking before you rely on a link is still worth it.
+
+## License
+
+Released into the public domain under [CC0 1.0](LICENSE).
+
+The links themselves belong to their respective owners and are **not** covered by this
+license — the same way a table of contents does not grant rights to the books it lists.
+Some resources are not officially free (e.g. *A Tour of Go* is provided by Google, and
+Feynman Lectures are Caltech-hosted but not CC-licensed as a whole). Treat this list as a
+starting point and follow each project's own terms.
