@@ -1,6 +1,6 @@
 # Awesome Free Resources
 
-A curated, **link-verified** collection of **1,996 free and open-source resources** for
+A curated, **link-verified** collection of **2,291 free and open-source resources** for
 developers, scientists, engineers, students and self-learners.
 
 Everything here is free to read, free to use, and — in the vast majority of cases —
@@ -17,7 +17,7 @@ Most "awesome" lists are unverified. This one is not:
 - **Every URL was checked over HTTP** with retries. Broken links were either repaired
   (often to a moved page) or removed outright.
 - **Duplicates were removed** programmatically by title *and* URL.
-- The result: **1,996 links across 62 categories, from 1,332 distinct domains.**
+- The result: **2,291 links across 72 categories, from 1,498 distinct domains.**
 
 That work is reproducible — see [Regenerating](#regenerating).
 
@@ -33,6 +33,7 @@ That work is reproducible — see [Regenerating](#regenerating).
 | AI / ML | 77 |
 | Computer Science | 74 |
 | Papers & preprints | 74 |
+| Networking | 65 |
 | Framework docs | 64 |
 | Language docs | 58 |
 | Go frameworks | 52 |
@@ -44,21 +45,26 @@ That work is reproducible — see [Regenerating](#regenerating).
 | Free textbooks | 46 |
 | Topic blogs | 46 |
 | Rust ecosystem | 41 |
+| Hacking & Pentesting | 40 |
 | Electronics | 39 |
 | DevOps / Infra | 38 |
+| Radio & Amateur | 36 |
 | Chemistry | 35 |
 | Tech pioneers | 35 |
 | Physics | 34 |
 | Fun facts | 33 |
 | Influential tech | 33 |
+| Telecommunications | 33 |
 | Dev blogs | 32 |
 | Omarchy | 32 |
+| SDR & Radio hacking | 32 |
 | Databases | 31 |
 | Hardware & Making | 30 |
 | Kotlin | 30 |
 | Nutrition | 30 |
 | Quantum & Atomic | 30 |
 | Astronomy | 29 |
+| RF & Microwave | 28 |
 | Compilers | 27 |
 | Semiconductors & Chips | 27 |
 | Tools & productivity | 27 |
@@ -71,6 +77,7 @@ That work is reproducible — see [Regenerating](#regenerating).
 | Go | 24 |
 | Computer Architecture | 23 |
 | Science news | 23 |
+| Antennas | 22 |
 | Circuits & Signals | 22 |
 | CS fundamentals | 22 |
 | Embedded & Devices | 22 |
@@ -82,13 +89,16 @@ That work is reproducible — see [Regenerating](#regenerating).
 | Physiotherapy | 19 |
 | Robotics & Control | 19 |
 | Mathematics | 17 |
+| Satellites & Space | 15 |
 | Go blogs | 14 |
 | Research data | 14 |
 | Device Repair | 13 |
 | Security | 13 |
 | Testing | 13 |
 | Web Performance | 13 |
+| PCB & EDA | 12 |
 | Self-taught learning | 12 |
+| Test & Measurement | 12 |
 | Performance | 11 |
 | Formal Methods | 10 |
 <!-- /AUTO-GENERATED -->
@@ -331,3 +341,69 @@ Contributions are welcome, especially:
 
 *Built by iterating: write → check every link over HTTP → repair or drop → deduplicate →
 re-publish.*
+
+## Radio, RF, antennas, telecom and networking
+
+The deepest part of the collection, and the part that took the most care to get
+right. Four groups, ten categories, 295 new links:
+
+**Radio, Antennas & RF**
+- `SDR & Radio hacking` (37) — GNU Radio and GRC, RTL-SDR, HackRF, LimeSDR, USRP/UHD,
+  ADALM-PLUTO, SoapySDR, Universal Radio Hacker, inspectrum, sigrok/PulseView,
+  RTL_433, Multimon-ng, DSD, SDR++, CubicSDR, SDRAngel, gr-satellites, Flipper Zero
+- `Antennas` (29) — antenna-theory.com, K7MEM, NEC-2/4nec3/MMANA, Yagi, log-periodic,
+  horn, patch and microstrip theory, Friis equation, Fresnel zones, NanoVNA, openEMS,
+  HF propagation
+- `Radio & Amateur` (36) — ARRL, HamStudy, HamTraining, IARU, ITU Radio Regulations,
+  eCFR Parts 15/73/97, WSJT-X, fldigi, direwolf, APRS, LoRa APRS, minimodem, dump1090
+- `RF & Microwave` (36) — transmission lines, VSWR, impedance matching, noise figure,
+  link budget and path loss calculators, OFDM, MIMO, Meshtastic, LoRaWAN, Zigbee,
+  Bluetooth and 802.11 specifications
+- `Satellites & Space` (22) — SatNOGS (open-source ground station), Celestrak,
+  Heavens-Above, n2yo, Skyfield, TLE and orbital elements, Space-Track, Hack-A-Sat
+
+**Telecommunications & Networking**
+- `Telecommunications` (36) — 3GPP specs (free), ETSI, ITU-T, IETF, RFC Editor, IANA,
+  IEEE 802.3/802.11, O-RAN, OpenAirInterface, srsRAN, 5G NR and network slicing,
+  fibre and OTN, SIP/VoIP, WebRTC, PSTN history
+- `Networking` (68) — Kurose & Ross top-down, Wireshark with sample captures, tcpdump,
+  nmap and NSE, Scapy, iperf3, Mininet, GNS3, FRRouting, GoBGP, BIRD, eBPF, Cilium,
+  RIPE NCC and RIS Live routing data, RouteViews, bgp.tools, RPKI/MANRS, Quic, TLS 1.3,
+  DNS and BIND/Unbound, nftables, subnetting practice
+
+**Hacking & Pentesting** (47) — DEF CON talk archive, Hackaday and Hackster,
+Hack The Box, TryHackMe, OverTheWire, pwn.college, PortSwigger Academy, OWASP WSTG and
+cheat sheets, MITRE ATT&CK, Exploit-DB, NVD, CISA KEV, Ghidra, rizin/Cutter, GDB, QEMU,
+Unicorn, AFL, YARA, SecLists, Metasploit, OpenVAS, bettercap, binwalk, HackTricks
+
+**Test, Measurement & PCB Design**
+- `Test & Measurement` (13) — EEVblog, NanoVNA, sigrok decoders, Saleae Logic,
+  metrology and NIST calibration guides, soldering and SMD reference
+- `PCB & EDA` (21) — KiCad and its libraries, LibrePCB, ngspice, LTspice, Qucs,
+  Qucs-S, openEMS, Gerber and Ucamco spec, design-for-manufacture guidance,
+  freerouting, KiCad forum
+
+### On legality
+
+Radio and radio-hacking resources sit next to the regulatory documents on
+purpose. `Radio & Amateur` and `Telecommunications` both carry the ITU Radio
+Regulations, the relevant eCFR parts, the FCC spectrum pages, the European EMC/RED
+framework and the RF exposure limits, because the difference between a legal
+transmitter and an illegal one is entirely in the rules, and the rules are free to
+read. Receiving and analysing are unrestricted; transmitting is not. Every
+repeater, digipeater and SDR beacon you switch on is covered by one of these
+documents.
+
+### On link verification
+
+295 links were added, and 34 of them were removed or corrected before landing. I had
+invented plausible-looking deep URLs for repositories and reference pages, and a
+paced check caught them: `github.com/jketterl/urh` does not exist (the author moved
+the project to `jopohl/urh`), `inspectrum/inspectrum` is actually `miek/inspectrum`,
+and a dozen `rfwireless-world.com` and `ti.com` paths were invented outright.
+
+The corrected versions were found through the GitHub API rather than by guessing
+again, and anything I still could not confirm was deleted instead of shipped. A
+handful of hosts (`nanovna.ch`, `rigol.com`, `smdcomponent.com`) are DNS-blocked
+from the sandbox and are carried unverified; the weekly check will confirm them
+from a real runner.

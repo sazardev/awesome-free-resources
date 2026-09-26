@@ -144,3 +144,23 @@ ${table}
 
 console.log('sitemap.xml:', urls.length, 'urls');
 console.log('robots.txt, 404.html written');
+
+// ---------------------------------------------------------------- index.html counts
+// The link count appears in the page's social cards, and a hand-maintained
+// number there goes stale silently: the site keeps working while advertising
+// the wrong size. Rewrite it on every run instead, so it cannot drift.
+{
+  let html = read('index.html');
+  const before = html;
+  const n = BOOKMARKS.length.toLocaleString('en-US');
+  html = html.replace(
+    /(content="Awesome Free Resources \u2014 )[\d,]+( link-verified)/g,
+    `$1${n}$2`
+  );
+  if (html !== before) {
+    write('index.html', html);
+    console.log(`index.html: link count set to ${n}`);
+  } else {
+    console.log(`index.html: link count already ${n}`);
+  }
+}

@@ -47,6 +47,19 @@ export const GROUPS = [
   ['Papers, Books & Blogs', [
     'Papers & preprints', 'Free textbooks', 'Topic blogs',
   ]],
+  ['Radio, Antennas & RF', [
+    'SDR & Radio hacking', 'Antennas', 'Radio & Amateur', 'RF & Microwave',
+    'Satellites & Space',
+  ]],
+  ['Telecommunications & Networking', [
+    'Telecommunications', 'Networking',
+  ]],
+  ['Hacking & Pentesting', [
+    'Hacking & Pentesting',
+  ]],
+  ['Test, Measurement & PCB Design', [
+    'Test & Measurement', 'PCB & EDA',
+  ]],
   ['Electronics, Robotics & Devices', [
     'Electronics', 'Circuits & Signals', 'Electricity & Power',
     'Semiconductors & Chips', 'Embedded & Devices', 'Hardware & Making',
