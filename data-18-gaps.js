@@ -103,7 +103,7 @@ const BOOKMARKS_18 = [
   { c: "Self-taught learning", t: "Real World OCaml (free book)", u: "https://realworldocaml.org/", d: "A free book on practical OCaml. Very well written.", g: ["ocaml", "books", "free", "must-read"] },
   { c: "Self-taught learning", t: "Haskell School of Expression (free)", u: "http://haskell.galois.com/", d: "A free intro to Haskell as a functional language, with graphics.", g: ["haskell", "books", "free"] },
   { c: "Self-taught learning", t: "Problem Solving with Algorithms and Data Structures (free)", u: "https://runestone.academy/nspe/p/index.html", d: "A free Python textbook on algorithms and data structures. Excellent.", g: ["python", "algorithms", "books", "free", "must-do"] },
-  { c: "Self-taught learning", t: "MIT Rust course (free)", u: "https://rust-class.github.io/", d: "A free MIT-style Rust course. Very practical and well structured.", g: ["rust", "courses", "free", "must-do"] },
+  { c: "Self-taught learning", t: "MIT Rust course (free)", u: "https://www.rust-class.org/", d: "A free MIT-style Rust course. Very practical and well structured.", g: ["rust", "courses", "free", "must-do"] },
 
   // ================================================================ Tech Pioneers
   { c: "Tech pioneers", t: "Bret Victor — Worry Dream", u: "https://worrydream.com/", d: "Bret Victor's writing on computing, tools and education. Highly original.", g: ["blog", "must-read", "vision"] },

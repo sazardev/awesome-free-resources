@@ -17,7 +17,7 @@ const BOOKMARKS_17 = [
   { c: "Language docs", t: "R project (free)", u: "https://www.r-project.org/", d: "Free official R documentation, manuals and downloads.", g: ["r", "docs", "free"] },
   { c: "Linux & Unix", t: "Arch Linux man pages", u: "https://man.archlinux.org/", d: "Free curated man pages for Linux. Clean, consistent and reliable.", g: ["linux", "man-pages", "must-use"] },
   { c: "Linux & Unix", t: "Debian documentation", u: "https://www.debian.org/doc/", d: "Free official Debian docs, including the Administrator's Handbook.", g: ["linux", "docs", "free", "must-use"] },
-  { c: "Linux & Unix", t: "Awesome Linux (list)", u: "https://github.com/ledbettj/awesome-linux", d: "A curated list of excellent Linux resources, apps and tools. Free.", g: ["linux", "list", "must-use"] },
+  { c: "Linux & Unix", t: "Awesome Linux Software", u: "https://github.com/luong-komorebi/Awesome-Linux-Software", d: "A curated list of excellent Linux resources, apps and tools. Free.", g: ["linux", "list", "must-use"] },
   { c: "Linux & Unix", t: "GNU Autoconf manual (free)", u: "https://www.gnu.org/software/autoconf/manual/autoconf.html", d: "The free Autoconf manual. Essential for C projects.", g: ["linux", "build", "reference", "free"] },
   { c: "Linux & Unix", t: "Brendan Gregg — books", u: "https://www.brendangregg.com/books.html", d: "Free companion sites for Systems Performance and BPF Performance Tools.", g: ["linux", "performance", "books", "free", "must-read"] },
   { c: "Omarchy", t: "Omarchy — development tools", u: "https://omarchy.org/manual/development-tools/", d: "How languages and toolchains are installed. Mise handles versions.", g: ["omarchy", "docs", "dev"] },
