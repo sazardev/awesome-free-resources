@@ -179,7 +179,7 @@ console.log('robots.txt, 404.html written');
 {
   const SITE = 'https://sazardev.github.io/awesome-free-resources';
   const LAST_UPDATED = '2026-09-26';
-  const BUMP_WHEN_CHANGING = '2400';
+  const BUMP_WHEN_CHANGING = '2399';
 
   if (String(BOOKMARKS.length) !== BUMP_WHEN_CHANGING) {
     console.log(`feed.xml: WARNING update LAST_UPDATED and BUMP_WHEN_CHANGING in seo.mjs (now ${BOOKMARKS.length} links)`);

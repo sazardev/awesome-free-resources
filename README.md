@@ -1,6 +1,6 @@
 # Awesome Free Resources
 
-A curated, **link-verified** collection of **2,400 free and open-source resources** for
+A curated, **link-verified** collection of **2,399 free and open-source resources** for
 developers, scientists, engineers, students and self-learners.
 
 Everything here is free to read, free to use, and — in the vast majority of cases —
@@ -44,7 +44,7 @@ Most "awesome" lists are unverified. This one is not:
 - **Every URL was checked over HTTP** with retries. Broken links were either repaired
   (often to a moved page) or removed outright.
 - **Duplicates were removed** programmatically by title *and* URL.
-- The result: **2,400 links across 75 categories, from 1,504 distinct domains.**
+- The result: **2,399 links across 75 categories, from 1,504 distinct domains.**
 
 That work is reproducible and re-runnable — see [How it stays up to date](#how-it-stays-up-to-date).
 
@@ -69,7 +69,7 @@ Three things make that trustworthy rather than aspirational:
 | Linux & Unix | 95 |
 | AI / ML | 77 |
 | Computer Science | 74 |
-| Papers & preprints | 74 |
+| Papers & preprints | 73 |
 | SDR & Radio hacking | 67 |
 | Networking | 65 |
 | Framework docs | 64 |
@@ -333,7 +333,9 @@ there.
 **`.github/workflows/maintain.yml`** runs on push to `main` and every Monday:
 
 1. regenerates everything and commits the result
-2. re-checks all ~1,330 unique URLs over HTTP (12 workers, HEAD then GET, 3 attempts)
+2. re-checks all ~1,500 unique URLs over HTTP (HEAD then GET, 3 attempts). Wikipedia
+   is asked about through its API, because it throttles by returning 404 rather
+   than 429 and an HTML fetch would report good links as dead
 3. classifies the results, so genuine 404s are separated from bot-blocks (401/403/406)
    and from timeouts, which in CI are usually rate-limiting rather than dead links
 4. opens a single **issue** with the report only if something is actually flagged, so
@@ -411,7 +413,7 @@ node -e 'const B=new Function(require("fs").readFileSync("all.js","utf8")+";retu
 
 Download `chromium-bookmarks.html`, then in Chromium/Chrome press
 <kbd>Ctrl/⌘ Shift</kbd>+<kbd>O</kbd> → *Import and export* → *Import bookmarks*,
-and select the file. You get all 1,996 links in 12 grouped folders.
+and select the file. You get all 2,399 links in 17 grouped folders.
 
 ### As a browsable page
 
@@ -432,14 +434,37 @@ idempotent — running it again replaces only the generated folders.
 
 ```
 .
-├── index.html                 # the browsable page (self-contained)
-├── all.js                     # generated: all data + categories + tags
-├── chromium-bookmarks.html    # Netscape export — import into any Chromium/Chrome/Firefox
+├── index.html                 # the browsable page (self-contained, no build step)
+├── all.js                     # generated: data + categories + tags + groups
+├── feed.xml                   # generated: Atom feed, one entry per category
+├── chromium-bookmarks.html    # generated: Netscape export for any browser
+├── sitemap.xml                # generated: one URL per category, plus the root
+├── robots.txt                 # generated
+├── 404.html                   # generated
+│
 ├── data-*.js                  # the source of truth, one file per topic area
-├── build.mjs                  # merge + validate + generate all.js
-├── dedupe.mjs                 # remove duplicate titles/URLs
-├── make-bookmarks.mjs         # generate chromium-bookmarks.html
-├── write-bookmarks.mjs        # write directly into a Chromium profile
+├── groups.mjs                 # the category-to-group map. Single source of truth
+│
+├── build.mjs                  # merge + validate the data files into all.js
+├── dedupe.mjs                 # strip duplicate titles and URLs from data files
+├── make-bookmarks.mjs         # generate the browser import file
+├── write-bookmarks.mjs        # write straight into a live Chromium profile
+├── seo.mjs                    # generate feed, sitemap, robots, 404, README stats
+│
+├── scripts/
+│   ├── rebuild.mjs            # run the whole pipeline in the right order
+│   ├── check-data.mjs         # validate the data files
+│   ├── check-render.mjs       # prove every link is reachable in the page
+│   ├── link-check.mjs         # re-verify every URL over HTTP
+│   ├── commit-generated.mjs   # commit only if the generated files changed
+│   └── publish-report.cjs     # open one issue when links rot
+│
+├── .github/workflows/
+│   ├── verify.yml             # required check on every pull request
+│   └── maintain.yml           # regenerate and re-verify on a schedule
+│
+├── CONTRIBUTING.md            # how to add a link
+├── README.md
 └── LICENSE                    # CC0 1.0
 ```
 
@@ -453,6 +478,10 @@ The `data-*.js` files are plain JS arrays, so they stay easy to read and diff:
 ```
 
 `c` category · `t` title · `u` url · `d` description · `g` tags.
+
+Only three files are ever edited by hand: the `data-*.js` files, `groups.mjs`
+when a new category is added, and `index.html` for the page itself. Everything
+else is generated by `node scripts/rebuild.mjs`.
 
 ## Contributing
 
@@ -498,15 +527,21 @@ Mark the highest-signal entries with a `must-read` / `must-do` / `must-use` tag.
 
 ## Known caveats
 
-- **6 links are `http://`**, not `https://`: Gelman's *Bayesian Data Analysis*,
-  *Learn You a Haskell*, Preskill's quantum notes, Subatomic Cafe, Scholarpedia and
-  *This Week in Virology*. Their HTTPS endpoints did not respond during verification,
-  and a working HTTP link beats a broken HTTPS one. All six support HTTPS in a normal
-  browser — they are reachable, just not from the network this list was built on.
+- **8 links are `http://`**, not `https://`: Gelman's *Bayesian Data Analysis*,
+  *Learn You a Haskell*, *Learn You Some Erlang*, Haskell School of Expression,
+  Preskill's quantum notes, Subatomic Cafe, Scholarpedia and *This Week in Virology*.
+  Each was checked over both schemes: the HTTPS endpoint did not respond at the time
+  of verification, and a working HTTP link beats a broken HTTPS one. All of them
+  serve HTTPS fine in a normal browser — they are reachable, just not from the
+  network this list was built on. A ninth, McCarthy's papers, was originally in
+  this list and has since been confirmed over HTTPS and upgraded.
 - **Some resources are free but not openly licensed** (e.g. the Feynman Lectures are
   Caltech-hosted but not CC-licensed as a whole). Check each project's own terms.
-- **The list rots.** `data/*.js` reflects links verified in the last days of
-  development. Spot-checking before you rely on a link is still worth it.
+- **The list rots.** The `data-*.js` files reflect links verified on the dates in
+  the commit history. The weekly workflow re-checks every URL, but it can only
+  report what it finds — spot-checking before you rely on a link is still worth it.
+- **41% of entries carry a `must-*` tag**, which is too many for the tag to be a
+  useful filter. It is being trimmed; treat it as weak signal for now.
 
 ## License
 

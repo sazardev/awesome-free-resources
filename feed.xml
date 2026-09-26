@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title>Awesome Free Resources</title>
-  <subtitle>2400 free and open-source resources across 75 categories</subtitle>
+  <subtitle>2399 free and open-source resources across 75 categories</subtitle>
   <link href="https://sazardev.github.io/awesome-free-resources/"/>
   <link rel="self" href="https://sazardev.github.io/awesome-free-resources/feed.xml"/>
   <link rel="alternate" type="text/html" href="https://sazardev.github.io/awesome-free-resources/"/>
@@ -335,7 +335,7 @@
     <link href="https://sazardev.github.io/awesome-free-resources/#cat-papers-preprints"/>
     <id>https://sazardev.github.io/awesome-free-resources/#cat-papers-preprints</id>
     <category term="Papers &amp; preprints"/>
-    <summary type="text">74 free resources. Tags: access, ai, api, astronomy, atomic, biology, books, chemistry.</summary>
+    <summary type="text">73 free resources. Tags: access, ai, api, astronomy, atomic, biology, books, chemistry.</summary>
   </entry>
   <entry>
     <title>Particle physics</title>
