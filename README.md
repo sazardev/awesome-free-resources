@@ -126,6 +126,18 @@ Please add resources that are:
 
 Mark the highest-signal entries with a `must-read` / `must-do` / `must-use` tag.
 
+## Known caveats
+
+- **6 links are `http://`**, not `https://`: Gelman's *Bayesian Data Analysis*,
+  *Learn You a Haskell*, Preskill's quantum notes, Subatomic Cafe, Scholarpedia and
+  *This Week in Virology*. Their HTTPS endpoints did not respond during verification,
+  and a working HTTP link beats a broken HTTPS one. All six support HTTPS in a normal
+  browser — they are reachable, just not from the network this list was built on.
+- **Some resources are free but not openly licensed** (e.g. the Feynman Lectures are
+  Caltech-hosted but not CC-licensed as a whole). Check each project's own terms.
+- **The list rots.** `data/*.js` reflects links verified in the last days of
+  development. Spot-checking before you rely on a link is still worth it.
+
 ## License
 
 Released into the public domain under [CC0 1.0](LICENSE).

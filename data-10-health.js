@@ -5,7 +5,7 @@ const BOOKMARKS_10 = [
   { c: "Anatomy", t: "Kenhub", u: "https://www.kenhub.com/", d: "Free core content plus quizzes and diagrams. Excellent for visual anatomy.", g: ["anatomy", "quizzes", "must-use"] },
   { c: "Anatomy", t: "Z-Anatomy (open 3D atlas)", u: "https://www.z-anatomy.com/", d: "A complete, free, open-source 3D anatomy atlas. Runs in the browser. Outstanding.", g: ["anatomy", "3d", "open-source", "must-try"] },
   { c: "Anatomy", t: "Z-Anatomy source (open data)", u: "https://github.com/LluisV/Z-Anatomy", d: "The free atlas source data and models. CC-licensed, fully open.", g: ["anatomy", "3d", "open-source", "data"] },
-  { c: "Anatomy", t: "Anatomy Atlases (Michigan State)", u: "http://www.anatomyatlases.org/", d: "Free digital atlases: sectional anatomy, cross-sections, endoscopy. Scholarly quality.", g: ["anatomy", "atlas", "reference"] },
+  { c: "Anatomy", t: "Anatomy Atlases (Michigan State)", u: "https://anatomyatlases.org/", d: "Free digital atlases: sectional anatomy, cross-sections, endoscopy. Scholarly quality.", g: ["anatomy", "atlas", "reference"] },
   { c: "Anatomy", t: "BodyParts3D", u: "https://lifesciencedb.jp/bp3d/", d: "Free 3D anatomy viewer with a huge labelled database of human structures.", g: ["anatomy", "3d", "data"] },
   { c: "Anatomy", t: "BioDigital Human", u: "https://www.biodigital.com/", d: "Free interactive 3D human body with tissue-level detail. Very good for learning.", g: ["anatomy", "3d", "must-try"] },
   { c: "Anatomy", t: "NIH 3D Print Exchange", u: "https://3d.nih.gov/", d: "Free repository of printable 3D medical models, including anatomy.", g: ["anatomy", "3d", "tooling", "free"] },

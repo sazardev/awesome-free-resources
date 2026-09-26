@@ -69,7 +69,7 @@ const BOOKMARKS_11 = [
   { c: "Topic blogs", t: "The Panda's Thumb", u: "https://pandasthumb.org/", d: "Free, long-running evolution blog from a working evolutionary biologist.", g: ["biology", "blog", "must-read"] },
   { c: "Topic blogs", t: "Pharyngula", u: "https://pharyngula.com/", d: "Free blog curating evolution, palaeontology and developmental biology posts.", g: ["biology", "blog", "must-read"] },
   { c: "Topic blogs", t: "TalkOrigins", u: "https://www.talkorigins.org/", d: "Free archive of the best creationism-vs-evolution arguments. Excellent reference.", g: ["biology", "blog", "must-read"] },
-  { c: "Topic blogs", t: "Darwin Online", u: "http://darwin-online.org.uk/", d: "Free full text of Darwin's published and unpublished writing. Primary source.", g: ["biology", "history", "free", "must-read"] },
+  { c: "Topic blogs", t: "Darwin Online", u: "https://darwin-online.org.uk/", d: "Free full text of Darwin's published and unpublished writing. Primary source.", g: ["biology", "history", "free", "must-read"] },
   { c: "Topic blogs", t: "iNaturalist", u: "https://www.inaturalist.org/", d: "Free biodiversity observations with AI-assisted species identification. Huge dataset.", g: ["biology", "data", "must-try"] },
   { c: "Topic blogs", t: "Encyclopedia of Life", u: "https://eol.org/", d: "Free, free-to-use species pages drawing from all the major databases.", g: ["biology", "reference", "free"] },
   { c: "Topic blogs", t: "GBIF — Global Biodiversity Facility", u: "https://www.gbif.org/", d: "Free global biodiversity data infrastructure and API. Open data.", g: ["biology", "data", "open-data", "must-use"] },

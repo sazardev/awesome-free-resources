@@ -68,7 +68,7 @@ const BOOKMARKS_09 = [
   { c: "Quantum & Atomic", t: "Cirq documentation", u: "https://quantumai.google/cirq", d: "Google's free open-source quantum computing framework and its free tutorials.", g: ["quantum", "tooling", "open-source"] },
   { c: "Quantum & Atomic", t: "PennyLane documentation", u: "https://pennylane.ai/", d: "Free open-source quantum machine learning library from Xanadu. Great docs.", g: ["quantum", "tooling", "open-source"] },
   { c: "Quantum & Atomic", t: "Qiskit (IBM) — open-source SDK", u: "https://www.ibm.com/quantum/qiskit", d: "The most widely used open-source quantum SDK. Free to install and learn.", g: ["quantum", "tooling"] },
-  { c: "Quantum & Atomic", t: "ProjectQ — open-source quantum", u: "http://www.projectq.ch/", d: "Free open-source quantum computing framework. Small, readable Python+C++.", g: ["quantum", "tooling", "code"] },
+  { c: "Quantum & Atomic", t: "ProjectQ — open-source quantum", u: "https://www.projectq.ch/", d: "Free open-source quantum computing framework. Small, readable Python+C++.", g: ["quantum", "tooling", "code"] },
   { c: "Quantum & Atomic", t: "Amazon Braket notebooks", u: "https://docs.aws.amazon.com/braket/", d: "Free quantum computing notebooks you can run in the cloud.", g: ["quantum", "computation"] },
   { c: "Quantum & Atomic", t: "NIST — quantum information", u: "https://www.nist.gov/quantum-information-science", d: "US standards body for quantum computing and sensing. Free resources.", g: ["quantum", "reference"] },
   { c: "Quantum & Atomic", t: "Nobel Prize — Quantum Physics", u: "https://www.nobelprize.org/prizes/physics/2022/summary/", d: "The 2022 Nobel in Physics on entanglement. Free popular explanations.", g: ["quantum", "explainer"] },
