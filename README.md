@@ -1,6 +1,6 @@
 # Awesome Free Resources
 
-A curated, **link-verified** collection of **3,366 free and open-source resources** for
+A curated, **link-verified** collection of **3,586 free and open-source resources** for
 developers, scientists, engineers, students and self-learners.
 
 Everything here is free to read, free to use, and — in the vast majority of cases —
@@ -44,7 +44,7 @@ Most "awesome" lists are unverified. This one is not:
 - **Every URL was checked over HTTP** with retries. Broken links were either repaired
   (often to a moved page) or removed outright.
 - **Duplicates were removed** programmatically by title *and* URL.
-- The result: **3,366 links across 102 categories, from 1,709 distinct domains.**
+- The result: **3,586 links across 109 categories, from 1,730 distinct domains.**
 
 That work is reproducible and re-runnable — see [How it stays up to date](#how-it-stays-up-to-date).
 
@@ -79,6 +79,7 @@ Three things make that trustworthy rather than aspirational:
 | Framework docs | 64 |
 | Language docs | 58 |
 | Data Science | 53 |
+| Tennis | 53 |
 | Go frameworks | 52 |
 | Android | 51 |
 | Low-Level Systems | 50 |
@@ -91,6 +92,7 @@ Three things make that trustworthy rather than aspirational:
 | Rust ecosystem | 41 |
 | Hacking & Pentesting | 40 |
 | Hydrogen | 40 |
+| Physiology | 40 |
 | Electronics | 39 |
 | English Grammar | 38 |
 | AI Papers & Reading | 36 |
@@ -102,11 +104,13 @@ Three things make that trustworthy rather than aspirational:
 | Tech pioneers | 34 |
 | Fun facts | 33 |
 | Influential tech | 33 |
+| Sports science | 33 |
 | Telecommunications | 33 |
 | Dev blogs | 32 |
 | Omarchy | 32 |
 | Databases | 31 |
 | LLMs & Models | 31 |
+| Muscles | 31 |
 | Hardware & Making | 30 |
 | Kotlin | 30 |
 | Nutrition | 30 |
@@ -126,6 +130,7 @@ Three things make that trustworthy rather than aspirational:
 | Software Engineering | 25 |
 | Electricity & Power | 24 |
 | Go | 24 |
+| Sports medicine & Injuries | 24 |
 | Computer Architecture | 23 |
 | Efficiency & Algorithms | 23 |
 | Performance Engineering | 23 |
@@ -145,11 +150,13 @@ Three things make that trustworthy rather than aspirational:
 | Go Hacking | 20 |
 | Mobile & Android Hacking | 20 |
 | Particle physics | 20 |
+| Sports nutrition | 20 |
 | English Pronunciation & Listening | 19 |
 | English Writing & Composition | 19 |
 | Health | 19 |
 | Physiotherapy | 19 |
 | Security Hats & Teams | 19 |
+| Strength & Conditioning | 19 |
 | Robotics & Control | 18 |
 | English for Academic Purposes | 17 |
 | Mathematics | 17 |
@@ -196,6 +203,41 @@ Highlights by area:
 | **Web Performance** | Core Web Vitals, HTTP caching, DevTools, Web Almanac, performance.now() talks |
 | **Tech Pioneers** | Bret Victor, Jef Raskin, Stallman, McCarthy, Shannon, Hofstadter, plus primary sources |
 | **Fun & News** | Quanta, 3Blue1Brown, Numberphile, Lobsters, Computerphile |
+
+## Sport, health and the body
+
+220 links across seven new or previously-thin categories, plus a new area. The
+collection already had 25 anatomy atlases, 19 physiotherapy links, 30 nutrition
+databases and 19 health references, and **nothing at all** for tennis, sports
+science, strength training, muscles or sports medicine. What was missing was the
+applied and the physiological; what was there was regulatory and reference.
+
+The categories are ordered by how the material relates. **Muscles** (31) and
+**Physiology** (40) are the mechanism — sarcomere structure, the cross-bridge
+cycle, motor units, fibre types, fibre-type ratios, satellite cells and
+myostatin, then the cardiovascular, respiratory, endocrine and nervous systems
+and the disease states that follow from them. **Sports science** (33) and
+**Strength & Conditioning** (19) are the method: biomechanics, VO2 max, EPOC,
+motor learning, Fitts's law, progressive overload, periodisation, and the free
+journals and open textbooks where the primary literature actually is — JSSM,
+*Sports Medicine — Open*, PMC, PLOS ONE, the ISSN position stands, and two
+genuinely free textbooks on exercise delivery and biomechanics.
+
+**Sports nutrition** (20) and **Sports medicine & Injuries** (24) are the two ends
+of one training cycle: fuelling and recovery on one side, injury and
+rehabilitation on the other. Both lean on the load-capacity model rather than the
+older inflammation model, and both say so where the evidence contradicts the
+usual coaching advice — static stretching does not prevent injury, lactate is not
+the cause of fatigue, and DOMS is not what most people think it is.
+
+**Tennis** (53) is the one sport taken seriously enough to warrant its own
+category. The rules and scoring, the four majors, court surfaces and how surface
+governs ball speed, the shots and the strategy that decides points, the
+equipment and the physics behind it — topspin, sidespin, the Magnus effect, the
+coefficient of restitution and the trade between string tension and feel — and
+the biomechanics of generating and absorbing racket speed. Plus the official
+ITF rulebook, the governing bodies, the Hall of Fame, and the players whose
+careers are the reference points for the modern game.
 
 ## Thermodynamics, nuclear physics, hydrogen and the world wars
 
@@ -500,7 +542,7 @@ node -e 'const B=new Function(require("fs").readFileSync("all.js","utf8")+";retu
 
 Download `chromium-bookmarks.html`, then in Chromium/Chrome press
 <kbd>Ctrl/⌘ Shift</kbd>+<kbd>O</kbd> → *Import and export* → *Import bookmarks*,
-and select the file. You get all 3,366 links in 23 grouped folders.
+and select the file. You get all 3,586 links in 24 grouped folders.
 
 ### As a browsable page
 
@@ -628,9 +670,9 @@ Mark the highest-signal entries with a `must-read` / `must-do` / `must-use` tag.
 - **The list rots.** The `data-*.js` files reflect links verified on the dates in
   the commit history. The weekly workflow re-checks every URL, but it can only
   report what it finds — spot-checking before you rely on a link is still worth it.
-- **45% of entries carry a `must-*` tag** (1,508 of 3,366), which is too many for
+- **47% of entries carry a `must-*` tag** (1,688 of 3,586), which is too many for
   the tag to be a useful filter — there are now 12 distinct `must-*` tags, and
-  `must-read` alone covers 771 entries. Treat it as weak signal for now. The fix
+  `must-read` alone covers 934 entries. Treat it as weak signal for now. The fix
   is pruning, not more tags: new entries should reach for a specific
   `must-read`-equivalent only when they are genuinely the best thing in the
   category, and the older weak `must-*` uses are candidates for removal.

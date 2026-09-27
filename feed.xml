@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title>Awesome Free Resources</title>
-  <subtitle>3366 free and open-source resources across 102 categories</subtitle>
+  <subtitle>3586 free and open-source resources across 109 categories</subtitle>
   <link href="https://sazardev.github.io/awesome-free-resources/"/>
   <link rel="self" href="https://sazardev.github.io/awesome-free-resources/feed.xml"/>
   <link rel="alternate" type="text/html" href="https://sazardev.github.io/awesome-free-resources/"/>
@@ -422,6 +422,13 @@
     <summary type="text">20 free resources. Tags: advanced, android, code, mobile, must-read, must-try, must-use, official.</summary>
   </entry>
   <entry>
+    <title>Muscles</title>
+    <link href="https://sazardev.github.io/awesome-free-resources/#cat-muscles"/>
+    <id>https://sazardev.github.io/awesome-free-resources/#cat-muscles</id>
+    <category term="Muscles"/>
+    <summary type="text">31 free resources. Tags: advanced, anatomy, health, muscle, must-read, physiology, protein, reference.</summary>
+  </entry>
+  <entry>
     <title>Negotiation &amp; Communication</title>
     <link href="https://sazardev.github.io/awesome-free-resources/#cat-negotiation-communication"/>
     <id>https://sazardev.github.io/awesome-free-resources/#cat-negotiation-communication</id>
@@ -504,6 +511,13 @@
     <id>https://sazardev.github.io/awesome-free-resources/#cat-physics</id>
     <category term="Physics"/>
     <summary type="text">34 free resources. Tags: advanced, atomic, books, community, computation, courses, education, explainer.</summary>
+  </entry>
+  <entry>
+    <title>Physiology</title>
+    <link href="https://sazardev.github.io/awesome-free-resources/#cat-physiology"/>
+    <id>https://sazardev.github.io/awesome-free-resources/#cat-physiology</id>
+    <category term="Physiology"/>
+    <summary type="text">40 free resources. Tags: health, muscle, must-read, nutrition, physiology, recovery, reference, sports-science.</summary>
   </entry>
   <entry>
     <title>Physiotherapy</title>
@@ -646,6 +660,34 @@
     <summary type="text">25 free resources. Tags: algorithms, architecture, blog, book, books, cheatsheet, curriculum, design.</summary>
   </entry>
   <entry>
+    <title>Sports medicine &amp; Injuries</title>
+    <link href="https://sazardev.github.io/awesome-free-resources/#cat-sports-medicine-injuries"/>
+    <id>https://sazardev.github.io/awesome-free-resources/#cat-sports-medicine-injuries</id>
+    <category term="Sports medicine &amp; Injuries"/>
+    <summary type="text">24 free resources. Tags: anatomy, free, injury, must-read, must-use, nutrition, physiology, recovery.</summary>
+  </entry>
+  <entry>
+    <title>Sports nutrition</title>
+    <link href="https://sazardev.github.io/awesome-free-resources/#cat-sports-nutrition"/>
+    <id>https://sazardev.github.io/awesome-free-resources/#cat-sports-nutrition</id>
+    <category term="Sports nutrition"/>
+    <summary type="text">20 free resources. Tags: biochemistry, health, must-read, must-visit, nutrition, official, reference, sports-science.</summary>
+  </entry>
+  <entry>
+    <title>Sports science</title>
+    <link href="https://sazardev.github.io/awesome-free-resources/#cat-sports-science"/>
+    <id>https://sazardev.github.io/awesome-free-resources/#cat-sports-science</id>
+    <category term="Sports science"/>
+    <summary type="text">33 free resources. Tags: analytics, athletics, biomechanics, book, ethics, free, must-read, must-visit.</summary>
+  </entry>
+  <entry>
+    <title>Strength &amp; Conditioning</title>
+    <link href="https://sazardev.github.io/awesome-free-resources/#cat-strength-conditioning"/>
+    <id>https://sazardev.github.io/awesome-free-resources/#cat-strength-conditioning</id>
+    <category term="Strength &amp; Conditioning"/>
+    <summary type="text">19 free resources. Tags: free, must-read, recovery, reference, research, strength, therapy, training.</summary>
+  </entry>
+  <entry>
     <title>Tech Leadership &amp; CTO</title>
     <link href="https://sazardev.github.io/awesome-free-resources/#cat-tech-leadership-cto"/>
     <id>https://sazardev.github.io/awesome-free-resources/#cat-tech-leadership-cto</id>
@@ -672,6 +714,13 @@
     <id>https://sazardev.github.io/awesome-free-resources/#cat-telecommunications</id>
     <category term="Telecommunications"/>
     <summary type="text">33 free resources. Tags: advanced, api, cellular, code, concepts, fiber, free, history.</summary>
+  </entry>
+  <entry>
+    <title>Tennis</title>
+    <link href="https://sazardev.github.io/awesome-free-resources/#cat-tennis"/>
+    <id>https://sazardev.github.io/awesome-free-resources/#cat-tennis</id>
+    <category term="Tennis"/>
+    <summary type="text">53 free resources. Tags: analytics, anatomy, biography, biomechanics, coaching, equipment, ethics, history.</summary>
   </entry>
   <entry>
     <title>Test &amp; Measurement</title>
