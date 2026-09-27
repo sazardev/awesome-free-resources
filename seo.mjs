@@ -8,6 +8,7 @@
 import { readFileSync, writeFileSync, existsSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
 import { dirname, join } from 'node:path';
+import { slug as SLUG, catAnchor as CAT_ANCHOR } from './slug.mjs';
 
 const here = dirname(fileURLToPath(import.meta.url));
 const read = (p) => readFileSync(join(here, p), 'utf8');
@@ -21,7 +22,7 @@ const GROUPS = new Function(`${src}; return GROUPS;`)();
 
 const ORIGIN = 'https://sazardev.github.io';
 const BASE = `${ORIGIN}/awesome-free-resources`;
-const slug = (s) => s.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
+const slug = SLUG;
 
 // ---------------------------------------------------------------- sitemap.xml
 const today = new Date().toISOString().slice(0, 10);
@@ -206,7 +207,7 @@ if (existsSync(join(here, readmePath))) {
   const esc = (s) =>
     String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
       .replace(/"/g, '&quot;').replace(/'/g, '&apos;');
-  const slug = (c) => 'cat-' + c.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
+  const slug = CAT_ANCHOR;
 
   const cats = [...new Set(BOOKMARKS.map((b) => b.c))].sort();
   const entries = cats.map((c) => {
@@ -239,4 +240,31 @@ ${entries.join('\n')}
 </feed>
 `);
   console.log(`feed.xml: ${entries.length} categories`);
+}
+
+// ---------------------------------------------------------------- inject slug helpers
+// index.html is a single self-contained file with no build step, so it cannot
+// import from slug.mjs at runtime. Rather than paste a second copy of the rule
+// in by hand — which is how the sitemap and the anchors drifted apart the first
+// time — inject the real source of it into the marked slot. The HTML still
+// works standalone, and there is only ever one implementation.
+{
+  const src2 = read('slug.mjs')
+    .split('\n')
+    .filter((l) => !/^\s*\/\/|^import |^export /.test(l))
+    .join('\n')
+    .trim();
+  const before = read('index.html');
+  const after = before.replace(
+    '  /* SLUG_FROM_MODULE */',
+    `  const slug = (s) =>\n    String(s).toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '');\n` +
+    `  const catAnchor = (c) => 'cat-' + slug(c);\n` +
+    `  const groupAnchor = (g) => 'grp-' + slug(g);`
+  );
+  if (after !== before) {
+    write('index.html', after);
+    console.log('index.html: slug helpers injected from slug.mjs');
+  } else {
+    console.log('index.html: slug helpers already in place');
+  }
 }

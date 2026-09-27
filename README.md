@@ -463,6 +463,7 @@ idempotent — running it again replaces only the generated folders.
 │
 ├── data-*.js                  # the source of truth, one file per topic area
 ├── groups.mjs                 # the category-to-group map. Single source of truth
+├── slug.mjs                   # the anchor-slug rule, single source of truth
 │
 ├── build.mjs                  # merge + validate the data files into all.js
 ├── dedupe.mjs                 # strip duplicate titles and URLs from data files
