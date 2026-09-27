@@ -1,6 +1,6 @@
 # Awesome Free Resources
 
-A curated, **link-verified** collection of **3,075 free and open-source resources** for
+A curated, **link-verified** collection of **3,366 free and open-source resources** for
 developers, scientists, engineers, students and self-learners.
 
 Everything here is free to read, free to use, and — in the vast majority of cases —
@@ -44,7 +44,7 @@ Most "awesome" lists are unverified. This one is not:
 - **Every URL was checked over HTTP** with retries. Broken links were either repaired
   (often to a moved page) or removed outright.
 - **Duplicates were removed** programmatically by title *and* URL.
-- The result: **3,075 links across 98 categories, from 1,672 distinct domains.**
+- The result: **3,366 links across 102 categories, from 1,709 distinct domains.**
 
 That work is reproducible and re-runnable — see [How it stays up to date](#how-it-stays-up-to-date).
 
@@ -67,10 +67,13 @@ Three things make that trustworthy rather than aspirational:
 | Category | Links |
 |---|---|
 | DevOps / Infra | 119 |
+| Thermodynamics & Heat | 106 |
 | Linux & Unix | 95 |
 | AI / ML | 77 |
+| Nuclear physics | 77 |
 | Computer Science | 73 |
 | Papers & preprints | 73 |
+| World War I & II | 68 |
 | SDR & Radio hacking | 67 |
 | Networking | 65 |
 | Framework docs | 64 |
@@ -87,6 +90,7 @@ Three things make that trustworthy rather than aspirational:
 | Free textbooks | 45 |
 | Rust ecosystem | 41 |
 | Hacking & Pentesting | 40 |
+| Hydrogen | 40 |
 | Electronics | 39 |
 | English Grammar | 38 |
 | AI Papers & Reading | 36 |
@@ -192,6 +196,54 @@ Highlights by area:
 | **Web Performance** | Core Web Vitals, HTTP caching, DevTools, Web Almanac, performance.now() talks |
 | **Tech Pioneers** | Bret Victor, Jef Raskin, Stallman, McCarthy, Shannon, Hofstadter, plus primary sources |
 | **Fun & News** | Quanta, 3Blue1Brown, Numberphile, Lobsters, Computerphile |
+
+## Thermodynamics, nuclear physics, hydrogen and the world wars
+
+291 links across four new categories, added as one batch. The thermodynamics
+half is deliberately weighted towards the laws and what follows from them, then
+towards phase change and freezing specifically.
+
+**Thermodynamics & Heat** (106) is split into four layers. The laws themselves:
+the zeroth through third law, entropy in its thermodynamic and arrow-of-time
+forms, the Carnot cycle and Carnot's theorem, the free energies and the chemical
+potential, and the state functions that make exact differentials work. Then the
+phase-change layer: the Gibbs phase rule and Clapeyron equation, latent heat,
+nucleation, supercooling, freezing-point depression, eutectics and the Stefan
+problem — the moving-boundary problem of a solid melting or a liquid freezing.
+Then heat transfer: Fourier's law through to the Stefan–Boltzmann law, with the
+dimensionless groups that every convection calculation actually needs. And
+finally the sources: Blundell's *Concepts in Thermal Physics* and its companion
+notes, Sethna, Styer, Nair, Arovas, Sean Carroll, MIT 8.333 and MIT 2.051, plus
+IAPWS and the NIST WebBook for real property data.
+
+**Nuclear physics** (77) covers the nucleus itself rather than weapons policy:
+binding energy and the semi-empirical mass formula, the shell model and the magic
+numbers, all three decay modes, fission and fusion, the neutron cross section and
+the moderator choice that defines a reactor, the Lawson criterion for fusion, and
+the serious open tooling (OpenMC, Serpent, MOOSE). It also carries the accident
+record — Three Mile Island, Chernobyl, Fukushima, Kyshtym, SL-1 — because
+understanding why they happened is the actual point of the safety systems.
+
+**Hydrogen** (40) treats it as an energy carrier rather than an element entry,
+so: electrolysis and the PEM overpotential that sets the cost, steam methane
+reforming and the ~95% of supply it still is, Haber–Bosch and ammonia as the
+carrier everyone actually uses, Sabatier for closing the loop to e-fuels, the
+storage problem (compression, liquefaction at 20 K, metal hydrides and their
+kinetics) and the four fuel-cell chemistries.
+
+**World War I & II** (68) is built from archives rather than summaries: Imperial
+War Museums, the US and UK National Archives, USHMM, Yad Vashem, the National
+WWII Museum, Project Gutenberg and Standard Ebooks for the memoirs, Wikisource
+for primary documents, and Khan Academy for the free course. The campaigns are
+covered as the arguments about them rather than as bare chronologies, with
+historiography of the Second World War as the single most useful entry for
+anyone who wants to go past the facts.
+
+A number of excellent primary-source archives could **not** be included because
+they are unreachable from the network this was built on — `hyperwar.org`,
+`avalon.law.yale.edu`, `history.army.mil`, `loc.gov`, `europeana.eu` and
+`osti.gov` all fail DNS or return 403. They are real and worth adding; guessing
+a path into them was not an option.
 
 ## Radio, RF, antennas, telecom and networking
 
@@ -448,7 +500,7 @@ node -e 'const B=new Function(require("fs").readFileSync("all.js","utf8")+";retu
 
 Download `chromium-bookmarks.html`, then in Chromium/Chrome press
 <kbd>Ctrl/⌘ Shift</kbd>+<kbd>O</kbd> → *Import and export* → *Import bookmarks*,
-and select the file. You get all 3,075 links in 22 grouped folders.
+and select the file. You get all 3,366 links in 23 grouped folders.
 
 ### As a browsable page
 
@@ -576,9 +628,9 @@ Mark the highest-signal entries with a `must-read` / `must-do` / `must-use` tag.
 - **The list rots.** The `data-*.js` files reflect links verified on the dates in
   the commit history. The weekly workflow re-checks every URL, but it can only
   report what it finds — spot-checking before you rely on a link is still worth it.
-- **44% of entries carry a `must-*` tag** (1,380 of 3,075), which is too many for
+- **45% of entries carry a `must-*` tag** (1,508 of 3,366), which is too many for
   the tag to be a useful filter — there are now 12 distinct `must-*` tags, and
-  `must-read` alone covers 654 entries. Treat it as weak signal for now. The fix
+  `must-read` alone covers 771 entries. Treat it as weak signal for now. The fix
   is pruning, not more tags: new entries should reach for a specific
   `must-read`-equivalent only when they are genuinely the best thing in the
   category, and the older weak `must-*` uses are candidates for removal.

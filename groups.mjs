@@ -27,10 +27,13 @@ export const GROUPS = [
     'Science', 'Science news', 'Research data',
   ]],
   ['Physics & Chemistry', [
-    'Physics', 'Chemistry',
+    'Physics', 'Chemistry', 'Thermodynamics & Heat', 'Hydrogen',
   ]],
   ['Atomic & Particles', [
-    'Quantum & Atomic', 'Particle physics',
+    'Quantum & Atomic', 'Particle physics', 'Nuclear physics',
+  ]],
+  ['History, War & Conflict', [
+    'World War I & II',
   ]],
   ['Astronomy & Biology', [
     'Astronomy', 'Biology',
