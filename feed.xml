@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title>Awesome Free Resources</title>
-  <subtitle>2586 free and open-source resources across 81 categories</subtitle>
+  <subtitle>2709 free and open-source resources across 86 categories</subtitle>
   <link href="https://sazardev.github.io/awesome-free-resources/"/>
   <link rel="self" href="https://sazardev.github.io/awesome-free-resources/feed.xml"/>
   <link rel="alternate" type="text/html" href="https://sazardev.github.io/awesome-free-resources/"/>
@@ -282,11 +282,32 @@
     <summary type="text">33 free resources. Tags: archive, blog, career, community, devops, dhh, docs, free.</summary>
   </entry>
   <entry>
+    <title>Keyboard Switches &amp; Parts</title>
+    <link href="https://sazardev.github.io/awesome-free-resources/#cat-keyboard-switches-parts"/>
+    <id>https://sazardev.github.io/awesome-free-resources/#cat-keyboard-switches-parts</id>
+    <category term="Keyboard Switches &amp; Parts"/>
+    <summary type="text">16 free resources. Tags: advanced, hardware, history, keyboards, keycaps, kicad, learning, must-do.</summary>
+  </entry>
+  <entry>
+    <title>Keyboards &amp; Customization</title>
+    <link href="https://sazardev.github.io/awesome-free-resources/#cat-keyboards-customization"/>
+    <id>https://sazardev.github.io/awesome-free-resources/#cat-keyboards-customization</id>
+    <category term="Keyboards &amp; Customization"/>
+    <summary type="text">35 free resources. Tags: advanced, community, design, docs, embedded, ergonomic, ergonomics, firmware.</summary>
+  </entry>
+  <entry>
     <title>Kotlin</title>
     <link href="https://sazardev.github.io/awesome-free-resources/#cat-kotlin"/>
     <id>https://sazardev.github.io/awesome-free-resources/#cat-kotlin</id>
     <category term="Kotlin"/>
     <summary type="text">30 free resources. Tags: advanced, blog, build, code, community, compilers, compose, concurrency.</summary>
+  </entry>
+  <entry>
+    <title>LLMs &amp; Models</title>
+    <link href="https://sazardev.github.io/awesome-free-resources/#cat-llms-models"/>
+    <id>https://sazardev.github.io/awesome-free-resources/#cat-llms-models</id>
+    <category term="LLMs &amp; Models"/>
+    <summary type="text">31 free resources. Tags: advanced, api, apple-silicon, benchmarks, browser, cpp, data, datasets.</summary>
   </entry>
   <entry>
     <title>Language docs</title>
@@ -443,6 +464,13 @@
     <summary type="text">14 free resources. Tags: biology, climate, data, free, genetics, geography, health, must-know.</summary>
   </entry>
   <entry>
+    <title>Reverse Engineering</title>
+    <link href="https://sazardev.github.io/awesome-free-resources/#cat-reverse-engineering"/>
+    <id>https://sazardev.github.io/awesome-free-resources/#cat-reverse-engineering</id>
+    <category term="Reverse Engineering"/>
+    <summary type="text">22 free resources. Tags: advanced, binary, binutils, code, conferences, cpp, debugging, decompiler.</summary>
+  </entry>
+  <entry>
     <title>Robotics &amp; Control</title>
     <link href="https://sazardev.github.io/awesome-free-resources/#cat-robotics-control"/>
     <id>https://sazardev.github.io/awesome-free-resources/#cat-robotics-control</id>
@@ -497,6 +525,13 @@
     <id>https://sazardev.github.io/awesome-free-resources/#cat-security</id>
     <category term="Security"/>
     <summary type="text">13 free resources. Tags: api, crypto, dependencies, linux, must-do, must-know, must-read, practice.</summary>
+  </entry>
+  <entry>
+    <title>Security Hats &amp; Teams</title>
+    <link href="https://sazardev.github.io/awesome-free-resources/#cat-security-hats-teams"/>
+    <id>https://sazardev.github.io/awesome-free-resources/#cat-security-hats-teams</id>
+    <category term="Security Hats &amp; Teams"/>
+    <summary type="text">19 free resources. Tags: active-directory, blue-team, bug-bounty, c2, career, certification, code, ctf.</summary>
   </entry>
   <entry>
     <title>Self-taught learning</title>
