@@ -42,10 +42,14 @@ export const GROUPS = [
     'Medicine',
   ]],
   ['Anatomy & Physiotherapy', [
-    'Anatomy', 'Physiotherapy',
+    'Anatomy', 'Physiology', 'Physiotherapy',
   ]],
   ['Nutrition & Health', [
-    'Nutrition', 'Health',
+    'Nutrition', 'Health', 'Sports nutrition',
+  ]],
+  ['Sport, Fitness & Performance', [
+    'Sports science', 'Strength & Conditioning', 'Muscles', 'Tennis',
+    'Sports medicine & Injuries',
   ]],
   ['Papers, Books & Blogs', [
     'Papers & preprints', 'Free textbooks', 'Topic blogs',
