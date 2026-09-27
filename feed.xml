@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title>Awesome Free Resources</title>
-  <subtitle>2395 free and open-source resources across 75 categories</subtitle>
+  <subtitle>2586 free and open-source resources across 81 categories</subtitle>
   <link href="https://sazardev.github.io/awesome-free-resources/"/>
   <link rel="self" href="https://sazardev.github.io/awesome-free-resources/feed.xml"/>
   <link rel="alternate" type="text/html" href="https://sazardev.github.io/awesome-free-resources/"/>
@@ -14,6 +14,13 @@
     <id>https://sazardev.github.io/awesome-free-resources/#cat-ai-ml</id>
     <category term="AI / ML"/>
     <summary type="text">77 free resources. Tags: advanced, agents, ai, api, blog, book, c, code.</summary>
+  </entry>
+  <entry>
+    <title>AI Papers &amp; Reading</title>
+    <link href="https://sazardev.github.io/awesome-free-resources/#cat-ai-papers-reading"/>
+    <id>https://sazardev.github.io/awesome-free-resources/#cat-ai-papers-reading</id>
+    <category term="AI Papers &amp; Reading"/>
+    <summary type="text">36 free resources. Tags: advanced, ai, algorithms, architecture, arxiv, books, concepts, distributed.</summary>
   </entry>
   <entry>
     <title>Anatomy</title>
@@ -93,6 +100,13 @@
     <summary type="text">27 free resources. Tags: advanced, assembly, blog, book, c, clang, code, compilers.</summary>
   </entry>
   <entry>
+    <title>Compute &amp; Accelerators</title>
+    <link href="https://sazardev.github.io/awesome-free-resources/#cat-compute-accelerators"/>
+    <id>https://sazardev.github.io/awesome-free-resources/#cat-compute-accelerators</id>
+    <category term="Compute &amp; Accelerators"/>
+    <summary type="text">6 free resources. Tags: advanced, ai, cuda, gpu, hardware, learning, must-read, must-use.</summary>
+  </entry>
+  <entry>
     <title>Computer Architecture</title>
     <link href="https://sazardev.github.io/awesome-free-resources/#cat-computer-architecture"/>
     <id>https://sazardev.github.io/awesome-free-resources/#cat-computer-architecture</id>
@@ -112,6 +126,13 @@
     <id>https://sazardev.github.io/awesome-free-resources/#cat-data-engineering</id>
     <category term="Data Engineering"/>
     <summary type="text">26 free resources. Tags: blog, books, data, databases, docs, free, internals, must-do.</summary>
+  </entry>
+  <entry>
+    <title>Data Science</title>
+    <link href="https://sazardev.github.io/awesome-free-resources/#cat-data-science"/>
+    <id>https://sazardev.github.io/awesome-free-resources/#cat-data-science</id>
+    <category term="Data Science"/>
+    <summary type="text">53 free resources. Tags: advanced, ai, algorithms, architecture, books, concepts, data, data-structures.</summary>
   </entry>
   <entry>
     <title>Databases</title>
@@ -140,6 +161,13 @@
     <id>https://sazardev.github.io/awesome-free-resources/#cat-device-repair</id>
     <category term="Device Repair"/>
     <summary type="text">13 free resources. Tags: batteries, community, debugging, devices, electronics, free, measurement, must-read.</summary>
+  </entry>
+  <entry>
+    <title>Efficiency &amp; Algorithms</title>
+    <link href="https://sazardev.github.io/awesome-free-resources/#cat-efficiency-algorithms"/>
+    <id>https://sazardev.github.io/awesome-free-resources/#cat-efficiency-algorithms</id>
+    <category term="Efficiency &amp; Algorithms"/>
+    <summary type="text">23 free resources. Tags: advanced, algorithms, concurrency, cpp, go, javascript, languages, learning.</summary>
   </entry>
   <entry>
     <title>Electricity &amp; Power</title>
@@ -275,6 +303,13 @@
     <summary type="text">95 free resources. Tags: advanced, audio, books, bsd, build, c, cli, code.</summary>
   </entry>
   <entry>
+    <title>Low-Level Systems</title>
+    <link href="https://sazardev.github.io/awesome-free-resources/#cat-low-level-systems"/>
+    <id>https://sazardev.github.io/awesome-free-resources/#cat-low-level-systems</id>
+    <category term="Low-Level Systems"/>
+    <summary type="text">50 free resources. Tags: advanced, architecture, assembly, bpf, c, code, compilers, concurrency.</summary>
+  </entry>
+  <entry>
     <title>Mathematics</title>
     <link href="https://sazardev.github.io/awesome-free-resources/#cat-mathematics"/>
     <id>https://sazardev.github.io/awesome-free-resources/#cat-mathematics</id>
@@ -350,6 +385,13 @@
     <id>https://sazardev.github.io/awesome-free-resources/#cat-performance</id>
     <category term="Performance"/>
     <summary type="text">11 free resources. Tags: book, databases, debugging, distributed-systems, ebpf, free, linux, must-read.</summary>
+  </entry>
+  <entry>
+    <title>Performance Engineering</title>
+    <link href="https://sazardev.github.io/awesome-free-resources/#cat-performance-engineering"/>
+    <id>https://sazardev.github.io/awesome-free-resources/#cat-performance-engineering</id>
+    <category term="Performance Engineering"/>
+    <summary type="text">23 free resources. Tags: advanced, benchmarking, books, compute, concurrency, cpp, debugging, design.</summary>
   </entry>
   <entry>
     <title>Physics</title>

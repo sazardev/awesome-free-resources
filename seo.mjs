@@ -197,7 +197,7 @@ if (existsSync(join(here, readmePath))) {
 {
   const SITE = 'https://sazardev.github.io/awesome-free-resources';
   const LAST_UPDATED = '2026-09-26';
-  const BUMP_WHEN_CHANGING = '2395';
+  const BUMP_WHEN_CHANGING = '2586';
 
   if (String(BOOKMARKS.length) !== BUMP_WHEN_CHANGING) {
     console.log(`feed.xml: WARNING update LAST_UPDATED and BUMP_WHEN_CHANGING in seo.mjs (now ${BOOKMARKS.length} links)`);

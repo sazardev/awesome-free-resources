@@ -17,7 +17,7 @@ export const GROUPS = [
     'Formal Methods', 'Mathematics', 'Computer Science',
     'AI / ML', 'Databases', 'Data Engineering',
     'DevOps / Infra', 'Testing', 'Security', 'Performance', 'Web Performance',
-    'Tools & productivity',
+    'Tools & productivity', 'Data Science', 'Efficiency & Algorithms',
     'Go', 'Go frameworks', 'Go blogs',
     'Rust', 'Rust ecosystem',
     'Flutter', 'Android', 'Kotlin',
@@ -56,6 +56,10 @@ export const GROUPS = [
   ]],
   ['Hacking & Pentesting', [
     'Hacking & Pentesting', 'Go Hacking', 'Mobile & Android Hacking',
+  ]],
+  ['AI, Papers & Low-Level Systems', [
+    'AI Papers & Reading', 'Low-Level Systems', 'Performance Engineering',
+    'Compute & Accelerators',
   ]],
   ['Test, Measurement & PCB Design', [
     'Test & Measurement', 'PCB & EDA',
