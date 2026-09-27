@@ -1,6 +1,6 @@
 # Awesome Free Resources
 
-A curated, **link-verified** collection of **2,951 free and open-source resources** for
+A curated, **link-verified** collection of **3,075 free and open-source resources** for
 developers, scientists, engineers, students and self-learners.
 
 Everything here is free to read, free to use, and — in the vast majority of cases —
@@ -44,7 +44,7 @@ Most "awesome" lists are unverified. This one is not:
 - **Every URL was checked over HTTP** with retries. Broken links were either repaired
   (often to a moved page) or removed outright.
 - **Duplicates were removed** programmatically by title *and* URL.
-- The result: **2,951 links across 98 categories, from 1,621 distinct domains.**
+- The result: **3,075 links across 98 categories, from 1,672 distinct domains.**
 
 That work is reproducible and re-runnable — see [How it stays up to date](#how-it-stays-up-to-date).
 
@@ -66,6 +66,7 @@ Three things make that trustworthy rather than aspirational:
 <!-- AUTO-GENERATED: category table. Regenerate with `node seo.mjs`. -->
 | Category | Links |
 |---|---|
+| DevOps / Infra | 119 |
 | Linux & Unix | 95 |
 | AI / ML | 77 |
 | Computer Science | 73 |
@@ -87,7 +88,6 @@ Three things make that trustworthy rather than aspirational:
 | Rust ecosystem | 41 |
 | Hacking & Pentesting | 40 |
 | Electronics | 39 |
-| DevOps / Infra | 38 |
 | English Grammar | 38 |
 | AI Papers & Reading | 36 |
 | Radio & Amateur | 36 |
@@ -107,6 +107,7 @@ Three things make that trustworthy rather than aspirational:
 | Kotlin | 30 |
 | Nutrition | 30 |
 | Quantum & Atomic | 30 |
+| Research data | 30 |
 | Astronomy | 29 |
 | RF & Microwave | 28 |
 | Compilers | 27 |
@@ -130,8 +131,11 @@ Three things make that trustworthy rather than aspirational:
 | CS fundamentals | 22 |
 | Embedded & Devices | 22 |
 | Reverse Engineering | 22 |
+| Formal Methods | 21 |
 | News & aggregators | 21 |
+| Security | 21 |
 | Technical writing | 21 |
+| Testing | 21 |
 | Architecture Decisions | 20 |
 | Biology | 20 |
 | Go Hacking | 20 |
@@ -153,16 +157,12 @@ Three things make that trustworthy rather than aspirational:
 | English Linguistics Research | 15 |
 | Satellites & Space | 15 |
 | Go blogs | 14 |
-| Research data | 14 |
 | Device Repair | 13 |
-| Security | 13 |
-| Testing | 13 |
 | Web Performance | 13 |
 | PCB & EDA | 12 |
 | Self-taught learning | 12 |
 | Test & Measurement | 12 |
 | Performance | 11 |
-| Formal Methods | 10 |
 | Compute & Accelerators | 6 |
 <!-- /AUTO-GENERATED -->
 
@@ -424,10 +424,22 @@ node -e 'const B=new Function(require("fs").readFileSync("all.js","utf8")+";retu
 `all.js` and runs straight from the filesystem or GitHub Pages.
 
 - **Search** by title, description, topic, tag or domain. Multi-word = AND.
+- **Browse the catalogue** with the **Browse** button: all 22 areas, and under
+  each one every topic with its size, as a scannable grid. Type in the filter box
+  to narrow the topics, then click one to jump straight to it. It is a table of
+  contents, so you can pick a subject before reading a single link.
 - **Filter by tag** with a `#` prefix: `#must-read`, `#free`, `#books`,
   `#rust #must-do`. Click any tag chip to apply it.
+- **Filter by topic** from the catalogue, or by area from the Filters menu. Both
+  show up as removable pills next to the result count.
+- **Sort** grouped, A–Z or Z–A.
 - Tags marked `must-*` are the highest-signal entries in their category.
-- **Keyboard:** <kbd>/</kbd> to search, <kbd>Esc</kbd> to clear.
+- **Deep links work.** `?q=kubernetes` runs a search, `?q=%23devops` applies a
+  tag, and `#cat-devops-infra` filters to that topic. Every category and tag URL
+  in the sitemap is one of these, so a link from a search engine lands where it
+  says it does.
+- **Keyboard:** <kbd>/</kbd> to search, <kbd>Esc</kbd> to clear or close,
+  <kbd>↑↓</kbd> to move, <kbd>↵</kbd> to open the first result.
 - **Light/dark theme**, remembered in `localStorage`.
 
 ## Installing the bookmarks
@@ -436,7 +448,7 @@ node -e 'const B=new Function(require("fs").readFileSync("all.js","utf8")+";retu
 
 Download `chromium-bookmarks.html`, then in Chromium/Chrome press
 <kbd>Ctrl/⌘ Shift</kbd>+<kbd>O</kbd> → *Import and export* → *Import bookmarks*,
-and select the file. You get all 2,951 links in 22 grouped folders.
+and select the file. You get all 3,075 links in 22 grouped folders.
 
 ### As a browsable page
 
@@ -564,8 +576,12 @@ Mark the highest-signal entries with a `must-read` / `must-do` / `must-use` tag.
 - **The list rots.** The `data-*.js` files reflect links verified on the dates in
   the commit history. The weekly workflow re-checks every URL, but it can only
   report what it finds — spot-checking before you rely on a link is still worth it.
-- **41% of entries carry a `must-*` tag**, which is too many for the tag to be a
-  useful filter. It is being trimmed; treat it as weak signal for now.
+- **44% of entries carry a `must-*` tag** (1,380 of 3,075), which is too many for
+  the tag to be a useful filter — there are now 12 distinct `must-*` tags, and
+  `must-read` alone covers 654 entries. Treat it as weak signal for now. The fix
+  is pruning, not more tags: new entries should reach for a specific
+  `must-read`-equivalent only when they are genuinely the best thing in the
+  category, and the older weak `must-*` uses are candidates for removal.
 
 ## License
 

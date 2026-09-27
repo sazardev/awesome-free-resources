@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title>Awesome Free Resources</title>
-  <subtitle>2951 free and open-source resources across 98 categories</subtitle>
+  <subtitle>3075 free and open-source resources across 98 categories</subtitle>
   <link href="https://sazardev.github.io/awesome-free-resources/"/>
   <link rel="self" href="https://sazardev.github.io/awesome-free-resources/feed.xml"/>
   <link rel="alternate" type="text/html" href="https://sazardev.github.io/awesome-free-resources/"/>
   <id>https://sazardev.github.io/awesome-free-resources/</id>
-  <updated>2026-09-26T00:00:00Z</updated>
+  <updated>2026-09-27T00:00:00Z</updated>
   <generator>seo.mjs</generator>
   <entry>
     <title>AI / ML</title>
@@ -160,7 +160,7 @@
     <link href="https://sazardev.github.io/awesome-free-resources/#cat-devops-infra"/>
     <id>https://sazardev.github.io/awesome-free-resources/#cat-devops-infra</id>
     <category term="DevOps / Infra"/>
-    <summary type="text">38 free resources. Tags: advanced, automation, blog, cd, ci, cicd, cli, cloud-native.</summary>
+    <summary type="text">119 free resources. Tags: advanced, alerting, analytics, automation, blog, cache, case-studies, cd.</summary>
   </entry>
   <entry>
     <title>Device Repair</title>
@@ -265,7 +265,7 @@
     <link href="https://sazardev.github.io/awesome-free-resources/#cat-formal-methods"/>
     <id>https://sazardev.github.io/awesome-free-resources/#cat-formal-methods</id>
     <category term="Formal Methods"/>
-    <summary type="text">10 free resources. Tags: c, formal, free, history, must-know, must-try, open-source, reference.</summary>
+    <summary type="text">21 free resources. Tags: advanced, c, concurrency, formal, formal-methods, free, history, learning.</summary>
   </entry>
   <entry>
     <title>Framework docs</title>
@@ -531,7 +531,7 @@
     <link href="https://sazardev.github.io/awesome-free-resources/#cat-research-data"/>
     <id>https://sazardev.github.io/awesome-free-resources/#cat-research-data</id>
     <category term="Research data"/>
-    <summary type="text">14 free resources. Tags: biology, climate, data, free, genetics, geography, health, must-know.</summary>
+    <summary type="text">30 free resources. Tags: biology, climate, data, databases, distributed, formats, free, genetics.</summary>
   </entry>
   <entry>
     <title>Reverse Engineering</title>
@@ -594,7 +594,7 @@
     <link href="https://sazardev.github.io/awesome-free-resources/#cat-security"/>
     <id>https://sazardev.github.io/awesome-free-resources/#cat-security</id>
     <category term="Security"/>
-    <summary type="text">13 free resources. Tags: api, crypto, dependencies, linux, must-do, must-know, must-read, practice.</summary>
+    <summary type="text">21 free resources. Tags: api, architecture, crypto, dependencies, learning, linux, must-do, must-know.</summary>
   </entry>
   <entry>
     <title>Security Hats &amp; Teams</title>
@@ -671,7 +671,7 @@
     <link href="https://sazardev.github.io/awesome-free-resources/#cat-testing"/>
     <id>https://sazardev.github.io/awesome-free-resources/#cat-testing</id>
     <category term="Testing"/>
-    <summary type="text">13 free resources. Tags: blog, fuzzing, go, java, microservices, must-read, mutation, open-source.</summary>
+    <summary type="text">21 free resources. Tags: blog, docs, e2e, free, fuzzing, go, java, javascript.</summary>
   </entry>
   <entry>
     <title>Tools &amp; productivity</title>
