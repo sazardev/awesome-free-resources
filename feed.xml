@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title>Awesome Free Resources</title>
-  <subtitle>2709 free and open-source resources across 86 categories</subtitle>
+  <subtitle>2873 free and open-source resources across 94 categories</subtitle>
   <link href="https://sazardev.github.io/awesome-free-resources/"/>
   <link rel="self" href="https://sazardev.github.io/awesome-free-resources/feed.xml"/>
   <link rel="alternate" type="text/html" href="https://sazardev.github.io/awesome-free-resources/"/>
@@ -189,6 +189,62 @@
     <id>https://sazardev.github.io/awesome-free-resources/#cat-embedded-devices</id>
     <category term="Embedded &amp; Devices"/>
     <summary type="text">22 free resources. Tags: beginner, community, courses, docs, embedded, free, language, magazine.</summary>
+  </entry>
+  <entry>
+    <title>English Dictionaries &amp; Corpora</title>
+    <link href="https://sazardev.github.io/awesome-free-resources/#cat-english-dictionaries-corpora"/>
+    <id>https://sazardev.github.io/awesome-free-resources/#cat-english-dictionaries-corpora</id>
+    <category term="English Dictionaries &amp; Corpora"/>
+    <summary type="text">15 free resources. Tags: corpus, data, dictionary, english, etymology, free, history, learning.</summary>
+  </entry>
+  <entry>
+    <title>English Exercises &amp; Practice</title>
+    <link href="https://sazardev.github.io/awesome-free-resources/#cat-english-exercises-practice"/>
+    <id>https://sazardev.github.io/awesome-free-resources/#cat-english-exercises-practice</id>
+    <category term="English Exercises &amp; Practice"/>
+    <summary type="text">16 free resources. Tags: apps, community, courses, english, exercises, feedback, free, grammar.</summary>
+  </entry>
+  <entry>
+    <title>English Grammar</title>
+    <link href="https://sazardev.github.io/awesome-free-resources/#cat-english-grammar"/>
+    <id>https://sazardev.github.io/awesome-free-resources/#cat-english-grammar</id>
+    <category term="English Grammar"/>
+    <summary type="text">38 free resources. Tags: advanced, audio, english, exercises, free, grammar, idiom, learning.</summary>
+  </entry>
+  <entry>
+    <title>English Linguistics Research</title>
+    <link href="https://sazardev.github.io/awesome-free-resources/#cat-english-linguistics-research"/>
+    <id>https://sazardev.github.io/awesome-free-resources/#cat-english-linguistics-research</id>
+    <category term="English Linguistics Research"/>
+    <summary type="text">15 free resources. Tags: advanced, fun, history, learning, linguistics, must-read, must-try, reference.</summary>
+  </entry>
+  <entry>
+    <title>English Pronunciation &amp; Listening</title>
+    <link href="https://sazardev.github.io/awesome-free-resources/#cat-english-pronunciation-listening"/>
+    <id>https://sazardev.github.io/awesome-free-resources/#cat-english-pronunciation-listening</id>
+    <category term="English Pronunciation &amp; Listening"/>
+    <summary type="text">19 free resources. Tags: advanced, business, courses, english, exercises, free, ipa, linguistics.</summary>
+  </entry>
+  <entry>
+    <title>English Vocabulary &amp; Phrases</title>
+    <link href="https://sazardev.github.io/awesome-free-resources/#cat-english-vocabulary-phrases"/>
+    <id>https://sazardev.github.io/awesome-free-resources/#cat-english-vocabulary-phrases</id>
+    <category term="English Vocabulary &amp; Phrases"/>
+    <summary type="text">25 free resources. Tags: advanced, audio, data, dictionary, english, idiom, learning, linguistics.</summary>
+  </entry>
+  <entry>
+    <title>English Writing &amp; Composition</title>
+    <link href="https://sazardev.github.io/awesome-free-resources/#cat-english-writing-composition"/>
+    <id>https://sazardev.github.io/awesome-free-resources/#cat-english-writing-composition</id>
+    <category term="English Writing &amp; Composition"/>
+    <summary type="text">19 free resources. Tags: advanced, blog, data, english, free, grammar, guides, linguistics.</summary>
+  </entry>
+  <entry>
+    <title>English for Academic Purposes</title>
+    <link href="https://sazardev.github.io/awesome-free-resources/#cat-english-for-academic-purposes"/>
+    <id>https://sazardev.github.io/awesome-free-resources/#cat-english-for-academic-purposes</id>
+    <category term="English for Academic Purposes"/>
+    <summary type="text">17 free resources. Tags: academic, courses, eap, english, free, learning, linguistics, materials.</summary>
   </entry>
   <entry>
     <title>Flutter</title>

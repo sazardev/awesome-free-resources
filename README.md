@@ -1,6 +1,6 @@
 # Awesome Free Resources
 
-A curated, **link-verified** collection of **2,709 free and open-source resources** for
+A curated, **link-verified** collection of **2,873 free and open-source resources** for
 developers, scientists, engineers, students and self-learners.
 
 Everything here is free to read, free to use, and — in the vast majority of cases —
@@ -25,7 +25,7 @@ Search, filter by tag or category, no account needed. Works offline once loaded.
 - *Safari* — File → Import → Bookmarks HTML File
 - *Android Chrome* — ⋮ → Bookmarks → ⋮ → Import from file
 
-They land in 19 top-level folders. Existing bookmarks are never touched if you use
+They land in 20 top-level folders. Existing bookmarks are never touched if you use
 the import; the folder names are plain ASCII, no emoji.
 
 **Want to use the data?** [`all.js`](all.js) is the whole collection as JSON, one
@@ -44,7 +44,7 @@ Most "awesome" lists are unverified. This one is not:
 - **Every URL was checked over HTTP** with retries. Broken links were either repaired
   (often to a moved page) or removed outright.
 - **Duplicates were removed** programmatically by title *and* URL.
-- The result: **2,709 links across 86 categories, from 1,549 distinct domains.**
+- The result: **2,873 links across 94 categories, from 1,605 distinct domains.**
 
 That work is reproducible and re-runnable — see [How it stays up to date](#how-it-stays-up-to-date).
 
@@ -88,6 +88,7 @@ Three things make that trustworthy rather than aspirational:
 | Hacking & Pentesting | 40 |
 | Electronics | 39 |
 | DevOps / Infra | 38 |
+| English Grammar | 38 |
 | AI Papers & Reading | 36 |
 | Radio & Amateur | 36 |
 | Chemistry | 35 |
@@ -115,6 +116,7 @@ Three things make that trustworthy rather than aspirational:
 | Rust | 26 |
 | Anatomy | 25 |
 | Architecture | 25 |
+| English Vocabulary & Phrases | 25 |
 | Software Engineering | 25 |
 | Electricity & Power | 24 |
 | Go | 24 |
@@ -133,12 +135,18 @@ Three things make that trustworthy rather than aspirational:
 | Go Hacking | 20 |
 | Mobile & Android Hacking | 20 |
 | Particle physics | 20 |
+| English Pronunciation & Listening | 19 |
+| English Writing & Composition | 19 |
 | Health | 19 |
 | Physiotherapy | 19 |
 | Security Hats & Teams | 19 |
 | Robotics & Control | 18 |
+| English for Academic Purposes | 17 |
 | Mathematics | 17 |
+| English Exercises & Practice | 16 |
 | Keyboard Switches & Parts | 16 |
+| English Dictionaries & Corpora | 15 |
+| English Linguistics Research | 15 |
 | Satellites & Space | 15 |
 | Go blogs | 14 |
 | Research data | 14 |
@@ -424,7 +432,7 @@ node -e 'const B=new Function(require("fs").readFileSync("all.js","utf8")+";retu
 
 Download `chromium-bookmarks.html`, then in Chromium/Chrome press
 <kbd>Ctrl/⌘ Shift</kbd>+<kbd>O</kbd> → *Import and export* → *Import bookmarks*,
-and select the file. You get all 2,709 links in 19 grouped folders.
+and select the file. You get all 2,873 links in 20 grouped folders.
 
 ### As a browsable page
 
@@ -675,3 +683,63 @@ landing: `triton-passwords/triton` (it is `JonathanSalwan/Triton`),
 (`infosecn1nja/Red-Teaming-Toolkit`) and `practicalbinaryanalysis`, an
 organisation that does not exist. Adaptix and the No Starch page for *Practical
 Reverse Engineering* were dropped entirely rather than guessed at.
+
+## Learning English
+
+Eight categories, 164 new links, arranged from the practical to the theoretical.
+
+| Category | Links | What is in it |
+|---|---|---|
+| `English Grammar` | 38 | tense, aspect, mood, clauses, articles, word order |
+| `English Vocabulary & Phrases` | 25 | dictionaries, phrasal verbs, idioms, frequency data |
+| `English Pronunciation & Listening` | 19 | the IPA, stress, intonation, graded listening |
+| `English Writing & Composition` | 19 | argument, cohesion, connotation, pragmatics |
+| `English Exercises & Practice` | 16 | drills that use retrieval rather than rereading |
+| `English for Academic Purposes` | 17 | IELTS, TOEFL, PTE, EAP standards |
+| `English Dictionaries & Corpora` | 15 | OED, downloadable corpora, etymology |
+| `English Linguistics Research` | 15 | the theories the teaching methods come from |
+
+**The order of study that actually works.** Grammar first, but from Cambridge's
+grammar reference and Barry's English Grammar Usage Lab rather than a rule list.
+Vocabulary alongside it, from `Oxford Learner's` and `Longman` — both give you
+audio, which matters more than learners expect. Pronunciation from the IPA
+alphabet itself, so dictionary transcriptions stop being mysterious, then minimal
+pairs and stress.
+
+**Three things that are more load-bearing than they look.** The `testing effect`
+(retrieving beats rereading, one of the most replicated findings in learning
+science), `spaced repetition` (the maths is in the article), and `Zipf's law`
+(why the second most common English word appears about half as often as the first
+— the curve behind any frequency list). Together they are a better argument for
+how to study than any method debate.
+
+**Data, since you asked for it.** `english-corpora.org` and `corpus.byu.edu`
+give you large freely downloadable and searchable text corpora. That is where
+frequency lists come from, and it means the vocabulary claims in most English
+courses are checkable rather than folklore. `Grimm's law` explains why English
+vocabulary looks the way it does, and `Grimm` is a fifteen-minute read that pays
+back for years.
+
+**Official and exam material.** IELTS, TOEFL, PTE and Cambridge B2/C1 with free
+sample papers, plus the TESOL and NCTM standards. If you need a certificate, this
+is the actual specification rather than a list of websites.
+
+**The research underneath.** `Falsification` is in there on purpose — it explains
+why you cannot verify your own argument, which is the most useful thing to know
+before writing anything persuasive. Then `politeness theory` and the `cooperative
+principle`, which are the gap between English as written and English as used.
+
+### What I could not verify, and therefore left out
+
+The British Council and its LearnEnglish site, Macmillan Dictionary,
+`learneng.com`, `voicereader.com` and a few university writing centres do not
+resolve from this network. They are obviously real, but this list claims its
+links were checked, so they are absent rather than assumed. `VoiceReader` was
+written in and then removed when it turned out to be the same.
+
+Eight entries were also removed by dedupe because I had used the same URL in two
+categories — `grammar.org` and `Breaking News English` each appeared under both
+Grammar and Exercises. That was my sloppiness, not a tooling problem: a URL can
+only sensibly live in one place. `English Exercises & Practice` was then filled
+out with genuinely distinct material, `UsingEnglish` and `Perfect English
+Grammar` being the standouts.
