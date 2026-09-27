@@ -403,6 +403,9 @@
     font-size: 13.5px; width: 100%; font-family: inherit;
   }
   .cat-find input::placeholder { color: var(--fg-3); }
+  /* Same reason as the main search field: the native clear affordance is a
+     blue glyph that breaks the monochrome surface. */
+  .cat-find input::-webkit-search-cancel-button { display: none; }
 
   .cat-body {
     overflow-y: auto; -webkit-overflow-scrolling: touch;
