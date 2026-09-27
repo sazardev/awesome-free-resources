@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title>Awesome Free Resources</title>
-  <subtitle>3075 free and open-source resources across 98 categories</subtitle>
+  <subtitle>3366 free and open-source resources across 102 categories</subtitle>
   <link href="https://sazardev.github.io/awesome-free-resources/"/>
   <link rel="self" href="https://sazardev.github.io/awesome-free-resources/feed.xml"/>
   <link rel="alternate" type="text/html" href="https://sazardev.github.io/awesome-free-resources/"/>
@@ -338,6 +338,13 @@
     <summary type="text">19 free resources. Tags: courses, data, evidence, exercise, free, guidance, health, journalism.</summary>
   </entry>
   <entry>
+    <title>Hydrogen</title>
+    <link href="https://sazardev.github.io/awesome-free-resources/#cat-hydrogen"/>
+    <id>https://sazardev.github.io/awesome-free-resources/#cat-hydrogen</id>
+    <category term="Hydrogen"/>
+    <summary type="text">40 free resources. Tags: chemistry, cryogenics, energy, engineering, hydrogen, industrial, materials, must-read.</summary>
+  </entry>
+  <entry>
     <title>Influential tech</title>
     <link href="https://sazardev.github.io/awesome-free-resources/#cat-influential-tech"/>
     <id>https://sazardev.github.io/awesome-free-resources/#cat-influential-tech</id>
@@ -434,6 +441,13 @@
     <id>https://sazardev.github.io/awesome-free-resources/#cat-news-aggregators</id>
     <category term="News &amp; aggregators"/>
     <summary type="text">21 free resources. Tags: aggregator, android, blog, community, databases, discovery, flutter, go.</summary>
+  </entry>
+  <entry>
+    <title>Nuclear physics</title>
+    <link href="https://sazardev.github.io/awesome-free-resources/#cat-nuclear-physics"/>
+    <id>https://sazardev.github.io/awesome-free-resources/#cat-nuclear-physics</id>
+    <category term="Nuclear physics"/>
+    <summary type="text">77 free resources. Tags: advanced, applications, astrophysics, case-study, data, docs, energy, engineering.</summary>
   </entry>
   <entry>
     <title>Nutrition</title>
@@ -674,6 +688,13 @@
     <summary type="text">21 free resources. Tags: blog, docs, e2e, free, fuzzing, go, java, javascript.</summary>
   </entry>
   <entry>
+    <title>Thermodynamics &amp; Heat</title>
+    <link href="https://sazardev.github.io/awesome-free-resources/#cat-thermodynamics-heat"/>
+    <id>https://sazardev.github.io/awesome-free-resources/#cat-thermodynamics-heat</id>
+    <category term="Thermodynamics &amp; Heat"/>
+    <summary type="text">106 free resources. Tags: advanced, book, chemistry, constants, course, courses, cryogenics, energy.</summary>
+  </entry>
+  <entry>
     <title>Tools &amp; productivity</title>
     <link href="https://sazardev.github.io/awesome-free-resources/#cat-tools-productivity"/>
     <id>https://sazardev.github.io/awesome-free-resources/#cat-tools-productivity</id>
@@ -693,5 +714,12 @@
     <id>https://sazardev.github.io/awesome-free-resources/#cat-web-performance</id>
     <category term="Web Performance"/>
     <summary type="text">13 free resources. Tags: courses, data, docs, free, http, must-read, must-use, must-watch.</summary>
+  </entry>
+  <entry>
+    <title>World War I &amp; II</title>
+    <link href="https://sazardev.github.io/awesome-free-resources/#cat-world-war-i-ii"/>
+    <id>https://sazardev.github.io/awesome-free-resources/#cat-world-war-i-ii</id>
+    <category term="World War I &amp; II"/>
+    <summary type="text">68 free resources. Tags: archive, biography, books, cold-war, computing, courses, data, free.</summary>
   </entry>
 </feed>
