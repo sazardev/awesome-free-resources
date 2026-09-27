@@ -54,6 +54,12 @@ export const GROUPS = [
   ['Telecommunications & Networking', [
     'Telecommunications', 'Networking',
   ]],
+  ['English: Grammar, Vocabulary & Writing', [
+    'English Grammar', 'English Vocabulary & Phrases',
+    'English Pronunciation & Listening', 'English Writing & Composition',
+    'English Exercises & Practice', 'English for Academic Purposes',
+    'English Dictionaries & Corpora', 'English Linguistics Research',
+  ]],
   ['Hacking & Pentesting', [
     'Hacking & Pentesting', 'Go Hacking', 'Mobile & Android Hacking',
     'Security Hats & Teams',
