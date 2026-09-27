@@ -64,4 +64,22 @@ for (const [file, text] of docs) {
   }
 }
 
+// The slug rule must exist in exactly one place. index.html cannot import it at
+// runtime, so seo.mjs injects it from slug.mjs into a marked slot; if someone
+// pastes a second copy in by hand the sitemap and the rendered anchors drift
+// apart and search engines index anchors that do not exist.
+{
+  const src = readFileSync('index.html', 'utf8');
+  const occurrences = (src.match(/\[\^a-z0-9\]/g) || []).length;
+  if (occurrences > 1) {
+    problems++;
+    console.log(`  FALSA  index.html: ${occurrences} copies of the slug regex — it must be injected from slug.mjs by seo.mjs, never hand-written`);
+  } else if (occurrences === 0) {
+    problems++;
+    console.log('  FALSA  index.html: no slug rule found — run node seo.mjs');
+  } else {
+    console.log(`  ok     index.html: ${occurrences} copy of the slug rule (injected)`);
+  }
+}
+
 console.log(`\n=== AFIRMACIONES FALSAS: ${problems} ===`);

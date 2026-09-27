@@ -201,6 +201,14 @@
   const B = BOOKMARKS, CATS = CATEGORIES, TAG_LIST = TAGS, GROUPS_ = GROUPS;
   document.title = 'Dev Bookmarks — ' + B.length + ' free & open-source resources';
 
+  // Slug rule, generated from slug.mjs by seo.mjs. Do not edit by hand: the
+  // sitemap and the rendered anchors must agree, or search engines index
+  // anchors that do not exist.
+  const slug = (s) =>
+    String(s).toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '');
+  const catAnchor = (c) => 'cat-' + slug(c);
+  const groupAnchor = (g) => 'grp-' + slug(g);
+
   // Top-level grouping comes from all.js, which build.mjs derives from
   // groups.mjs. One source of truth: a category cannot be added to the
   // data and then be missing here.
@@ -277,7 +285,7 @@
 
       const wrap = document.createElement('section');
       wrap.className = 'grp';
-      wrap.id = 'grp-' + group.replace(/[^a-z0-9]+/gi, '-').toLowerCase();
+      wrap.id = groupAnchor(group);
       const n = built.reduce((a, [, r]) => a + r.length, 0);
       const h1 = document.createElement('h1');
       h1.className = 'grp-title';
@@ -288,7 +296,7 @@
       for (const [cat, rows] of built) {
         const sec = document.createElement('section');
         sec.className = 'cat';
-        sec.id = 'cat-' + cat.replace(/[^a-z0-9]+/gi, '-').toLowerCase();
+        sec.id = catAnchor(cat);
         const h = document.createElement('h2');
         h.innerHTML = '<span class="n">' + rows.length + '</span> ' + esc(cat);
         sec.appendChild(h);
@@ -339,7 +347,7 @@
   render();
   if (location.hash.length > 1) {
     const t2 = CATS.find(c => c.toLowerCase() === decodeURIComponent(location.hash.slice(1)).toLowerCase());
-    if (t2) setTimeout(() => document.getElementById('cat-' + t2.replace(/[^a-z0-9]+/gi, '-').toLowerCase())
+    if (t2) setTimeout(() => document.getElementById(catAnchor(t2))
       ?.scrollIntoView({ block: 'start' }), 60);
   }
 })();
