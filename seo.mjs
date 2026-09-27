@@ -268,3 +268,53 @@ ${entries.join('\n')}
     console.log('index.html: slug helpers already in place');
   }
 }
+
+// ---------------------------------------------------------------- static counts
+// The visible counts on the page were "0" in the served HTML and only filled in
+// by JavaScript at runtime. That means a crawler that does not execute JS — and
+// a human in the moment before it does — sees a page claiming zero categories
+// and zero domains. Hardcoding the real numbers here costs nothing, makes the
+// page degrade honestly, and lets the page state its own size to any reader.
+{
+  const before = read('index.html');
+  const n = BOOKMARKS.length.toLocaleString('en-US');
+  const cats = CATEGORIES.length;
+  const doms = new Set(BOOKMARKS.map((b) => new URL(b.u).hostname)).size;
+  // Regex, not literal: a literal match against the previous run's number
+  // silently stops matching, so the counts would freeze at whatever they were
+  // when this was first written. Same failure mode as a hand-maintained number.
+  const after = before
+    .replace(/<h1>Dev Bookmarks <span id="count">[^<]*<\/span><\/h1>/,
+             `<h1>Dev Bookmarks <span id="count">\u00b7 ${n} links</span></h1>`)
+    .replace(/(<b id="shown">)[\d,]+(<\/b> shown)/, `$1${n}$2`)
+    .replace(/(<b id="cats">)[\d,]+(<\/b> categories)/, `$1${cats}$2`)
+    .replace(/(<b id="doms">)[\d,]+(<\/b> domains)/, `$1${doms}$2`);
+  if (after !== before) {
+    write('index.html', after);
+    console.log(`index.html: static counts set to ${n} links, ${cats} categories, ${doms} domains`);
+  } else {
+    console.log(`index.html: static counts already ${n} / ${cats} / ${doms}`);
+  }
+}
+
+// ---------------------------------------------------------------- JSON-LD item list
+// The ItemList is what turns 62 category headings into something a crawler can
+// read as structured entries rather than prose. It is generated here because the
+// categories live in all.js and would otherwise be typed out twice.
+{
+  const SITE = 'https://sazardev.github.io/awesome-free-resources/';
+  const before = read('index.html');
+  const items = CATEGORIES.map((c) =>
+    `        { "@type": "ListItem", "position": 1, "name": ${JSON.stringify(c)}, "url": ${JSON.stringify(SITE + '#' + SLUG(c))} }`
+      .replace('"position": 1', `"position": ${CATEGORIES.indexOf(c) + 1}`)
+  );
+  const after = before
+    .replace('"numberOfItems": "<!--CATEGORIES-->"', `"numberOfItems": ${CATEGORIES.length}`)
+    .replace('"itemListElement": "<!--ITEMLIST-->"', `\n      "itemListElement": [\n${items.join(',\n')}\n      ]`);
+  if (after !== before) {
+    write('index.html', after);
+    console.log(`index.html: JSON-LD ItemList with ${CATEGORIES.length} categories`);
+  } else {
+    console.log(`index.html: JSON-LD ItemList already has ${CATEGORIES.length} categories`);
+  }
+}

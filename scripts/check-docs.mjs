@@ -82,4 +82,25 @@ for (const [file, text] of docs) {
   }
 }
 
+// The counts in the static HTML must match the data. They are baked in at build
+// time so a crawler that does not execute JavaScript still sees the real size of
+// the collection, which means they can also go stale if the build is skipped.
+{
+  const src = readFileSync('index.html', 'utf8');
+  const n = B.length.toLocaleString('en-US');
+  const want = {
+    'link count in the h1': new RegExp(`id="count">· ${n} links`),
+    'shown count': new RegExp(`id="shown">${n}</`),
+    'category count': new RegExp(`id="cats">${CATEGORIES.length}</`),
+    'domain count': new RegExp(`id="doms">${real.dominios}</`),
+  };
+  for (const [label, re] of Object.entries(want)) {
+    if (!re.test(src)) {
+      problems++;
+      console.log(`  FALSA  index.html: ${label} is stale — run node seo.mjs`);
+    }
+  }
+  if (!problems) console.log('  ok     index.html: static counts match the data');
+}
+
 console.log(`\n=== AFIRMACIONES FALSAS: ${problems} ===`);
