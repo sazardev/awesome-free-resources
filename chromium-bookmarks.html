@@ -1031,6 +1031,40 @@
                 <DT><A HREF="https://developer.nvidia.com/blog/" ADD_DATE="0">NVIDIA developer blog</A><DD>Deep technical posts on GPU architecture, optimisation and numerical computing.
                 <DT><A HREF="https://www.opencompute.org/" ADD_DATE="0">Open Compute Project</A><DD>Open hardware designs for servers, racks and AI accelerators. Real schematics and bills of materials.
             </DL><p>
+            <DT><H3 ADD_DATE="0" LAST_MODIFIED="0">LLMs &amp; Models</H3>
+            <DL><p>
+                <DT><A HREF="https://github.com/casper-hansen/AutoAWQ" ADD_DATE="0">AutoAWQ</A><DD>Activation-aware weight quantisation, which needs no calibration data and often beats GPTQ.
+                <DT><A HREF="https://github.com/AutoGPTQ/AutoGPTQ" ADD_DATE="0">AutoGPTQ</A><DD>A usable GPTQ implementation with a kernel for fast batched inference on quantised weights.
+                <DT><A HREF="https://github.com/axolotl-ai-cloud/axolotl" ADD_DATE="0">Axolotl</A><DD>A config file for fine-tuning. Takes the YAML boilerplate out of getting a LoRA run going.
+                <DT><A HREF="https://github.com/bitsandbytes-foundation/bitsandbytes" ADD_DATE="0">bitsandbytes</A><DD>8-bit optimisers and 4-bit quantisation, plus the LLM.int8() inference path. Quietly essential for training large models.
+                <DT><A HREF="https://github.com/deepspeedai/DeepSpeed" ADD_DATE="0">DeepSpeed</A><DD>ZeRO, offload and pipeline parallelism. What makes training models far larger than one GPU possible.
+                <DT><A HREF="https://github.com/turboderp-org/exllamav2" ADD_DATE="0">ExLlamaV2</A><DD>Very fast local inference over EXL2 quantised models. Often the quickest option on consumer GPUs.
+                <DT><A HREF="https://github.com/lm-sys/FastChat" ADD_DATE="0">FastChat</A><DD>The training and evaluation platform behind the LMSYS Chatbot Arena leaderboard.
+                <DT><A HREF="https://github.com/IST-DASLab/gptq" ADD_DATE="0">GPTQ</A><DD>Code for the GPTQ paper: 3- and 4-bit post-training quantisation with very little accuracy loss.
+                <DT><A HREF="https://github.com/huggingface/text-generation-inference" ADD_DATE="0">Hugging Face TGI</A><DD>Hugging Face's production serving toolkit, with token streaming and tensor parallelism.
+                <DT><A HREF="https://www.kaggle.com/" ADD_DATE="0">Kaggle</A><DD>Datasets, notebooks and competitions. Free, and still the best source of tabular data with a public baseline.
+                <DT><A HREF="https://github.com/KoboldAI/KoboldAI-Client" ADD_DATE="0">KoboldAI client</A><DD>A long-running, open-source front end for local and remote models, with a strong community.
+                <DT><A HREF="https://github.com/BerriAI/litellm" ADD_DATE="0">LiteLLM</A><DD>One interface over every model provider, with a proxy, fallbacks and cost accounting. Solves a real problem.
+                <DT><A HREF="https://github.com/hiyouga/LLaMA-Factory" ADD_DATE="0">LLaMA-Factory</A><DD>A unified interface for fine-tuning over a hundred model families, with a web UI. The most complete toolkit here.
+                <DT><A HREF="https://github.com/abetlen/llama-cpp-python" ADD_DATE="0">llama.cpp Python bindings</A><DD>Python bindings for llama.cpp, with a server mode. The simplest way to call a local model from Python.
+                <DT><A HREF="https://github.com/InternLM/lmdeploy" ADD_DATE="0">LMDeploy</A><DD>Compression and deployment from the InternLM team, with a PyTorch-oriented API.
+                <DT><A HREF="https://github.com/mlc-ai/mlc-llm" ADD_DATE="0">MLC LLM</A><DD>Universal LLM deployment to phone, browser and TV, compiled with Apache TVM. Remarkable footprint work.
+                <DT><A HREF="https://github.com/ml-explore/mlx" ADD_DATE="0">MLX</A><DD>Apple's array framework for silicon. The only framework where a NumPy-like API maps cleanly onto the hardware.
+                <DT><A HREF="https://github.com/modelscope/ms-swift" ADD_DATE="0">MS-Swift</A><DD>ModelScope's fine-tuning and deployment toolkit, with strong multimodal support.
+                <DT><A HREF="https://github.com/ollama/ollama" ADD_DATE="0">Ollama</A><DD>Local models in one command, with a clean model library. The lowest friction way to run an LLM yourself.
+                <DT><A HREF="https://github.com/microsoft/onnxruntime" ADD_DATE="0">ONNX Runtime</A><DD>Cross-platform inference for ONNX models. The practical way to ship a model into a C++ or mobile app.
+                <DT><A HREF="https://huggingface.co/spaces/open-llm-leaderboard/open_llm_leaderboard" ADD_DATE="0">Open LLM Leaderboard</A><DD>Standardised evaluation across open models. Read the version column: the benchmarks are v2 for a reason.
+                <DT><A HREF="https://github.com/huggingface/peft" ADD_DATE="0">PEFT — parameter-efficient fine-tuning</A><DD>LoRA, adapters and prefix tuning. How you fine-tune a large model on a single consumer GPU.
+                <DT><A HREF="https://github.com/huggingface/safetensors" ADD_DATE="0">safetensors</A><DD>A deliberately simple, safe model weight format. Replaces pickle loading, which was a real attack surface.
+                <DT><A HREF="https://github.com/sgl-project/sglang" ADD_DATE="0">SGLang</A><DD>Fast serving and structured generation, with a RadixAttention prefix cache that saves real money on shared system prompts.
+                <DT><A HREF="https://github.com/NVIDIA/TensorRT-LLM" ADD_DATE="0">TensorRT-LLM</A><DD>NVIDIA's optimised inference runtime. The fastest option on their hardware, at the cost of the lock-in.
+                <DT><A HREF="https://github.com/tinygrad/tinygrad" ADD_DATE="0">tinygrad</A><DD>A deliberately tiny framework that is also a readable explanation of what deep learning frameworks actually do.
+                <DT><A HREF="https://github.com/huggingface/transformers.js" ADD_DATE="0">Transformers.js</A><DD>Running transformer models directly in the browser or Node with WebGPU. The same API as Python.
+                <DT><A HREF="https://github.com/huggingface/trl" ADD_DATE="0">TRL — transformer reinforcement learning</A><DD>SFT, DPO, PPO and reward modelling in one library. The reference implementation for the post-training methods.
+                <DT><A HREF="https://github.com/unslothai/unsloth" ADD_DATE="0">Unsloth</A><DD>Fine-tuning that claims to be twice as fast and use far less memory, by patching the attention kernels.
+                <DT><A HREF="https://github.com/mlc-ai/web-llm" ADD_DATE="0">WebLLM</A><DD>In-browser LLM inference via WebGPU. No server, no API key, everything client side.
+                <DT><A HREF="https://github.com/ggerganov/whisper.cpp" ADD_DATE="0">whisper.cpp</A><DD>OpenAI's Whisper speech recognition in portable C++, with no dependencies. Speech-to-text that runs anywhere.
+            </DL><p>
             <DT><H3 ADD_DATE="0" LAST_MODIFIED="0">Low-Level Systems</H3>
             <DL><p>
                 <DT><A HREF="https://github.com/abseil/abseil-cpp" ADD_DATE="0">Abseil — Google's C++ libraries</A><DD>The hardened C++ base libraries. Reading the string and flat-hash-map code teaches a lot.
@@ -1109,6 +1143,31 @@
                 <DT><A HREF="https://clang.llvm.org/docs/ThreadSanitizer.html" ADD_DATE="0">ThreadSanitizer</A><DD>Finds data races by instrumenting memory access. Slow, but it is the only reliable way to find them.
                 <DT><A HREF="https://clang.llvm.org/docs/UndefinedBehaviorSanitizer.html" ADD_DATE="0">UndefinedBehaviorSanitizer</A><DD>Catches undefined behaviour the compiler is otherwise free to assume away. Cheap enough to leave on in production.
                 <DT><A HREF="https://www.usenix.org/" ADD_DATE="0">USENIX</A><DD>Every USENIX conference paper is free. Systems, performance, security and networking research, all open.
+            </DL><p>
+            <DT><H3 ADD_DATE="0" LAST_MODIFIED="0">Reverse Engineering</H3>
+            <DL><p>
+                <DT><A HREF="https://github.com/angr/angr" ADD_DATE="0">angr — binary analysis framework</A><DD>Symbolic execution, CFG recovery and constraint solving. A research framework that answers questions statically.
+                <DT><A HREF="https://github.com/dweinstein/awesome-frida" ADD_DATE="0">Awesome Frida</A><DD>A curated index of Frida resources, scripts and bypass write-ups. The best map of the dynamic instrumentation world.
+                <DT><A HREF="https://www.blackhats.com.au/" ADD_DATE="0">BlackHat Asia archives</A><DD>Talk archives from a long-running security conference, much of it free. Deep applied content.
+                <DT><A HREF="https://github.com/mandiant/capa" ADD_DATE="0">capa — identify capabilities in binaries</A><DD>Detects what a binary can do rather than what it is called. The most useful triage tool in malware analysis.
+                <DT><A HREF="https://github.com/capstone-engine/capstone" ADD_DATE="0">Capstone</A><DD>A multi-architecture disassembly engine with bindings for Python, Rust, Go and Java. Excellent for building your own tooling.
+                <DT><A HREF="https://chromium.googlesource.com/" ADD_DATE="0">Chromium source browser</A><DD>A very large real-world codebase in C++ with its build files. Useful as a reference when reading decompiler output of compiled C++.
+                <DT><A HREF="https://github.com/horsicq/Detect-It-Easy" ADD_DATE="0">Detect It Easy</A><DD>Identifies compilers, packers and protectors by signature. Instant context when you first open an unknown binary.
+                <DT><A HREF="https://github.com/mandiant/flare-ida" ADD_DATE="0">Flare IDA — free decompiler build</A><DD>A free IDA-style decompiler for researchers, and the source of the FLARE obfuscation deobfuscators.
+                <DT><A HREF="https://sourceware.org/binutils/docs/" ADD_DATE="0">GDB and the binutils docs</A><DD>The full binutils documentation: objdump, readelf, nm, strip. The command line tools that make RE scriptable.
+                <DT><A HREF="https://ghidra.re/" ADD_DATE="0">Ghidra — official site and downloads</A><DD>The NSA's free decompiler. The scripting API, the decompiler and the processor modules are all public.
+                <DT><A HREF="https://github.com/justfoxing/ghidra_bridge" ADD_DATE="0">Ghidra Bridge</A><DD>A Python bridge to Ghidra, so you can drive the decompiler from your own tooling.
+                <DT><A HREF="https://ghidra.re/ghidra_docs/api/" ADD_DATE="0">Ghidra scripting API</A><DD>The Java and Python scripting API. Automating a hundred decompiler actions beats clicking through them.
+                <DT><A HREF="https://learnxinyminutes.com/" ADD_DATE="0">Learn X in Y minutes</A><DD>Quick syntax references for dozens of languages and tools. Not deep, but the fastest way to read unfamiliar assembly-level idioms.
+                <DT><A HREF="https://github.com/lief-project/LIEF" ADD_DATE="0">LIEF — binary parsing library</A><DD>Parse and patch PE, ELF and Mach-O files. The library to reach for when you need to modify binaries programmatically.
+                <DT><A HREF="https://lldb.llvm.org/" ADD_DATE="0">LLDB</A><DD>LLVM's debugger, the one to use on macOS and for C++ on any platform. A much better default than gdb on C++.
+                <DT><A HREF="https://github.com/erocarrera/pefile" ADD_DATE="0">pefile</A><DD>Pure Python PE file parsing. Small, readable, and the basis for most PE tooling you will write.
+                <DT><A HREF="https://github.com/avast/retdec" ADD_DATE="0">RetDec</A><DD>A complete open-source decompiler suite: from binary to readable C-like code, with a C++ frontend.
+                <DT><A HREF="https://en.wikipedia.org/wiki/Reverse_engineering" ADD_DATE="0">Reverse engineering</A><DD>The field overview, with the legal and ethical context that matters before you take work apart.
+                <DT><A HREF="https://www.sans.org/blog/" ADD_DATE="0">SANS Internet Storm Center blog</A><DD>Daily reverse engineering and malware analysis write-ups from practitioners. Consistently the highest signal.
+                <DT><A HREF="https://github.com/JonathanSalwan/Triton" ADD_DATE="0">Triton — dynamic symbolic analysis</A><DD>A library for instruction-level tracing and symbolic execution with taint analysis. Excellent for cryptanalysis of binaries.
+                <DT><A HREF="https://github.com/unicorn-engine/unicorn" ADD_DATE="0">Unicorn Engine</A><DD>Emulate individual CPU instructions with hooks. The practical way to lift and analyse shellcode.
+                <DT><A HREF="https://github.com/x64dbg/x64dbg" ADD_DATE="0">x64dbg</A><DD>A free Windows debugger with a built-in disassembler and a plugin ecosystem. The standard tool for native RE on Windows.
             </DL><p>
         </DL><p>
         <DT><H3 ADD_DATE="0" LAST_MODIFIED="0">Anatomy &amp; Physiotherapy</H3>
@@ -2425,6 +2484,28 @@
                 <DT><A HREF="https://github.com/JesusFreke/smali" ADD_DATE="0">smali and baksmali</A><DD>The assembler and disassembler for Dalvik bytecode. Read smali when decompiled Java is ambiguous.
                 <DT><A HREF="https://wiki.wireshark.org/Bluetooth" ADD_DATE="0">Wireshark Bluetooth dissectors</A><DD>Decodes Bluetooth and BLE traffic in captures, which pairs well with an nRF52 sniffer.
             </DL><p>
+            <DT><H3 ADD_DATE="0" LAST_MODIFIED="0">Security Hats &amp; Teams</H3>
+            <DL><p>
+                <DT><A HREF="https://github.com/SpecterOps/BloodHound" ADD_DATE="0">BloodHound</A><DD>Maps Active Directory relationships to expose privilege escalation paths. Standard for authorised AD assessments.
+                <DT><A HREF="https://hackerone.com/directory" ADD_DATE="0">Bug bounty programmes</A><DD>The directory of public bug bounty programmes, for testing systems whose owners have explicitly invited it.
+                <DT><A HREF="https://www.cisecurity.org/" ADD_DATE="0">Center for Internet Security benchmarks</A><DD>Consensus configuration benchmarks for every platform. Free, and the practical output of hardening work.
+                <DT><A HREF="https://www.isaca.org/" ADD_DATE="0">Certified Ethical Hacker (CEH) study resources</A><DD>ISACA's materials on information security governance, which is the part most offensive-only training skips.
+                <DT><A HREF="https://github.com/TheHive-Project/Cortex" ADD_DATE="0">Cortex — analyser orchestrator</A><DD>Runs analysers against observables and returns results, paired with TheHive.
+                <DT><A HREF="https://www.crest-approved.org/" ADD_DATE="0">CREST security accreditation</A><DD>The professional standards body for penetration testing, with the methodology documents free to read.
+                <DT><A HREF="https://ctftime.org/" ADD_DATE="0">CTFtime</A><DD>Capture the flag competitions, and a calendar of upcoming ones. The most legitimate way to practise offensive work.
+                <DT><A HREF="https://github.com/fortra/impacket" ADD_DATE="0">Impacket</A><DD>Python classes for Windows network protocols. The reference for SMB, LDAP and Kerberos on your own lab.
+                <DT><A HREF="https://github.com/its-a-feature/Mythic" ADD_DATE="0">Mythic — C2 framework</A><DD>A modular, actively maintained C2 with a web UI. Popular in authorised red team work.
+                <DT><A HREF="https://github.com/osquery/osquery" ADD_DATE="0">osquery</A><DD>Query a fleet of machines with SQL. The most practical endpoint visibility tool there is.
+                <DT><A HREF="https://github.com/log2timeline/plaso" ADD_DATE="0">Plaso (log2timeline)</A><DD>Forensic timeline generation from disk images. Unstaggering since 2012, and extremely thorough.
+                <DT><A HREF="https://github.com/skelsec/pypykatz" ADD_DATE="0">pypykatz — Mimikatz in Python</A><DD>Credential extraction implemented in readable Python. Read it to understand the Windows credential model.
+                <DT><A HREF="https://github.com/infosecn1nja/Red-Teaming-Toolkit" ADD_DATE="0">Red Team Toolkit</A><DD>An open-source collection of the tools a red team reaches for, with a real information architecture behind it.
+                <DT><A HREF="https://github.com/SigmaHQ/sigma" ADD_DATE="0">Sigma — detection rules</A><DD>A generic signature format for SIEM rules, with thousands of community rules. The blue team's counterpart to a red technique.
+                <DT><A HREF="https://en.wikipedia.org/wiki/Hacker_ethic" ADD_DATE="0">The hacker hat taxonomy</A><DD>White, grey and black hats as originally defined, plus the ethical code they all share. Read the history, not just the labels.
+                <DT><A HREF="https://github.com/TheHive-Project/TheHive" ADD_DATE="0">TheHive</A><DD>An open-source case management platform for security operations. The centre of most small SOCs.
+                <DT><A HREF="https://github.com/velocidex/velociraptor" ADD_DATE="0">Velociraptor</A><DD>An open-source DFIR and endpoint response platform written in Go, with a real query language.
+                <DT><A HREF="https://en.wikipedia.org/wiki/White_hat" ADD_DATE="0">White hat</A><DD>Authorised testing, bug bounty work, and the disclosure norms that come with it.
+                <DT><A HREF="https://github.com/Yara-Rules/rules" ADD_DATE="0">YARA rules repository</A><DD>Thousands of community detection rules. Free, well organised, and the place to learn pattern matching.
+            </DL><p>
         </DL><p>
         <DT><H3 ADD_DATE="0" LAST_MODIFIED="0">Nutrition &amp; Health</H3>
         <DL><p>
@@ -2482,6 +2563,66 @@
                 <DT><A HREF="https://www.who.int/news-room/fact-sheets/detail/healthy-diet" ADD_DATE="0">WHO — healthy diet guidelines</A><DD>Free WHO fact sheet on healthy diets. Short, clear, citable.
                 <DT><A HREF="https://www.who.int/health-topics/nutrition" ADD_DATE="0">WHO — Nutrition</A><DD>Free WHO guidance on nutrition, malnutrition and healthy diets globally.
                 <DT><A HREF="https://www.wolframalpha.com/" ADD_DATE="0">Wolfram Alpha — nutrition</A><DD>Free (with limits) nutritional analysis of foods and nutrients.
+            </DL><p>
+        </DL><p>
+        <DT><H3 ADD_DATE="0" LAST_MODIFIED="0">Keyboards &amp; Customization</H3>
+        <DL><p>
+            <DT><H3 ADD_DATE="0" LAST_MODIFIED="0">Keyboard Switches &amp; Parts</H3>
+            <DL><p>
+                <DT><A HREF="https://en.wikipedia.org/wiki/Alps_Alpine" ADD_DATE="0">Alps Alpine</A><DD>The Alpine switch, prized for its tactile bump and distinct sound. Worth trying next to an MX.
+                <DT><A HREF="https://en.wikipedia.org/wiki/Buckling_spring" ADD_DATE="0">Buckling spring</A><DD>The Model M mechanism, and why its sound and feel are unrepeatable in a custom board.
+                <DT><A HREF="https://en.wikipedia.org/wiki/Cherry_AG" ADD_DATE="0">Cherry MX switches</A><DD>The switch that made custom keyboards possible, and the company behind the MX profile and keycap standard.
+                <DT><A HREF="https://en.wikipedia.org/wiki/Hall-effect_sensor" ADD_DATE="0">Hall effect sensor</A><DD>The sensing principle behind contactless switches and adjustable-actuation boards. The modern direction.
+                <DT><A HREF="https://en.wikipedia.org/wiki/Key_switch" ADD_DATE="0">Key switch (mechanism overview)</A><DD>Every switch technology in one article: membrane, dome, buckling spring, Hall effect, capacitive.
+                <DT><A HREF="https://en.wikipedia.org/wiki/Keycap" ADD_DATE="0">Keycap</A><DD>Profiles, materials and doubleshot versus dye-sublimation printing. The thing most newcomers most want explained.
+                <DT><A HREF="https://en.wikipedia.org/wiki/Lubrication" ADD_DATE="0">Lubrication (for switches and stabilisers)</A><DD>The theory behind lubing. 205g0 on housings, thin oil on the stem, never both.
+                <DT><A HREF="https://github.com/heiso/macrolev" ADD_DATE="0">macrolev — open source analog keyboard</A><DD>Analog keyboard position sensing. The most experimental hardware in the open-source keyboard world.
+                <DT><A HREF="https://en.wikipedia.org/wiki/Membrane_keyboard" ADD_DATE="0">Membrane keyboard</A><DD>The cheapest and most common technology, and why it feels the way it does.
+                <DT><A HREF="https://en.wikipedia.org/wiki/Model_M_keyboard" ADD_DATE="0">Model M keyboard</A><DD>The buckling spring board, its variants, and the restoration guides that go with them.
+                <DT><A HREF="https://en.wikipedia.org/wiki/Oryx" ADD_DATE="0">Oryx</A><DD>An early capacitive keyboard, and the mechanism the BBC Micro used. Interesting for the history.
+                <DT><A HREF="https://en.wikipedia.org/wiki/Soldering" ADD_DATE="0">Soldering</A><DD>The skill that gates most keyboard building. Through-hole versus hot air, and technique.
+                <DT><A HREF="https://en.wikipedia.org/wiki/Stabilizer" ADD_DATE="0">Stabilizer (keyboard)</A><DD>Why the spacebar rattles, and the difference between plate-mount, screw-in and PCB-mount stabilizers.
+                <DT><A HREF="https://en.wikipedia.org/wiki/Through-hole_technology" ADD_DATE="0">Through-hole technology</A><DD>The mounting style most custom keyboards use, because it lets you swap switches.
+                <DT><A HREF="https://en.wikipedia.org/wiki/Topre" ADD_DATE="0">Topre</A><DD>The electrostatic capacitive mechanism behind Realforce and HHKB. A completely different feel and sound.
+                <DT><A HREF="https://github.com/riskable/void_switch_kicad" ADD_DATE="0">void_switch — Hall effect keyboard PCB</A><DD>Open-source KiCad files for a Hall effect switch board with adjustable actuation and rapid trigger.
+            </DL><p>
+            <DT><H3 ADD_DATE="0" LAST_MODIFIED="0">Keyboards &amp; Customization</H3>
+            <DL><p>
+                <DT><A HREF="https://1upkeyboards.com/" ADD_DATE="0">1upkeyboards</A><DD>Open-source 60% and 40% designs, sold as kits and assembled. Excellent for a first build.
+                <DT><A HREF="https://alchemist.io/" ADD_DATE="0">Alchemist</A><DD>Keycap sets and deskmats, with unusually good photography. A good way to understand keycap profiles.
+                <DT><A HREF="https://github.com/flurples/C-13X" ADD_DATE="0">C-13X — a handwired design</A><DD>A complete handwired Alice-layout board with schematic, PCB and case files. A good first non-rectangular build.
+                <DT><A HREF="https://caniusevia.com/" ADD_DATE="0">Can I Use Vial?</A><DD>A compatibility list showing exactly which commercial keyboards support VIA. Saves buying the wrong board.
+                <DT><A HREF="https://cannonkeys.com/" ADD_DATE="0">CannonKeys</A><DD>US vendor, very strong on switches, keycaps and open-source board kits. Their switch sample packs are a good way to compare.
+                <DT><A HREF="https://en.wikipedia.org/wiki/Colemak" ADD_DATE="0">Colemak</A><DD>A layout that changes far fewer keys from QWERTY while claiming better ergonomics. The best documented alternative.
+                <DT><A HREF="https://deskthority.net/" ADD_DATE="0">Deskthority wiki</A><DD>Encyclopedic reference on switch mechanisms, keycap profiles and case materials. The best single reference on the web.
+                <DT><A HREF="https://drop.com/" ADD_DATE="0">Drop</A><DD>Keyboards, keycaps and switches, with detailed community reviews. Useful for comparing before buying.
+                <DT><A HREF="https://en.wikipedia.org/wiki/Dvorak_keyboard_layout" ADD_DATE="0">Dvorak keyboard layout</A><DD>The most researched alternative layout, with the original finger-frequency study. Still worth reading.
+                <DT><A HREF="https://ergohaven.com/" ADD_DATE="0">Ergohaven</A><DD>Open-source ergonomic keyboard designs with full files. The reference point for split ergo hardware.
+                <DT><A HREF="https://en.wikipedia.org/wiki/Ergonomic_keyboard" ADD_DATE="0">Ergonomic keyboard</A><DD>Split, tented, column-staggered and the evidence for and against each. Read before buying an ergo board.
+                <DT><A HREF="https://github.com/joe-scotto/scottokeebs" ADD_DATE="0">Handwired keyboard designs</A><DD>Free, complete build guides for a large range of handwired boards. The best way to learn what a keyboard physically is.
+                <DT><A HREF="https://github.com/hungrygeek/HSKB" ADD_DATE="0">HSKB — open-source HHKB-layout board</A><DD>A 60% board in HHKB layout, in KiCad. A clean reference design for a real custom PCB.
+                <DT><A HREF="https://www.input.club/" ADD_DATE="0">Input Club</A><DD>Keycap sets and desk accessories from a community-focused brand.
+                <DT><A HREF="https://kbdfans.com/" ADD_DATE="0">KBDFans</A><DD>A very large catalog of switches, keycaps and parts, with real stock data rather than preorders.
+                <DT><A HREF="https://www.keebwerk.com/" ADD_DATE="0">Keebwerk</A><DD>Group buys and in-stock ergonomic kits, with clear timelines and good build documentation.
+                <DT><A HREF="https://en.wikipedia.org/wiki/Key_rollover" ADD_DATE="0">Key rollover</A><DD>Why cheap keyboards drop keystrokes, and what n-key rollover actually means. Explains a lot of user complaints.
+                <DT><A HREF="https://github.com/TeXitoi/keyberon" ADD_DATE="0">Keyberon</A><DD>A pure-Rust firmware framework for split and ortho boards, with layouts in a Rust-like DSL.
+                <DT><A HREF="https://github.com/TeXitoi/keyberon-f4" ADD_DATE="0">Keyberon firmware for STM32F4</A><DD>Keyberon on the STM32F401, the most common controller in DIY split keyboards.
+                <DT><A HREF="https://en.wikipedia.org/wiki/Keyboard_layout" ADD_DATE="0">Keyboard layout</A><DD>ANSI versus ISO, layers, modifiers and the regional differences that matter when buying a case.
+                <DT><A HREF="https://www.keyboardtechnology.com/" ADD_DATE="0">Keyboard technology (Marshall)</A><DD>A long-running reference site on switch mechanisms and keyboard history, with clear technical explanations.
+                <DT><A HREF="https://en.wikipedia.org/wiki/Keyboard_technology" ADD_DATE="0">Keyboard technology (overview)</A><DD>The full range, from membrane and rubber dome to buckling spring and Hall effect.
+                <DT><A HREF="https://www.keychron.com/" ADD_DATE="0">Keychron</A><DD>Prebuilt boards, most QMK-compatible for remapping via Vial. The usual starting point for a first custom board.
+                <DT><A HREF="https://www.kmkfw.io/" ADD_DATE="0">KMK firmware</A><DD>Python firmware for microcontrollers. You can write a keymap in Python, which makes complex logic tractable.
+                <DT><A HREF="https://github.com/ai03-2725/MX_Alps_Hybrid" ADD_DATE="0">MX-Alps hybrid footprint library</A><DD>KiCad footprints for boards that accept both Cherry MX and Alps switches. Rare, clever, and well documented.
+                <DT><A HREF="https://www.novelkeys.com/" ADD_DATE="0">NovelKeys</A><DD>A long-running US vendor with deep technical detail on switches, keycaps and cases. Their switch guides are the reference.
+                <DT><A HREF="https://docs.qmk.fm/" ADD_DATE="0">QMK documentation</A><DD>Keymap syntax, layers, combos, tapping behaviour and the full reference. Read the 'Understanding QMK' section first.
+                <DT><A HREF="https://qmk.fm/" ADD_DATE="0">QMK firmware</A><DD>The dominant open-source keyboard firmware. Virtually every custom board runs it, and the docs are excellent.
+                <DT><A HREF="https://github.com/qmk/qmk_toolbox" ADD_DATE="0">QMK Toolbox</A><DD>The official GUI for compiling and flashing QMK. Removes the command line from the first build.
+                <DT><A HREF="https://www.reddit.com/r/MechanicalKeyboards/wiki/index/" ADD_DATE="0">r/MechanicalKeyboards wiki</A><DD>A genuinely good community wiki on terminology, sizes and buying advice. Surprisingly well written.
+                <DT><A HREF="https://ramaworks.store/" ADD_DATE="0">Rama Works</A><DD>Machined aluminium boards with unusually good documentation. Expensive, and worth reading about regardless.
+                <DT><A HREF="https://soundtested.com/" ADD_DATE="0">SoundTested — switch sound library</A><DD>A large library of switch, case and keycap sound recordings. The only way to compare sound before buying.
+                <DT><A HREF="https://github.com/vial-kb/vial-qmk" ADD_DATE="0">Vial — graphical keymap configurator</A><DD>Remap keys in a browser instead of recompiling firmware. The change that opened the hobby to non-programmers.
+                <DT><A HREF="https://zmk.dev/docs/" ADD_DATE="0">ZMK documentation</A><DD>Device tree configuration, power management and shield listings. Well organised and complete.
+                <DT><A HREF="https://zmk.dev/" ADD_DATE="0">ZMK firmware</A><DD>The modern alternative to QMK, built for wireless and low-power boards. The power management is far better.
             </DL><p>
         </DL><p>
         <DT><H3 ADD_DATE="0" LAST_MODIFIED="0">Medicine</H3>

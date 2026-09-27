@@ -1,6 +1,6 @@
 # Awesome Free Resources
 
-A curated, **link-verified** collection of **2,586 free and open-source resources** for
+A curated, **link-verified** collection of **2,709 free and open-source resources** for
 developers, scientists, engineers, students and self-learners.
 
 Everything here is free to read, free to use, and — in the vast majority of cases —
@@ -25,7 +25,7 @@ Search, filter by tag or category, no account needed. Works offline once loaded.
 - *Safari* — File → Import → Bookmarks HTML File
 - *Android Chrome* — ⋮ → Bookmarks → ⋮ → Import from file
 
-They land in 18 top-level folders. Existing bookmarks are never touched if you use
+They land in 19 top-level folders. Existing bookmarks are never touched if you use
 the import; the folder names are plain ASCII, no emoji.
 
 **Want to use the data?** [`all.js`](all.js) is the whole collection as JSON, one
@@ -44,7 +44,7 @@ Most "awesome" lists are unverified. This one is not:
 - **Every URL was checked over HTTP** with retries. Broken links were either repaired
   (often to a moved page) or removed outright.
 - **Duplicates were removed** programmatically by title *and* URL.
-- The result: **2,586 links across 81 categories, from 1,518 distinct domains.**
+- The result: **2,709 links across 86 categories, from 1,549 distinct domains.**
 
 That work is reproducible and re-runnable — see [How it stays up to date](#how-it-stays-up-to-date).
 
@@ -91,6 +91,7 @@ Three things make that trustworthy rather than aspirational:
 | AI Papers & Reading | 36 |
 | Radio & Amateur | 36 |
 | Chemistry | 35 |
+| Keyboards & Customization | 35 |
 | Physics | 34 |
 | Radio Frequencies & Bands | 34 |
 | Tech pioneers | 34 |
@@ -100,6 +101,7 @@ Three things make that trustworthy rather than aspirational:
 | Dev blogs | 32 |
 | Omarchy | 32 |
 | Databases | 31 |
+| LLMs & Models | 31 |
 | Hardware & Making | 30 |
 | Kotlin | 30 |
 | Nutrition | 30 |
@@ -124,6 +126,7 @@ Three things make that trustworthy rather than aspirational:
 | Circuits & Signals | 22 |
 | CS fundamentals | 22 |
 | Embedded & Devices | 22 |
+| Reverse Engineering | 22 |
 | News & aggregators | 21 |
 | Technical writing | 21 |
 | Biology | 20 |
@@ -132,8 +135,10 @@ Three things make that trustworthy rather than aspirational:
 | Particle physics | 20 |
 | Health | 19 |
 | Physiotherapy | 19 |
+| Security Hats & Teams | 19 |
 | Robotics & Control | 18 |
 | Mathematics | 17 |
+| Keyboard Switches & Parts | 16 |
 | Satellites & Space | 15 |
 | Go blogs | 14 |
 | Research data | 14 |
@@ -419,7 +424,7 @@ node -e 'const B=new Function(require("fs").readFileSync("all.js","utf8")+";retu
 
 Download `chromium-bookmarks.html`, then in Chromium/Chrome press
 <kbd>Ctrl/⌘ Shift</kbd>+<kbd>O</kbd> → *Import and export* → *Import bookmarks*,
-and select the file. You get all 2,586 links in 18 grouped folders.
+and select the file. You get all 2,709 links in 19 grouped folders.
 
 ### As a browsable page
 
@@ -615,3 +620,58 @@ model article, so it was the same destination twice.
 Three hosts could not be reached from the network this was built on and are
 therefore absent rather than guessed: CMU 15-451, MIT 6.035, and the Dartmouth
 SICP archive.
+
+## LLMs, reverse engineering, security hats, and keyboards
+
+A third pass, 123 new links in five categories.
+
+| Category | Links | What is in it |
+|---|---|---|
+| `Keyboards & Customization` | 35 | firmware, layouts, vendors, reference sites |
+| `LLMs & Models` | 31 | running, serving, fine-tuning and quantising models |
+| `Reverse Engineering` | 22 | decompilers, debuggers, symbolic execution |
+| `Security Hats & Teams` | 19 | red, blue and the ethics in between |
+| `Keyboard Switches & Parts` | 16 | mechanisms, keycaps, stabilisers, technique |
+
+**On models.** The practical stack end to end: `llama.cpp` for local inference,
+`vLLM` and `SGLang` for serving, `PEFT`/`Axolotl`/`Unsloth`/`LLaMA-Factory` for
+fine-tuning, and `GPTQ`/`AutoAWQ`/`ExLlamaV2` for quantisation. Also the two
+frameworks worth reading even if you do not use them — `MLX` because it is the
+only one whose API maps cleanly onto Apple silicon, and `tinygrad` because it is
+a readable explanation of what frameworks actually do.
+
+**On reverse engineering.** `RetDec` for open-source decompilation, `angr` and
+`Triton` for symbolic execution, `Unicorn` for lifting shellcode, `x64dbg` on
+Windows and `LLDB` everywhere else. `capa` is the one to reach for first: it
+tells you what a binary *can do* rather than what it is called. The SANS Storm
+Center blog is the highest-signal daily writing in the field.
+
+**On the hats.** The taxonomy is included deliberately, including the ethics
+chapter it comes from, because white/grey/black and red/blue are usually taught
+as vocabulary without the reasoning. Alongside them: the open-source offensive
+stack (Sliver, Mythic, Impacket, BloodHound) and the defensive one (Sigma, YARA
+rules, osquery, Velociraptor, TheHive, Plaso). Every entry is framed around
+authorised testing — bug bounty programmes, your own lab, or CTFs, which is the
+legitimate way to practise offensive work at all.
+
+**On keyboards.** QMK and ZMK as the two firmwares worth learning, Vial for
+remapping without recompiling, and `Deskthority` plus `SoundTested` as the two
+reference sites that matter most — the second is the only reliable way to compare
+switch sound before buying. Then the mechanism layer: Cherry MX, Topre, Alps,
+buckling spring, Hall effect, and open-source KiCad designs for the last one.
+
+### What I could not verify, and therefore did not include
+
+The keyboard vendors and community blogs are mostly unreachable from the network
+this was built on — CannonKeys, MechMarket, Mode, mkii.co, kbd.ci, ai03.co,
+Wilba's Tech, ZealPC and more all failed to resolve or connect, over both IPv4 and
+IPv6. Only the ones that actually answered are included, plus CannonKeys, which
+an independent search confirmed as live with current stock. The rest are absent
+rather than assumed.
+
+Four URLs I wrote from memory turned out to be wrong and were caught before
+landing: `triton-passwords/triton` (it is `JonathanSalwan/Triton`),
+`horsicq/DetectItEasy` (`horsicq/Detect-It-Easy`), `danielmiessler/Red-Team-Toolkit`
+(`infosecn1nja/Red-Teaming-Toolkit`) and `practicalbinaryanalysis`, an
+organisation that does not exist. Adaptix and the No Starch page for *Practical
+Reverse Engineering* were dropped entirely rather than guessed at.

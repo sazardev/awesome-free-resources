@@ -56,13 +56,17 @@ export const GROUPS = [
   ]],
   ['Hacking & Pentesting', [
     'Hacking & Pentesting', 'Go Hacking', 'Mobile & Android Hacking',
+    'Security Hats & Teams',
   ]],
   ['AI, Papers & Low-Level Systems', [
     'AI Papers & Reading', 'Low-Level Systems', 'Performance Engineering',
-    'Compute & Accelerators',
+    'Compute & Accelerators', 'LLMs & Models', 'Reverse Engineering',
   ]],
   ['Test, Measurement & PCB Design', [
     'Test & Measurement', 'PCB & EDA',
+  ]],
+  ['Keyboards & Customization', [
+    'Keyboards & Customization', 'Keyboard Switches & Parts',
   ]],
   ['Electronics, Robotics & Devices', [
     'Electronics', 'Circuits & Signals', 'Electricity & Power',
