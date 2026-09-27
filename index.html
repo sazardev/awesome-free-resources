@@ -1411,36 +1411,67 @@
   // ---- deep links
   //
   // The site is linked to from three places that all used to land on an
-  // unfiltered 2,951-row list and do nothing useful:
+  // unfiltered 3,075-row list and do nothing useful:
   //
   //   ?q=kubernetes     the JSON-LD SearchAction target, and any hand-shared URL
   //   ?q=%23devops      every tag URL in sitemap.xml
   //   #cat-linux-unix   every category URL in sitemap.xml and the ItemList
   //
-  // So both are honoured here, once, before the first render. `#cat-` narrows
-  // to the exact category; the old behaviour added the whole surrounding group,
-  // which landed the reader 26 categories away from where the link promised.
-  (function hydrateFromUrl() {
+  // So both are honoured here, before the first render. `#cat-` narrows to the
+  // exact category; the old behaviour added the whole surrounding group, which
+  // landed the reader 27 categories away from where the link promised.
+  //
+  // `fromHash` is true on a hashchange. Changing only the fragment is a
+  // same-document navigation, so the page never reloads and this has to run
+  // again on its own: that is what the browser back button, a pasted in-page
+  // link and any anchor in the page all rely on.
+  //
+  // It resets *every* filter, not just the text query. Switching from
+  // #cat-testing to #grp-… used to leave the category filter behind, so the two
+  // intersected to nothing and the page showed "0" with two pills that looked
+  // like they were doing something. Same for clearing the hash: it has to
+  // restore the full list, not just drop the fragment.
+  function applyUrlState(fromHash) {
+    if (fromHash) {
+      q.value = '';
+      state.terms = [];
+      state.tags = [];
+      state.groups.clear();
+      state.cats.clear();
+      searchWrap.classList.remove('filled');
+      syncTagButtons();
+      syncGroupBoxes();
+      syncCatTiles();
+    }
+    const h = decodeURIComponent(location.hash.slice(1)).toLowerCase();
+    if (h.length > 1) {
+      if (h.startsWith('cat-')) {
+        focusCategory(h.slice(4));          // filters and renders
+        return;
+      }
+      if (h.startsWith('grp-')) {
+        const g = GROUP_ORDER.find((x) => groupAnchor(x).toLowerCase() === h);
+        if (g) { state.groups.add(g.toLowerCase()); syncGroupBoxes(); render(); return; }
+      } else {
+        const g = GROUP_ORDER.find((x) => x.toLowerCase() === h);
+        if (g) { state.groups.add(g.toLowerCase()); syncGroupBoxes(); render(); return; }
+        focusCategory(h);
+        return;
+      }
+    }
+    if (fromHash) { render(); return; }
     const want = new URL(location.href).searchParams.get('q');
     if (want) {
       q.value = want;
       searchWrap.classList.add('filled');
       applyQuery();
     }
-    const hash = decodeURIComponent(location.hash.slice(1)).toLowerCase();
-    if (hash.length > 1) {
-      if (hash.startsWith('cat-')) {
-        focusCategory(hash.slice(4));
-      } else if (hash.startsWith('grp-')) {
-        const g = GROUP_ORDER.find((x) => groupAnchor(x).toLowerCase() === hash);
-        if (g) { state.groups.add(g.toLowerCase()); syncGroupBoxes(); }
-      } else {
-        const g = GROUP_ORDER.find((x) => x.toLowerCase() === hash);
-        if (g) { state.groups.add(g.toLowerCase()); syncGroupBoxes(); }
-        else focusCategory(hash);
-      }
-    }
-  })();
+  }
+  applyUrlState(false);
+  window.addEventListener('hashchange', () => {
+    applyUrlState(true);
+    window.scrollTo({ top: 0, behavior: 'auto' });
+  });
 
   render();
 })();
