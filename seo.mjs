@@ -198,7 +198,7 @@ if (existsSync(join(here, readmePath))) {
 {
   const SITE = 'https://sazardev.github.io/awesome-free-resources';
   const LAST_UPDATED = '2026-09-26';
-  const BUMP_WHEN_CHANGING = '2873';
+  const BUMP_WHEN_CHANGING = '2951';
 
   if (String(BOOKMARKS.length) !== BUMP_WHEN_CHANGING) {
     console.log(`feed.xml: WARNING update LAST_UPDATED and BUMP_WHEN_CHANGING in seo.mjs (now ${BOOKMARKS.length} links)`);
@@ -283,12 +283,16 @@ ${entries.join('\n')}
   // Regex, not literal: a literal match against the previous run's number
   // silently stops matching, so the counts would freeze at whatever they were
   // when this was first written. Same failure mode as a hand-maintained number.
+  // Matched by id, not by surrounding markup. The previous version anchored on
+  // "<h1>Dev Bookmarks <span id=\"count\">", and the redesign replaced that h1
+  // with a div.brand — so the pattern stopped matching and the count froze at
+  // 2,873 while the data held 2,951. Anchoring on the id survives restyling.
   const after = before
-    .replace(/<h1>Dev Bookmarks <span id="count">[^<]*<\/span><\/h1>/,
-             `<h1>Dev Bookmarks <span id="count">\u00b7 ${n} links</span></h1>`)
+    .replace(/(<span id="count">)[^<]*(<\/span>)/, `$1\u00b7 ${n} links$2`)
     .replace(/(<b id="shown">)[\d,]+(<\/b> shown)/, `$1${n}$2`)
     .replace(/(<b id="cats">)[\d,]+(<\/b> categories)/, `$1${cats}$2`)
-    .replace(/(<b id="doms">)[\d,]+(<\/b> domains)/, `$1${doms}$2`);
+    .replace(/(<b id="doms">)[\d,]+(<\/b> domains)/, `$1${doms}$2`)
+    .replace(/(placeholder="Search )[\d,]+( resources)/, `$1${n}$2`);
   if (after !== before) {
     write('index.html', after);
     console.log(`index.html: static counts set to ${n} links, ${cats} categories, ${doms} domains`);
