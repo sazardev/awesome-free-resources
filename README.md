@@ -1,6 +1,6 @@
 # Awesome Free Resources
 
-A curated, **link-verified** collection of **2,873 free and open-source resources** for
+A curated, **link-verified** collection of **2,951 free and open-source resources** for
 developers, scientists, engineers, students and self-learners.
 
 Everything here is free to read, free to use, and — in the vast majority of cases —
@@ -25,7 +25,7 @@ Search, filter by tag or category, no account needed. Works offline once loaded.
 - *Safari* — File → Import → Bookmarks HTML File
 - *Android Chrome* — ⋮ → Bookmarks → ⋮ → Import from file
 
-They land in 20 top-level folders. Existing bookmarks are never touched if you use
+They land in 22 top-level folders. Existing bookmarks are never touched if you use
 the import; the folder names are plain ASCII, no emoji.
 
 **Want to use the data?** [`all.js`](all.js) is the whole collection as JSON, one
@@ -44,7 +44,7 @@ Most "awesome" lists are unverified. This one is not:
 - **Every URL was checked over HTTP** with retries. Broken links were either repaired
   (often to a moved page) or removed outright.
 - **Duplicates were removed** programmatically by title *and* URL.
-- The result: **2,873 links across 94 categories, from 1,605 distinct domains.**
+- The result: **2,951 links across 98 categories, from 1,621 distinct domains.**
 
 That work is reproducible and re-runnable — see [How it stays up to date](#how-it-stays-up-to-date).
 
@@ -117,6 +117,7 @@ Three things make that trustworthy rather than aspirational:
 | Anatomy | 25 |
 | Architecture | 25 |
 | English Vocabulary & Phrases | 25 |
+| Negotiation & Communication | 25 |
 | Software Engineering | 25 |
 | Electricity & Power | 24 |
 | Go | 24 |
@@ -131,6 +132,7 @@ Three things make that trustworthy rather than aspirational:
 | Reverse Engineering | 22 |
 | News & aggregators | 21 |
 | Technical writing | 21 |
+| Architecture Decisions | 20 |
 | Biology | 20 |
 | Go Hacking | 20 |
 | Mobile & Android Hacking | 20 |
@@ -143,8 +145,10 @@ Three things make that trustworthy rather than aspirational:
 | Robotics & Control | 18 |
 | English for Academic Purposes | 17 |
 | Mathematics | 17 |
+| Tech Leadership & CTO | 17 |
 | English Exercises & Practice | 16 |
 | Keyboard Switches & Parts | 16 |
+| Site Reliability | 16 |
 | English Dictionaries & Corpora | 15 |
 | English Linguistics Research | 15 |
 | Satellites & Space | 15 |
@@ -432,7 +436,7 @@ node -e 'const B=new Function(require("fs").readFileSync("all.js","utf8")+";retu
 
 Download `chromium-bookmarks.html`, then in Chromium/Chrome press
 <kbd>Ctrl/⌘ Shift</kbd>+<kbd>O</kbd> → *Import and export* → *Import bookmarks*,
-and select the file. You get all 2,873 links in 20 grouped folders.
+and select the file. You get all 2,951 links in 22 grouped folders.
 
 ### As a browsable page
 
@@ -744,3 +748,63 @@ Grammar and Exercises. That was my sloppiness, not a tooling problem: a URL can
 only sensibly live in one place. `English Exercises & Practice` was then filled
 out with genuinely distinct material, `UsingEnglish` and `Perfect English
 Grammar` being the standouts.
+
+## Tech leadership, decisions, negotiation and SRE
+
+Four categories aimed at the parts of engineering that are not code. 95
+candidates, verified before writing, and 78 new links after removing 17 that
+already existed in the collection.
+
+| Category | Links | What is in it |
+|---|---|---|
+| `Tech Leadership & CTO` | 21 | essays on the staff+ and management tracks |
+| `Architecture Decisions` | 23 | ADRs, C4, arc42, and the cloud reference architectures |
+| `Negotiation & Communication` | 26 | the interpersonal half: persuasion, code review, agile |
+| `Site Reliability` | 25 | SRE, SLOs, error budgets, and the case studies |
+
+**On decisions.** `adr.github.io` is the pattern worth copying: record the
+context, the options considered and the consequences, then never rewrite it.
+Paired with `C4 model` for drawing and `arc42` for documenting, that is the
+working set. The cloud frameworks (AWS Well-Architected, Azure Architecture
+Center, Google Cloud) are free and specific enough to act on, and
+`High Scalability` is the best archive of real architectures with actual numbers
+in them.
+
+**On negotiation.** The Harvard Program on Negotiation, plus the Wikipedia
+articles on the underlying theory: `Getting to Yes` reframed as separate the
+people from the problem and focus on interests rather than positions,
+`assertiveness` as the middle option between collapsing and escalating, and
+`active listening`. This is the material most engineers never get taught and
+use daily.
+
+**On reliability.** The Google SRE book and workbook are free, complete, and
+the actual standard — SLOs, error budgets, on-call and incident management.
+Alongside them the case studies that show the numbers: `jepsen.io` for
+empirical database consistency testing, `aphyr.com` and `apenwarr.ca` for
+outage write-ups, and the engineering blogs of Dropbox, Discord, Slack, Shopify,
+GitHub, Stripe and Cloudflare.
+
+### What I removed before landing, and why it is worth saying
+
+- **`martinfowler.com/bliki/CodeReview.html` and `inkandswitch.com/prime-directive`
+  were invented.** Both 404. I could not locate the real paths after several
+  attempts, so both entries are gone rather than pointing somewhere plausible.
+- **Lara Hogan and Tyler Ongirard do not resolve from this network.** They are
+  obviously real and probably worth adding, but this list claims its links were
+  checked, so they are absent.
+- **Four entries in the first draft reused a URL that was already in the file**
+  under a different framing. Dedupe caught them, and the categories were then
+  filled with genuinely distinct material.
+
+### A dead pattern in the build, caught by CI
+
+`seo.mjs` rewrote the header link count by matching the literal string
+`<h1>Dev Bookmarks <span id="count">`. The redesign replaced that `<h1>` with a
+`div.brand`, so the pattern stopped matching and **the count froze at 2,873 while
+the data held 2,951** — and the build reported success. The check caught it
+because that check exists, which is the fourth time it has earned its place.
+
+The replacement anchors on the element `id` rather than its surroundings, so
+restyling cannot break it, and the search input's placeholder is now generated
+too. `check-docs.mjs` additionally walks every number the page displays and
+fails if any disagrees with the data.

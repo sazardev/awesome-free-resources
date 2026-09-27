@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title>Awesome Free Resources</title>
-  <subtitle>2873 free and open-source resources across 94 categories</subtitle>
+  <subtitle>2951 free and open-source resources across 98 categories</subtitle>
   <link href="https://sazardev.github.io/awesome-free-resources/"/>
   <link rel="self" href="https://sazardev.github.io/awesome-free-resources/feed.xml"/>
   <link rel="alternate" type="text/html" href="https://sazardev.github.io/awesome-free-resources/"/>
@@ -49,6 +49,13 @@
     <id>https://sazardev.github.io/awesome-free-resources/#cat-architecture</id>
     <category term="Architecture"/>
     <summary type="text">25 free resources. Tags: adr, android, blog, book, clean-arch, ddd, eaa, eda.</summary>
+  </entry>
+  <entry>
+    <title>Architecture Decisions</title>
+    <link href="https://sazardev.github.io/awesome-free-resources/#cat-architecture-decisions"/>
+    <id>https://sazardev.github.io/awesome-free-resources/#cat-architecture-decisions</id>
+    <category term="Architecture Decisions"/>
+    <summary type="text">20 free resources. Tags: advanced, architecture, case-studies, cloud, databases, decision-making, design, distributed.</summary>
   </entry>
   <entry>
     <title>Astronomy</title>
@@ -408,6 +415,13 @@
     <summary type="text">20 free resources. Tags: advanced, android, code, mobile, must-read, must-try, must-use, official.</summary>
   </entry>
   <entry>
+    <title>Negotiation &amp; Communication</title>
+    <link href="https://sazardev.github.io/awesome-free-resources/#cat-negotiation-communication"/>
+    <id>https://sazardev.github.io/awesome-free-resources/#cat-negotiation-communication</id>
+    <category term="Negotiation &amp; Communication"/>
+    <summary type="text">25 free resources. Tags: communication, design, documentation, free, history, leadership, learning, management.</summary>
+  </entry>
+  <entry>
     <title>Networking</title>
     <link href="https://sazardev.github.io/awesome-free-resources/#cat-networking"/>
     <id>https://sazardev.github.io/awesome-free-resources/#cat-networking</id>
@@ -604,11 +618,25 @@
     <summary type="text">27 free resources. Tags: blog, chips, courses, explainer, free, hardware, history, math.</summary>
   </entry>
   <entry>
+    <title>Site Reliability</title>
+    <link href="https://sazardev.github.io/awesome-free-resources/#cat-site-reliability"/>
+    <id>https://sazardev.github.io/awesome-free-resources/#cat-site-reliability</id>
+    <category term="Site Reliability"/>
+    <summary type="text">16 free resources. Tags: architecture, case-studies, concepts, distributed, documentation, essays, learning, metrics.</summary>
+  </entry>
+  <entry>
     <title>Software Engineering</title>
     <link href="https://sazardev.github.io/awesome-free-resources/#cat-software-engineering"/>
     <id>https://sazardev.github.io/awesome-free-resources/#cat-software-engineering</id>
     <category term="Software Engineering"/>
     <summary type="text">25 free resources. Tags: algorithms, architecture, blog, book, books, cheatsheet, curriculum, design.</summary>
+  </entry>
+  <entry>
+    <title>Tech Leadership &amp; CTO</title>
+    <link href="https://sazardev.github.io/awesome-free-resources/#cat-tech-leadership-cto"/>
+    <id>https://sazardev.github.io/awesome-free-resources/#cat-tech-leadership-cto</id>
+    <category term="Tech Leadership &amp; CTO"/>
+    <summary type="text">17 free resources. Tags: architecture, career, concepts, craft, decision-making, design, essays, leadership.</summary>
   </entry>
   <entry>
     <title>Tech pioneers</title>

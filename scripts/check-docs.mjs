@@ -89,11 +89,23 @@ for (const [file, text] of docs) {
   const src = readFileSync('index.html', 'utf8');
   const n = B.length.toLocaleString('en-US');
   const want = {
-    'link count in the h1': new RegExp(`id="count">· ${n} links`),
+    'link count in the header': new RegExp(`id="count">· ${n} links`),
     'shown count': new RegExp(`id="shown">${n}</`),
     'category count': new RegExp(`id="cats">${CATEGORIES.length}</`),
     'domain count': new RegExp(`id="doms">${real.dominios}</`),
+    'search placeholder': new RegExp(`placeholder="Search ${n} resources`),
   };
+  // Every number the page shows must be generated. A number typed into the markup
+  // silently freezes the day the build stops rewriting it — which is exactly
+  // what happened to the header count when a redesign replaced its <h1>.
+  for (const m of src.matchAll(/>\s*([\d,]{3,6}) (links|resources|domains)\b/g)) {
+    const val = Number(m[1].replace(/,/g, ''));
+    const expected = { links: B.length, resources: B.length, domains: real.dominios }[m[2]];
+    if (val !== expected) {
+      problems++;
+      console.log(`  FALSA  index.html: displays "${m[1]} ${m[2]}" but the data has ${expected}`);
+    }
+  }
   for (const [label, re] of Object.entries(want)) {
     if (!re.test(src)) {
       problems++;
