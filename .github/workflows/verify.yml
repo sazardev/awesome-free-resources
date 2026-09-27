@@ -25,6 +25,9 @@ jobs:
       - name: Every link is reachable in the UI
         run: node scripts/check-render.mjs
 
+      - name: Documentation matches the data
+        run: node scripts/check-docs.mjs
+
       - name: Generated files are up to date
         run: |
           node scripts/rebuild.mjs

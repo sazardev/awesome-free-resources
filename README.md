@@ -1,6 +1,6 @@
 # Awesome Free Resources
 
-A curated, **link-verified** collection of **2,395 free and open-source resources** for
+A curated, **link-verified** collection of **2,586 free and open-source resources** for
 developers, scientists, engineers, students and self-learners.
 
 Everything here is free to read, free to use, and — in the vast majority of cases —
@@ -25,7 +25,7 @@ Search, filter by tag or category, no account needed. Works offline once loaded.
 - *Safari* — File → Import → Bookmarks HTML File
 - *Android Chrome* — ⋮ → Bookmarks → ⋮ → Import from file
 
-They land in 17 top-level folders. Existing bookmarks are never touched if you use
+They land in 18 top-level folders. Existing bookmarks are never touched if you use
 the import; the folder names are plain ASCII, no emoji.
 
 **Want to use the data?** [`all.js`](all.js) is the whole collection as JSON, one
@@ -44,7 +44,7 @@ Most "awesome" lists are unverified. This one is not:
 - **Every URL was checked over HTTP** with retries. Broken links were either repaired
   (often to a moved page) or removed outright.
 - **Duplicates were removed** programmatically by title *and* URL.
-- The result: **2,395 links across 75 categories, from 1,502 distinct domains.**
+- The result: **2,586 links across 81 categories, from 1,518 distinct domains.**
 
 That work is reproducible and re-runnable — see [How it stays up to date](#how-it-stays-up-to-date).
 
@@ -74,8 +74,10 @@ Three things make that trustworthy rather than aspirational:
 | Networking | 65 |
 | Framework docs | 64 |
 | Language docs | 58 |
+| Data Science | 53 |
 | Go frameworks | 52 |
 | Android | 51 |
+| Low-Level Systems | 50 |
 | Medicine | 49 |
 | Science | 48 |
 | Flutter | 47 |
@@ -86,6 +88,7 @@ Three things make that trustworthy rather than aspirational:
 | Hacking & Pentesting | 40 |
 | Electronics | 39 |
 | DevOps / Infra | 38 |
+| AI Papers & Reading | 36 |
 | Radio & Amateur | 36 |
 | Chemistry | 35 |
 | Physics | 34 |
@@ -114,6 +117,8 @@ Three things make that trustworthy rather than aspirational:
 | Electricity & Power | 24 |
 | Go | 24 |
 | Computer Architecture | 23 |
+| Efficiency & Algorithms | 23 |
+| Performance Engineering | 23 |
 | Science news | 23 |
 | Antennas | 22 |
 | Circuits & Signals | 22 |
@@ -141,6 +146,7 @@ Three things make that trustworthy rather than aspirational:
 | Test & Measurement | 12 |
 | Performance | 11 |
 | Formal Methods | 10 |
+| Compute & Accelerators | 6 |
 <!-- /AUTO-GENERATED -->
 
 </details>
@@ -413,7 +419,7 @@ node -e 'const B=new Function(require("fs").readFileSync("all.js","utf8")+";retu
 
 Download `chromium-bookmarks.html`, then in Chromium/Chrome press
 <kbd>Ctrl/⌘ Shift</kbd>+<kbd>O</kbd> → *Import and export* → *Import bookmarks*,
-and select the file. You get all 2,395 links in 17 grouped folders.
+and select the file. You get all 2,586 links in 18 grouped folders.
 
 ### As a browsable page
 
@@ -552,3 +558,60 @@ license — the same way a table of contents does not grant rights to the books 
 Some resources are not officially free (e.g. *A Tour of Go* is provided by Google, and
 Feynman Lectures are Caltech-hosted but not CC-licensed as a whole). Treat this list as a
 starting point and follow each project's own terms.
+
+## AI papers, data science, low level, performance
+
+A second deep pass, 191 new links in six categories, aimed at the areas that were
+thinnest: papers, data science, and anything to do with what actually happens
+underneath.
+
+| Category | Links | What is in it |
+|---|---|---|
+| `Data Science` | 53 | statistics done properly, and the data infrastructure underneath |
+| `Low-Level Systems` | 50 | kernels, ABI, linking, cache, and the compilers |
+| `AI Papers & Reading` | 36 | where papers actually come from, and how to read them |
+| `Performance Engineering` | 23 | the quantitative method, profiling, and the ceiling |
+| `Efficiency & Algorithms` | 23 | complexity, data structures, cache-oblivious design |
+| `Compute & Accelerators` | 6 | CUDA, GPU architecture, and open accelerator hardware |
+
+**On papers.** The collection had 21 arXiv entries and no way to follow a field.
+There are now ten arXiv listings by subject, `Distill` for interactive
+explanations, `Papers with Code` and `Semantic Scholar` for search, and `OpenReview`
+— where the *reviews* are public, which is how you should be reading an ML paper.
+Two lists worth knowing: `SysML-reading-list` is the ML/systems crossover, and
+`JMLR` plus `Project Euclid` are fully free, peer-reviewed and carry no author
+fees.
+
+**On the quantitative method.** The performance material is built around four laws
+that between them explain almost every optimisation conversation: Amdahl (the
+serial fraction caps speedup), Gustafson (and why parallelism can still win when
+the problem grows), Little's (latency, throughput and concurrency in a queue), and
+the Roofline model (whether you are compute bound or bandwidth bound — the first
+question to ask). `Chips and Cheese` reverse-engineers real microarchitectures
+from performance counters, and `Dan Luu` writes with unusual rigour about where
+the latencies actually are.
+
+**On low level.** `OSTEP` for operating systems, the kernel documentation for
+Linux, the RISC-V specifications, and `Crafting Interpreters` to build a language
+from scratch. Then the parts that are usually hand-waved: the ELF format, calling
+conventions, dynamic linking, name mangling, the branch predictor, cache
+coherence, memory barriers, page tables and the cost of a TLB walk. Assembly is
+never taught directly — it is taught as the output you can read on
+[Compiler Explorer](https://godbolt.org/) when you want to know what your code
+actually does.
+
+### Verified before written, as usual
+
+225 candidate entries, checked before being written down: 116 Wikipedia articles
+through the API in batches, 99 sites and repositories through the authenticated
+GitHub API and paced requests. One URL was wrong and was fixed before landing
+(`llvm.org/docs/MemorySanitizer.html` is a 404; the document lives on
+`clang.llvm.org`), and checking that turned up three more verified sanitizer
+documents worth adding — ASan, TSan and UBSan each have their own page.
+
+One entry was removed as redundant: `Arithmetic intensity` redirects to the Roofline
+model article, so it was the same destination twice.
+
+Three hosts could not be reached from the network this was built on and are
+therefore absent rather than guessed: CMU 15-451, MIT 6.035, and the Dartmouth
+SICP archive.
